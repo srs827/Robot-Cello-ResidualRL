@@ -1,0 +1,4 @@
+long_ago_bowings = [True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, 
+                    True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, 
+                    True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False,
+                    True, False, True, False, True, False, True, False, True, False, True, False, True, False, True, False, True ]

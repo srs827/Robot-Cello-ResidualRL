@@ -1,0 +1,240 @@
+<mujoco model="ur5e">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <include file="Base/Base.xml"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="ur5e">
+      <material specular="0.5" shininess="0.25"/>
+      <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.1"/>
+      <general gaintype="fixed" biastype="affine" ctrlrange="-6.2831 6.2831" gainprm="2000" biasprm="0 -2000 -400"
+        forcerange="-150 150"/>
+      <default class="size3">
+        <default class="size3_limited">
+          <joint range="-3.1415 3.1415"/>
+          <general ctrlrange="-3.1415 3.1415"/>
+        </default>
+      </default>
+      <default class="size1">
+        <general gainprm="500" biasprm="0 -500 -100" forcerange="-28 28"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="capsule" group="3"/>
+        <default class="eef_collision">
+          <geom type="cylinder"/>
+        </default>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+  <material name="0.113725_0.129412_0.156863_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.1137 0.1294 0.1569 1"/>
+    <material name="0.196078_0.196078_0.196078_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.1961 0.1961 0.1961 1"/>
+    <!-- <material name="0.231373_0.380392_0.705882_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.2314 0.3804 0.7059 1"/> -->
+    <material name="0.470588_0.470588_0.470588_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.4706 0.4706 0.4706 1"/>
+    <material name="0.568627_0.294118_0.078431_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.5686 0.2941 0.07843 1"/>
+    <!-- <material name="0.615686_0.811765_0.929412_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.6157 0.8118 0.9294 1"/> -->
+    <material name="0.666667_0.666667_0.666667_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.6667 0.6667 0.6667 1"/>
+    <!-- <material name="0.768627_0.886275_0.952941_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.7686 0.8863 0.9529 1"/> -->
+    <material name="0.823529_0.705882_0.431373_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.8235 0.7059 0.4314 1"/>
+    <material name="0.921569_0.705882_0.470588_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.9216 0.7059 0.4706 1"/>
+
+    <material name="string_material" specular="0.5" shininess="0.5" reflectance="0.1"/>
+    <material name="bow_hair_material" specular="0.3" shininess="0.3" reflectance="0.0"/> 
+
+    <mesh file="GripperBow_0.obj"/>
+    <mesh file="GripperBow_1.obj"/>
+    <mesh file="GripperBow_2.obj"/>
+    <mesh file="GripperBow_3.obj"/>
+    <mesh file="GripperBow_4.obj"/>
+    <mesh file="GripperBow_5.obj"/>
+    <mesh file="GripperBow_6.obj"/>
+    <mesh file="GripperBow_7.obj"/>
+    <mesh file="GripperBow_8.obj"/>
+    <mesh file="GripperBow_9.obj"/>
+    <mesh file="GripperBow_collision_0.obj"/>
+    <mesh file="GripperBow_collision_1.obj"/>
+    <mesh file="GripperBow_collision_2.obj"/>
+
+    <material class="ur5e" name="black" rgba="0.033 0.033 0.033 1"/>
+    <material class="ur5e" name="jointgray" rgba="0.278 0.278 0.278 1"/>
+    <material class="ur5e" name="linkgray" rgba="0.82 0.82 0.82 1"/>
+    <material class="ur5e" name="urblue" rgba="0.49 0.678 0.8 1"/>
+
+    <mesh name="gripper_mesh" file="Bow Holder Assembly 3 (1).stl" />
+    <mesh file="base_0.obj"/>
+    <mesh file="base_1.obj"/>
+    <mesh file="shoulder_0.obj"/>
+    <mesh file="shoulder_1.obj"/>
+    <mesh file="shoulder_2.obj"/>
+    <mesh file="upperarm_0.obj"/>
+    <mesh file="upperarm_1.obj"/>
+    <mesh file="upperarm_2.obj"/>
+    <mesh file="upperarm_3.obj"/>
+    <mesh file="forearm_0.obj"/>
+    <mesh file="forearm_1.obj"/>
+    <mesh file="forearm_2.obj"/>
+    <mesh file="forearm_3.obj"/>
+    <mesh file="wrist1_0.obj"/>
+    <mesh file="wrist1_1.obj"/>
+    <mesh file="wrist1_2.obj"/>
+    <mesh file="wrist2_0.obj"/>
+    <mesh file="wrist2_1.obj"/>
+    <mesh file="wrist2_2.obj"/>
+    <mesh file="wrist3.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="wrist_2_link" pos="0 -1 2"/>
+    <body name="base" pos="0 0 0.61214" quat="0 0 0 -1" childclass="ur5e">
+      <inertial mass="4.0" pos="0 0 0" diaginertia="0.00443333156 0.00443333156 0.0072"/>
+      <geom mesh="base_0" material="black" class="visual"/>
+      <geom mesh="base_1" material="jointgray" class="visual"/>
+      <body name="shoulder_link" pos="0 0 0.163">
+        <inertial mass="3.7" pos="0 0 0" diaginertia="0.0102675 0.0102675 0.00666"/>
+        <joint name="shoulder_pan_joint" class="size3" axis="0 0 1"/>
+        <geom mesh="shoulder_0" material="urblue" contype="1" conaffinity="1" class="visual"/>
+        <geom mesh="shoulder_1" material="black"  contype="1" conaffinity="1" class="visual"/>
+        <geom mesh="shoulder_2" material="jointgray" contype="1" conaffinity="1" class="visual"/>
+        <geom class="collision" size="0.06 0.06" pos="0 0 -0.04"/>
+        <body name="upper_arm_link" pos="0 0.138 0" quat="1 0 1 0">
+          <inertial mass="8.393" pos="0 0 0.2125" diaginertia="0.133886 0.133886 0.0151074"/>
+          <joint name="shoulder_lift_joint" class="size3"/>
+          <geom mesh="upperarm_0" material="linkgray" class="visual" contype="1" conaffinity="1"/>
+          <geom mesh="upperarm_1" material="black" class="visual" contype="1" conaffinity="1"/>
+          <geom mesh="upperarm_2" material="jointgray" class="visual" contype="1" conaffinity="1"/>
+          <geom mesh="upperarm_3" material="urblue" class="visual" contype="1" conaffinity="1"/>
+          <geom class="collision" pos="0 -0.04 0" quat="1 1 0 0" size="0.06 0.06"/>
+          <geom class="collision" size="0.05 0.2" pos="0 0 0.2"/>
+          <body name="forearm_link" pos="0 -0.131 0.425">
+            <inertial mass="2.275" pos="0 0 0.196" diaginertia="0.0311796 0.0311796 0.004095"/>
+            <joint name="elbow_joint" class="size3_limited"/>
+            <geom mesh="forearm_0" material="urblue" class="visual" contype="1" conaffinity="1"/>
+            <geom mesh="forearm_1" material="linkgray" class="visual" contype="1" conaffinity="1"/>
+            <geom mesh="forearm_2" material="black" class="visual" contype="1" conaffinity="1"/>
+            <geom mesh="forearm_3" material="jointgray" class="visual" contype="1" conaffinity="1"/>
+            <geom class="collision" pos="0 0.08 0" quat="1 1 0 0" size="0.055 0.06"/>
+            <geom class="collision" size="0.038 0.19" pos="0 0 0.2"/>
+            <body name="wrist_1_link" pos="0 0 0.392" quat="1 0 1 0">
+              <inertial mass="1.219" pos="0 0.127 0" diaginertia="0.0025599 0.0025599 0.0021942"/>
+              <joint name="wrist_1_joint" class="size1"/>
+              <geom mesh="wrist1_0" material="black" class="visual" contype="1" conaffinity="1"/>
+              <geom mesh="wrist1_1" material="urblue" class="visual" contype="1" conaffinity="1"/>
+              <geom mesh="wrist1_2" material="jointgray" class="visual" contype="1" conaffinity="1"/>
+              <geom class="collision" pos="0 0.05 0" quat="1 1 0 0" size="0.04 0.07"/>
+              <body name="wrist_2_link" pos="0 0.127 0">
+                <inertial mass="1.219" pos="0 0 0.1" diaginertia="0.0025599 0.0025599 0.0021942"/>
+                <joint name="wrist_2_joint" axis="0 0 1" class="size1"/>
+                <geom mesh="wrist2_0" material="black" class="visual" contype="1" conaffinity="1"/>
+                <geom mesh="wrist2_1" material="urblue" class="visual" contype="1" conaffinity="1"/>
+                <geom mesh="wrist2_2" material="jointgray" class="visual" contype="1" conaffinity="1"/>
+                <geom class="collision" size="0.04 0.06" pos="0 0 0.04"/>
+                <geom class="collision" pos="0 0.02 0.1" quat="1 1 0 0" size="0.04 0.04"/>
+                <body name="wrist_3_link" pos="0 0 0.1">
+                  <inertial mass="0.1889" pos="0 0.0771683 0" quat="1 0 0 1"
+                    diaginertia="0.000132134 9.90863e-05 9.90863e-05"/>
+                  <joint name="wrist_3_joint" class="size1"/>
+                  <geom material="linkgray" mesh="wrist3" class="visual"/>
+                  <geom class="eef_collision" pos="0 0.08 0" quat="1 1 0 0" size="0.04 0.02"/>
+                  <!-- <geom type="mesh" mesh="gripper_mesh" material="linkgray" class="visual" pos="0 0.1 0" quat="-1 1 0 0" contype="1" conaffinity="1"/> -->
+                  <!-- <include file="/Users/PV/Robot Cello/Robot-Cello/MuJoCo_RL_UR5/env_experiment/GripperBow/GripperBow.xml"/> -->
+                  <body name="GripperBow" pos="0 0.1 0" quat="-1 1 0 0"> 
+                    <geom mesh="GripperBow_0" material="0.615686_0.811765_0.929412_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_1" material="0.470588_0.470588_0.470588_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_2" material="0.823529_0.705882_0.431373_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_3" material="0.196078_0.196078_0.196078_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_4" material="0.666667_0.666667_0.666667_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_5" material="0.113725_0.129412_0.156863_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_6" material="0.568627_0.294118_0.078431_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_7" material="0.921569_0.705882_0.470588_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_8" material="0.231373_0.380392_0.705882_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_9" material="0.768627_0.886275_0.952941_0.000000_0.000000" class="visual"/>
+                    <geom mesh="GripperBow_collision_0" rgba="0.8830719240833379 0.9694187576009292 0.02174679723191808 1" class="collision"/>
+                    <geom mesh="GripperBow_collision_1" rgba="0.10404431504547218 0.9985556061204591 0.0893572362052153 1" class="collision"/>
+                    <geom mesh="GripperBow_collision_2" rgba="0.2933043500683049 0.37820582798772495 0.7342368790243478 1" class="collision"/>
+
+                    <geom name="bow_hair" type="box" fromto="0.031692 0 0.046278 0.646918 0 -0.063072" size="0.001" rgba="1 1 1 0.8" 
+                        material="bow_hair_material"/>
+                  </body>
+
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+     <!-- Define the cello strings as capsule geoms with appropriate physical properties -->
+    <body name="cello_strings" pos="0 0 0" quat="0.7071068 0 0 0.7071068">
+        <!-- G string -->
+        <geom name="G_string" type="capsule" fromto="0.754749 -0.208095 0.584309 0.754 -0.267213 0.497968" 
+                size="0.000700" rgba="0.8 0.6 0.2 1" 
+                material="string_material"/>
+        <site name="G_string_mid" pos="0.754375 -0.237654 0.541139" size="0.001"/>
+        <!-- <joint name="G_string_vibration" type="slide" axis="0 1 0" range="-0.003 0.003" stiffness="100" damping="0.5"/> -->
+        
+        <!-- C string -->
+        <geom name="C_string" type="capsule" fromto="0.739636 -0.202824 0.584309 0.738086 -0.261907 0.495697" 
+                size="0.000850" rgba="0.8 0.6 0.2 1"
+                material="string_material"/>
+        <site name="C_string_mid" pos="0.738861 -0.232366 0.540003" size="0.001"/>
+        <!-- <joint name="C_string_vibration" type="slide" axis="0 1 0" range="-0.003 0.003" stiffness="200" damping="0.5"/> -->
+        
+        <!-- D string -->
+        <geom name="D_string" type="capsule" fromto="0.769354 -0.207844 0.584309 0.769901 -0.268 0.496129" 
+                size="0.000508" rgba="0.7 0.7 0.7 1"
+                material="string_material"/>
+        <site name="D_string_mid" pos="0.769628 -0.237922 0.540219" size="0.001"/>
+        <!-- <joint name="D_string_vibration" type="slide" axis="0 1 0" range="-0.002 0.002" stiffness="300" damping="0.5"/> -->
+        
+        <!-- A string (highest) -->
+        <geom name="A_string" type="capsule" fromto="0.7835 -0.202322 0.584309 0.785914 -0.261907 0.495697" 
+                size="0.000508" rgba="0.7 0.7 0.7 1"
+                material="string_material"/>
+        <site name="A_string_mid" pos="0.784707 -0.232115 0.540003" size="0.001"/>
+        <!-- <joint name="A_string_vibration" type="slide" axis="0 1 0" range="-0.002 0.002" stiffness="400" damping="0.5"/> -->
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general class="size3" name="shoulder_pan" joint="shoulder_pan_joint"/>
+    <general class="size3" name="shoulder_lift" joint="shoulder_lift_joint"/>
+    <general class="size3_limited" name="elbow" joint="elbow_joint"/>
+    <general class="size1" name="wrist_1" joint="wrist_1_joint"/>
+    <general class="size1" name="wrist_2" joint="wrist_2_joint"/>
+    <general class="size1" name="wrist_3" joint="wrist_3_joint"/>
+  </actuator>
+
+  <!-- <contact>
+  <pair geom1="bow_hair" geom2="G_string" condim="3" friction="1.0 0.005 0.0001"/>
+  <pair geom1="bow_hair" geom2="C_string" condim="3" friction="1.0 0.005 0.0001"/>
+  <pair geom1="bow_hair" geom2="D_string" condim="3" friction="1.0 0.005 0.0001"/>
+  <pair geom1="bow_hair" geom2="A_string" condim="3" friction="1.0 0.005 0.0001"/>
+</contact> -->
+
+<sensor>
+  <!-- Sensors to detect bow pressure and velocity on strings -->
+  <touch name="G_string_touch" site="G_string_mid"/>
+  <touch name="C_string_touch" site="C_string_mid"/>
+  <touch name="D_string_touch" site="D_string_mid"/>
+  <touch name="A_string_touch" site="A_string_mid"/>
+  
+  <!-- Velocity sensors for strings  -->
+  <velocimeter name="G_string_vel" site="G_string_mid"/>
+  <velocimeter name="C_string_vel" site="C_string_mid"/>
+  <velocimeter name="D_string_vel" site="D_string_mid"/>
+  <velocimeter name="A_string_vel" site="A_string_mid"/>
+</sensor>
+
+
+<keyframe>
+    <key name="home" 
+         qpos="0.3128551550760768 0.6237390727874397 0.1331473851509603 -1.6506585627816217 -2.0735279059562384 1.0388212810915936" 
+         ctrl="0.3128551550760768 0.6237390727874397 0.1331473851509603 -1.6506585627816217 -2.0735279059562384 1.0388212810915936"/>
+</keyframe>
+</mujoco>

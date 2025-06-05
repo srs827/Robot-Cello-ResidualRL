@@ -1,0 +1,6 @@
+twinkle_bowings = [True, False, True, False, True, False, True, 
+                    False, True, False, True, False, True, False,
+                    True, False, True, False, True, False, True,
+                    False, True, False, True, False, True, False, 
+                    True, False, True, False, True, False, True,
+                    False, True, False, True, False, True, False]

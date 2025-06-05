@@ -1,0 +1,52 @@
+<mujoco model="GripperBow">
+  <!-- <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default> -->
+  <asset>
+    <material name="0.113725_0.129412_0.156863_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.1137 0.1294 0.1569 1"/>
+    <material name="0.196078_0.196078_0.196078_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.1961 0.1961 0.1961 1"/>
+    <material name="0.231373_0.380392_0.705882_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.2314 0.3804 0.7059 1"/>
+    <material name="0.470588_0.470588_0.470588_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.4706 0.4706 0.4706 1"/>
+    <material name="0.568627_0.294118_0.078431_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.5686 0.2941 0.07843 1"/>
+    <material name="0.615686_0.811765_0.929412_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.6157 0.8118 0.9294 1"/>
+    <material name="0.666667_0.666667_0.666667_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.6667 0.6667 0.6667 1"/>
+    <material name="0.768627_0.886275_0.952941_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.7686 0.8863 0.9529 1"/>
+    <material name="0.823529_0.705882_0.431373_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.8235 0.7059 0.4314 1"/>
+    <material name="0.921569_0.705882_0.470588_0.000000_0.000000" specular="0.0" shininess="0.0" rgba="0.9216 0.7059 0.4706 1"/>
+    <mesh file="GripperBow_0.obj"/>
+    <mesh file="GripperBow_1.obj"/>
+    <mesh file="GripperBow_2.obj"/>
+    <mesh file="GripperBow_3.obj"/>
+    <mesh file="GripperBow_4.obj"/>
+    <mesh file="GripperBow_5.obj"/>
+    <mesh file="GripperBow_6.obj"/>
+    <mesh file="GripperBow_7.obj"/>
+    <mesh file="GripperBow_8.obj"/>
+    <mesh file="GripperBow_9.obj"/>
+    <mesh file="GripperBow_collision_0.obj"/>
+    <mesh file="GripperBow_collision_1.obj"/>
+    <mesh file="GripperBow_collision_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="GripperBow">
+      <geom mesh="GripperBow_0" material="0.615686_0.811765_0.929412_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_1" material="0.470588_0.470588_0.470588_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_2" material="0.823529_0.705882_0.431373_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_3" material="0.196078_0.196078_0.196078_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_4" material="0.666667_0.666667_0.666667_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_5" material="0.113725_0.129412_0.156863_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_6" material="0.568627_0.294118_0.078431_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_7" material="0.921569_0.705882_0.470588_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_8" material="0.231373_0.380392_0.705882_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_9" material="0.768627_0.886275_0.952941_0.000000_0.000000" class="visual"/>
+      <geom mesh="GripperBow_collision_0" rgba="0.8830719240833379 0.9694187576009292 0.02174679723191808 1" class="collision"/>
+      <geom mesh="GripperBow_collision_1" rgba="0.10404431504547218 0.9985556061204591 0.0893572362052153 1" class="collision"/>
+      <geom mesh="GripperBow_collision_2" rgba="0.2933043500683049 0.37820582798772495 0.7342368790243478 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
