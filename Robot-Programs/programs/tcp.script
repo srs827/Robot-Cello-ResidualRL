@@ -1,0 +1,78 @@
+def tcp():
+  global _hidden_verificationVariable=0
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_gravity([0.0, 0.0, 9.82])
+  set_safety_mode_transition_hardness(1)
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_6a5c9771_3a57_41c8_9512_a8bcb78a5058 = 0.0
+  thread Step_Counter_Thread_86d3aa0c_338c_4db2_8e81_076cf3793398():
+    while (True):
+      step_count_6a5c9771_3a57_41c8_9512_a8bcb78a5058 = step_count_6a5c9771_3a57_41c8_9512_a8bcb78a5058 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_86d3aa0c_338c_4db2_8e81_076cf3793398()
+  global Waypoint_4_p=p[.362010357555, .474766328078, .134068376455, -1.613045547528, -2.136313119329, 1.151330141151]
+  global Waypoint_4_q=[-2.5493923449541125, -0.7570558593208405, 1.649136843878506, -1.6208817600006542, -1.6035007246170432, -2.808236179484469]
+  global Waypoint_2_p=p[.331971133677, .722315253805, .108291185217, -1.644956385011, -2.108101752441, 1.059071402778]
+  global Waypoint_2_q=[-2.263843838368551, -0.37471242368731694, 0.9072483221637171, -1.3311255735209961, -1.3414958159076136, -2.600104633961813]
+  global Waypoint_1_p=p[.324752035740, .765323943505, .130384926002, -1.494390555027, -2.277831043302, 1.156901887730]
+  global Waypoint_1_q=[-2.2175437860100358, -0.2572999179838069, 0.5854005161315633, -1.0825921479197582, -1.448159388314024, -2.6781183971139746]
+  global Waypoint_3_p=p[.439970647423, .533839164624, .197070289297, -1.494358441042, -2.277827104333, 1.156917736876]
+  global Waypoint_3_q=[-2.530459845704803, -0.6687565455417506, 1.2491110730625736, -1.3336343784427385, -1.676062206371708, -2.89166459544314]
+  def d_quarter_1():
+    $ 6 "d_quarter_1" "noBreak"
+    $ 7 "MoveL"
+    $ 8 "Waypoint_4" "breakAfter"
+    movel(Waypoint_4_p, a=1.2, v=0.25)
+    $ 9 "Wait: 10.0"
+    sleep(10.0)
+    $ 10 "path_d" "breakAfter"
+    movel(pose_trans(get_forward_kin(), path_d), a=1.2, v=0.25)
+  end
+  def d_quarter():
+    $ 11 "d_quarter" "noBreak"
+    $ 12 "MoveL"
+    $ 13 "Waypoint_2" "breakAfter"
+    movel(pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_2_p)), a=1.2, v=0.25)
+    $ 14 "Waypoint_4" "breakAfter"
+    movel(pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_4_p)), a=1.2, v=0.25)
+    $ 15 "path_d≔pose_dist(Waypoint_2, Waypoint_4)"
+    global path_d= pose_dist (pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_2_p)), pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_4_p)))
+  end
+  def a_quarter():
+    $ 16 "a_quarter" "noBreak"
+    $ 17 "MoveL"
+    $ 18 "Waypoint_1" "breakAfter"
+    movel(pose_trans(Plane_1, pose_trans(p[-.156489454785, .686583460113, -.503627994728, 2.208244884172, .247386098160, 1.919508547310], Waypoint_1_p)), a=1.2, v=0.25)
+    $ 19 "Waypoint_3" "breakAfter"
+    movel(pose_trans(Plane_1, pose_trans(p[-.156489454785, .686583460113, -.503627994728, 2.208244884172, .247386098160, 1.919508547310], Waypoint_3_p)), a=1.2, v=0.25)
+  end
+  $ 2 "Robot Program"
+  $ 3 "Call d_quarter"
+  d_quarter()
+  $ 4 "var_1≔Waypoint_4"
+  global var_1=pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_4_p))
+  $ 5 "Call d_quarter_1"
+  d_quarter_1()
+end

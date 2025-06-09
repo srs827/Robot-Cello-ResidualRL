@@ -1,0 +1,43 @@
+def g_to_a():
+  global _hidden_verificationVariable=0
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 = 0.0
+  thread Step_Counter_Thread_057cf1f9_7acf_4055_b688_e88626e2a37c():
+    while (True):
+      step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 = step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_057cf1f9_7acf_4055_b688_e88626e2a37c()
+  global Waypoint_1_from_p=p[.267753255645, .455828287547, .063351710983, -1.606404278733, -1.910715168434, .870148894806]
+  global Waypoint_1_to_p=p[.327363837215, .541728526132, .231866836857, 1.681751983898, 2.324759840670, -1.111441673390]
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "MoveJ"
+    $ 4 "Waypoint_1" "breakAfter"
+    movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_1_to_p, Waypoint_1_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+  end
+end

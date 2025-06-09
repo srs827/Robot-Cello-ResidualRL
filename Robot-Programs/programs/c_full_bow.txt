@@ -1,0 +1,17 @@
+ Program
+   Variables Setup
+   Robot Program
+     bow_dir≔ True 
+     note_dur≔1
+     timer_1: Start
+     If bow_dir≟ True 
+       MoveL
+         Waypoint_6
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_4
+           Until (expression)
+     'MoveL'
+     timer_1: Stop
+     timer_1: Reset

@@ -1,0 +1,392 @@
+ Program
+   Variables Setup
+   Robot Program
+     'Wait: 20.0'
+     beats: Start
+     MoveL
+       a_frog
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       Waypoint_1
+     beats: Reset
+     MoveL
+       Waypoint_4
+         Until (expression)
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     'Wait: 21.0'
+     MoveJ
+       Waypoint_5
+     MoveJ
+       Waypoint_10
+     'MoveL'
+     MoveJ
+       d_frog
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     beats: Start
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     MoveJ
+       a_frog
+     Wait: 1.0
+     beats: Reset
+     MoveL
+       a_frog
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       Waypoint_1
+     beats: Reset
+     MoveL
+       Waypoint_4
+         Until (expression)
+     MoveJ
+       a_frog
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     MoveJ
+       Waypoint_9
+     MoveJ
+       d_tip
+     beats: Reset
+     beats: Start
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     beats: Start
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     MoveJ
+       a_frog
+     Wait: 1.0
+     beats: Reset
+     MoveL
+       a_frog
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     MoveL
+       a_tip
+         Until (expression)
+     MoveJ
+       Waypoint_2
+     MoveL
+       Waypoint_3
+     MoveJ
+       a_frog
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveJ
+       Waypoint_7
+     MoveL
+       Waypoint_8
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       Waypoint_1
+     beats: Reset
+     MoveL
+       Waypoint_4
+         Until (expression)
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     MoveJ
+       Waypoint_5
+     MoveL
+       Waypoint_6
+     MoveJ
+       d_frog
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     beats: Start
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_frog
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset

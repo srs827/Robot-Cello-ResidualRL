@@ -1,0 +1,94 @@
+def sequence():
+  global _hidden_verificationVariable=0
+  step_count_d2a67d4b_5cb0_428d_bb6c_448b0b75375d = 0.0
+  thread Step_Counter_Thread_67eade17_b3b1_4e77_b440_af7935fb9ff2():
+    while (True):
+      step_count_d2a67d4b_5cb0_428d_bb6c_448b0b75375d = step_count_d2a67d4b_5cb0_428d_bb6c_448b0b75375d + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_67eade17_b3b1_4e77_b440_af7935fb9ff2()
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global Waypoint_1_p=p[.196373714184, .721837301465, .133867066343, 1.474710950862, 2.384590390345, -1.033013352923]
+  global Waypoint_1_q=[-2.1231043974505823, -0.5317170184901734, 1.1008346716510218, -1.429032177930214, -1.709649387990133, -2.531516138707296]
+  global Waypoint_2_from_p=p[.196377498321, .721838890784, .133880880761, 1.474721064546, 2.384582124307, -1.032995308257]
+  global Waypoint_2_to_p=p[.519539644255, .370100448706, .282791055843, -1.259155921389, -2.281069535835, 1.590866831864]
+  global Waypoint_3_p=p[.256547942570, .665972669924, .108569319509, -1.537443523787, -2.229218340508, 1.249553038205]
+  global Waypoint_3_q=[-2.229382340108053, -0.5460681480220337, 1.2602155844317835, -1.410557584171631, -1.4638026396380823, -2.639369312916891]
+  global Waypoint_4_from_p=p[.256565251390, .665974760686, .108581790776, -1.537471330463, -2.229216695538, 1.249524552493]
+  global Waypoint_4_to_p=p[.308200871219, .212165537269, .168468546547, 1.566880752075, 2.363665861262, -1.313364944439]
+  global Waypoint_5_p=p[.244536814929, .603171944766, .091746993125, -1.746710419839, -2.094804797466, .807656086869]
+  global Waypoint_5_q=[-2.2819626967059534, -0.6259936851314087, 1.5676019827472132, -1.9206177196898402, -1.2910974661456507, -2.544013325368063]
+  global Waypoint_6_from_p=p[.244521073137, .603181819387, .091749361360, -1.746716934447, -2.094834799544, .807650042444]
+  global Waypoint_6_to_p=p[.300326863987, .207838494561, .008819542335, -1.236658477725, -1.730478699854, 1.136023561914]
+  global Waypoint_7_p=p[.222972984545, .562956357683, .073090015821, -1.740443286102, -1.525449857958, .357172736743]
+  global Waypoint_7_q=[-2.2788317839251917, -0.557718352680542, 1.7717683951007288, -2.562565942803854, -0.738295857106344, -2.240481678639547]
+  global Waypoint_8_from_p=p[.225603621920, .562943260372, .077705508690, -1.740560980118, -1.524288189469, .348460187835]
+  global Waypoint_8_to_p=p[.108241081591, .170343178286, -.059718972008, -1.385232024659, -1.477683290624, .736651523055]
+  def a_str():
+    $ 9 "a_str" "noBreak"
+    $ 10 "MoveL"
+    $ 11 "Waypoint_1" "breakAfter"
+    movel(Waypoint_1_p, a=1.2, v=0.25)
+    $ 12 "Waypoint_2" "breakAfter"
+    movel(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_2_to_p, Waypoint_2_from_p)), a=1.2, v=0.25)
+  end
+  def d_str():
+    $ 13 "d_str" "noBreak"
+    $ 14 "MoveL"
+    $ 15 "Waypoint_3" "breakAfter"
+    movel(Waypoint_3_p, a=1.2, v=0.25)
+    $ 16 "Waypoint_4" "breakAfter"
+    movel(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_4_to_p, Waypoint_4_from_p)), a=1.2, v=0.25)
+  end
+  def g_str():
+    $ 17 "g_str" "noBreak"
+    $ 18 "MoveL"
+    $ 19 "Waypoint_5" "breakAfter"
+    movel(Waypoint_5_p, a=1.2, v=0.25)
+    $ 20 "Waypoint_6" "breakAfter"
+    movel(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_6_to_p, Waypoint_6_from_p)), a=1.2, v=0.25)
+  end
+  def c_str():
+    $ 21 "c_str" "noBreak"
+    $ 22 "MoveL"
+    $ 23 "Waypoint_7" "breakAfter"
+    movel(Waypoint_7_p, a=1.2, v=0.25)
+    $ 24 "Waypoint_8" "breakAfter"
+    movel(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_8_to_p, Waypoint_8_from_p)), a=1.2, v=0.25)
+  end
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "Call a_str"
+    a_str()
+    $ 4 "Call d_str"
+    d_str()
+    $ 5 "Call g_str"
+    g_str()
+    $ 6 "Call c_str"
+    c_str()
+    $ 7 "Call g_str"
+    g_str()
+    $ 8 "Call d_str"
+    d_str()
+  end
+end

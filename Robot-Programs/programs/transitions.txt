@@ -1,0 +1,19 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call d_4
+     Call a_2
+   a_2
+     timer_2: Start
+     MoveJ
+       Waypoint_4
+         Until (expression)
+       timer_2≔0
+   d_4
+     MoveL
+       Waypoint_1
+       timer_1: Start
+       Waypoint_3
+         Until (expression)
+           <empty>
+       timer_1≔0

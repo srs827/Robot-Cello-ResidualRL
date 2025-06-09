@@ -1,0 +1,5 @@
+ Program
+   Variables Setup
+   Robot Program
+     MoveJ
+       Waypoint_9

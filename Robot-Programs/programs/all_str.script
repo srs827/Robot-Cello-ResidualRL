@@ -1,0 +1,223 @@
+def unnamed():
+  global _hidden_verificationVariable=0
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_4cd27eac_f169_4e1f_b230_736eba67c81b = 0.0
+  thread Step_Counter_Thread_054fe300_89f9_4fc4_83d5_c9ee23134574():
+    while (True):
+      step_count_4cd27eac_f169_4e1f_b230_736eba67c81b = step_count_4cd27eac_f169_4e1f_b230_736eba67c81b + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_054fe300_89f9_4fc4_83d5_c9ee23134574()
+  global timer_1=0
+  global Waypoint_6_from_p=p[.332293231879, .455672654775, .108319289150, -1.644982388938, -2.108153310757, 1.058983107463]
+  global Waypoint_6_to_p=p[.343862461566, .499298209299, .240890587316, 1.738939074732, 2.310407548915, -1.107752625456]
+  global Waypoint_9_from_p=p[.343844194115, .499313333417, .240895333174, 1.738912227204, 2.310437496769, -1.107749846498]
+  global Waypoint_9_to_p=p[.332290211294, .455667184313, .108300630479, -1.644947408605, -2.108125124079, 1.059038525688]
+  global Waypoint_2_p=p[.393127941205, .325659382908, .303052769055, 1.738924283748, 2.310428550901, -1.107753568885]
+  global Waypoint_2_q=[-2.8016470941973988, -1.1754354120618569, 1.8019147901908428, -1.5737608069724507, -1.9821497696443178, -2.9452063380333353]
+  global Waypoint_1_p=p[.277236601206, .734032359319, .156891527665, 1.738924275492, 2.310428552465, -1.107753563859]
+  global Waypoint_1_q=[-2.210412708052746, -0.49084595566760747, 0.9551938502229333, -1.302301742823495, -1.605072055336045, -2.4750900912233345]
+  global Waypoint_4_p=p[.331972829410, .720894243842, .108291188914, -1.644956394239, -2.108101774266, 1.059071414057]
+  global Waypoint_4_q=[-2.264972537227802, -0.3778790224680133, 0.914086507142451, -1.334612975905629, -1.3422730752938108, -2.6009259901948476]
+  global Waypoint_5_p=p[.332565988845, .223852683819, .108291185277, -1.644956385032, -2.108101752489, 1.059071402976]
+  global Waypoint_5_q=[-2.9710621207401555, -0.9010623710694485, 2.201239346105246, -2.110836339926614, -1.8415992835367936, -3.1026224604114314]
+  global timer_1_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (timer_1_is_counting):
+        timer_1 = timer_1 + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  def d_to_a():
+    $ 11 "d_to_a" "noBreak"
+    $ 12 "MoveJ"
+    $ 13 "Waypoint_6" "breakAfter"
+    movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_6_to_p, Waypoint_6_from_p)), a=1.3962634015954636, v=1.0471975511965976, r=0.05)
+  end
+  def a_to_d():
+    $ 14 "a_to_d" "noBreak"
+    $ 15 "MoveJ"
+    $ 16 "Waypoint_9" "breakAfter"
+    movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_9_to_p, Waypoint_9_from_p)), a=1.3962634015954636, v=1.0471975511965976, r=0.05)
+  end
+  def a_full_bow():
+    $ 17 "a_full_bow" "noBreak"
+    $ 18 "note_dur≔1"
+    global note_dur=1
+    $ 19 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 20 "If bow_dir"
+    if (bow_dir):
+      $ 21 "MoveL"
+      $ 22 "Waypoint_2" "breakAfter"
+      global move_thread_flag_22=0
+      thread move_thread_22():
+        enter_critical
+        move_thread_flag_22 = 1
+        movel(Waypoint_2_p, a=1.2, v=0.25)
+        move_thread_flag_22 = 2
+        exit_critical
+      end
+      move_thread_flag_22 = 0
+      move_thread_han_22 = run move_thread_22()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_22
+          stopl(1.2)
+          $ 23 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_22 > 1):
+          join move_thread_han_22
+          break
+        end
+        sync()
+      end
+    else:
+      $ 24 "Else" "noBreak"
+      $ 25 "MoveL"
+      $ 26 "Waypoint_1" "breakAfter"
+      global move_thread_flag_26=0
+      thread move_thread_26():
+        enter_critical
+        move_thread_flag_26 = 1
+        movel(Waypoint_1_p, a=1.2, v=0.25)
+        move_thread_flag_26 = 2
+        exit_critical
+      end
+      move_thread_flag_26 = 0
+      move_thread_han_26 = run move_thread_26()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_26
+          stopl(1.2)
+          $ 27 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_26 > 1):
+          join move_thread_han_26
+          break
+        end
+        sync()
+      end
+    end
+    $ 32 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 33 "timer_1: Reset"
+    timer_1 = 0
+  end
+  def d_full_bow():
+    $ 34 "d_full_bow" "noBreak"
+    $ 35 "note_dur≔1"
+    global note_dur=1
+    $ 36 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 37 "If bow_dir≟ False "
+    if (bow_dir ==   False  ):
+      $ 38 "MoveL"
+      $ 39 "Waypoint_4" "breakAfter"
+      global move_thread_flag_39=0
+      thread move_thread_39():
+        enter_critical
+        move_thread_flag_39 = 1
+        movel(Waypoint_4_p, a=1.2, v=0.25)
+        move_thread_flag_39 = 2
+        exit_critical
+      end
+      move_thread_flag_39 = 0
+      move_thread_han_39 = run move_thread_39()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_39
+          stopl(1.2)
+          $ 40 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_39 > 1):
+          join move_thread_han_39
+          break
+        end
+        sync()
+      end
+    else:
+      $ 41 "Else" "noBreak"
+      $ 42 "MoveL"
+      $ 43 "Waypoint_5" "breakAfter"
+      global move_thread_flag_43=0
+      thread move_thread_43():
+        enter_critical
+        move_thread_flag_43 = 1
+        movel(Waypoint_5_p, a=1.2, v=0.25)
+        move_thread_flag_43 = 2
+        exit_critical
+      end
+      move_thread_flag_43 = 0
+      move_thread_han_43 = run move_thread_43()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_43
+          stopl(1.2)
+          $ 44 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_43 > 1):
+          join move_thread_han_43
+          break
+        end
+        sync()
+      end
+    end
+    $ 49 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 50 "timer_1: Reset"
+    timer_1 = 0
+  end
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 4 "Call a_full_bow"
+    a_full_bow()
+    $ 5 "Popup: tet"
+    popup("tet", "Message", False, False, blocking=True)
+    $ 7 "Popup: tet"
+    popup("tet", "Message", False, False, blocking=True)
+    $ 8 "bow_dir≔ False "
+    global bow_dir=  False  
+    $ 9 "Call d_full_bow"
+    d_full_bow()
+    $ 10 "Popup: tet"
+    popup("tet", "Message", False, False, blocking=True)
+  end
+end

@@ -1,0 +1,48 @@
+ Program
+   Variables Setup
+   Robot Program
+     bow_dir≔ True 
+     note_length≔1
+     MoveJ
+       Waypoint_7
+     Call a_full_bow_responsive
+     Call a_to_d
+     Call d_full_bow_responsive
+   d_full_bow_responsive
+     timer_1: Reset
+     timer_1: Start
+     If bow_dir≟ True 
+       MoveL
+         Waypoint_6
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_4
+           Until (expression)
+     timer_1: Stop
+   a_full_bow_responsive
+     timer_2: Reset
+     timer_2: Start
+     If bow_dir≟ True 
+       MoveL
+         Waypoint_2
+           Until (expression)
+     Else
+       MoveL
+         'Waypoint_3'
+         Waypoint_1
+           Until (expression)
+     timer_2: Stop
+   d_full_bow
+     MoveL
+       Waypoint_4
+       Waypoint_5
+       Waypoint_6
+   a_to_d
+     MoveJ
+       Waypoint_9
+   a_full_bow
+     MoveL
+       Waypoint_1
+       Waypoint_3
+       Waypoint_2

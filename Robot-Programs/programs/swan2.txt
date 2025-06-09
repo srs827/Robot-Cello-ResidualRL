@@ -1,0 +1,79 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call Swan
+   Swan
+     beats: Start
+     MoveL
+       a_frog
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       Waypoint_1
+     beats: Reset
+     MoveL
+       Waypoint_4
+         Until (expression)
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+     MoveJ
+       Waypoint_5
+     MoveL
+       Waypoint_6
+     MoveJ
+       d_frog
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     beats: Start
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_tip
+         Until (expression)
+     beats: Reset
+     MoveL
+       d_frog
+         Until (expression)
+     Wait: 500.0

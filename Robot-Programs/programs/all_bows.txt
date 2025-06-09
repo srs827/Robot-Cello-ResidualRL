@@ -1,0 +1,53 @@
+ Program
+   Variables Setup
+   Robot Program
+     MoveJ
+       Waypoint_25
+     Call a_full_bow
+     Call a_full_up
+     Call d_full_bow
+     Call d_full_up
+     Call g_full_bow
+     Call g_full_up
+     Call c_full_bow
+     Call c_full_up
+   c_full_up
+     MoveL
+       Waypoint_22
+       Waypoint_23
+       Waypoint_24
+   c_full_bow
+     MoveL
+       Waypoint_19
+       Waypoint_20
+       Waypoint_21
+   g_full_up
+     MoveL
+       Waypoint_16
+       Waypoint_17
+       Waypoint_18
+   g_full_bow
+     MoveL
+       Waypoint_13
+       Waypoint_14
+       Waypoint_15
+   d_full_up
+     MoveL
+       Waypoint_10
+       Waypoint_11
+       Waypoint_12
+   d_full_bow
+     MoveL
+       Waypoint_7
+       Waypoint_8
+       Waypoint_9
+   a_full_up
+     MoveL
+       Waypoint_4
+       Waypoint_5
+       Waypoint_6
+   a_full_bow
+     MoveL
+       Waypoint_1
+       Waypoint_3
+       Waypoint_2

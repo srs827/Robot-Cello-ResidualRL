@@ -1,0 +1,21 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call g_eighth
+     Call d_eighth
+     Call d_eighth
+     Call a_eighth
+     Call d_eighth
+     Call a_eighth
+   d_eighth
+     MoveL
+       Waypoint_5
+       Waypoint_7
+   g_eighth
+     MoveL
+       Waypoint_3
+       Waypoint_6
+   a_eighth
+     MoveL
+       Waypoint_1
+       Waypoint_4

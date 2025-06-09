@@ -1,0 +1,120 @@
+def c_full_bow():
+  global _hidden_verificationVariable=0
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 = 0.0
+  thread Step_Counter_Thread_057cf1f9_7acf_4055_b688_e88626e2a37c():
+    while (True):
+      step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 = step_count_0e4edbd7_2ae4_4ba3_916b_9e2970ae38d8 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_057cf1f9_7acf_4055_b688_e88626e2a37c()
+  global timer_1=0
+  global Waypoint_6_p=p[.152635568859, .275823570962, -.005983656739, -1.612154415185, -1.600813445868, .740445186757]
+  global Waypoint_6_q=[-2.6791065374957483, -0.465190128689148, 2.417635981236593, -2.6415277920165003, -1.0933659712420862, -2.8936691919909876]
+  global Waypoint_4_p=p[.245283703052, .570710326777, .053265630190, -1.842545665824, -1.391797994920, .068711419486]
+  global Waypoint_4_q=[-2.3077740403406404, -0.4328001930296841, 1.6809992346605778, -2.955228773678524, -0.7451124352554306, -1.9653584271955937]
+  global timer_1_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (timer_1_is_counting):
+        timer_1 = timer_1 + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 4 "note_dur≔1"
+    global note_dur=1
+    $ 5 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 6 "If bow_dir≟ True "
+    if (bow_dir ==   True  ):
+      $ 7 "MoveL"
+      $ 8 "Waypoint_6" "breakAfter"
+      global move_thread_flag_8=0
+      thread move_thread_8():
+        enter_critical
+        move_thread_flag_8 = 1
+        movel(Waypoint_6_p, a=1.2, v=0.25)
+        move_thread_flag_8 = 2
+        exit_critical
+      end
+      move_thread_flag_8 = 0
+      move_thread_han_8 = run move_thread_8()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_8
+          stopl(1.2)
+          $ 9 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_8 > 1):
+          join move_thread_han_8
+          break
+        end
+        sync()
+      end
+    else:
+      $ 10 "Else" "noBreak"
+      $ 11 "MoveL"
+      $ 12 "Waypoint_4" "breakAfter"
+      global move_thread_flag_12=0
+      thread move_thread_12():
+        enter_critical
+        move_thread_flag_12 = 1
+        movel(Waypoint_4_p, a=1.2, v=0.25)
+        move_thread_flag_12 = 2
+        exit_critical
+      end
+      move_thread_flag_12 = 0
+      move_thread_han_12 = run move_thread_12()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_12
+          stopl(1.2)
+          $ 13 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_12 > 1):
+          join move_thread_han_12
+          break
+        end
+        sync()
+      end
+    end
+    $ 18 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 19 "timer_1: Reset"
+    timer_1 = 0
+  end
+end

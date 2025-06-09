@@ -1,0 +1,55 @@
+def new_piece_setup():
+  global _hidden_verificationVariable=0
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_gravity([0.0, 0.0, 9.82])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_safety_mode_transition_hardness(1)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_01a5416a_706e_43ac_8500_7b624283ade9 = 0.0
+  thread Step_Counter_Thread_0f10a913_1884_41de_a979_8c048dec9c3a():
+    while (True):
+      step_count_01a5416a_706e_43ac_8500_7b624283ade9 = step_count_01a5416a_706e_43ac_8500_7b624283ade9 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_0f10a913_1884_41de_a979_8c048dec9c3a()
+  global a_frog_p=p[.336637615375, .773335607743, .103937252349, -1.369835518384, -2.336199267621, 1.326965437172]
+  global a_frog_q=[-2.2183508256726725, -0.10787170694309989, 0.3315182010864657, -0.8747277688546333, -1.5480837419785658, -2.738136215391106]
+  global a_tip_p=p[.525205911288, .350983193771, .214779688012, -1.369835518377, -2.336199267606, 1.326965437192]
+  global a_tip_q=[-2.8104675709775435, -0.7777254095899568, 1.4170561331656568, -1.3734529955874306, -2.00764934437745, -3.120955890640845]
+  global d_frog_p=p[.358556290033, .758658722538, .094067239126, -1.509385446503, -2.078818869906, 1.199291353549]
+  global d_frog_q=[-2.253490233785314, -0.1836762239618741, 0.5352870636115314, -1.0208649772608265, -1.3332682820109216, -2.681564252679738]
+  global d_tip_p=p[.447608867837, .273936235050, .153016456946, -1.509385446500, -2.078818869903, 1.199291353552]
+  global d_tip_q=[-2.9133813825213988, -0.859593719768676, 1.8198980032177747, -1.640544880913927, -1.854018434813682, -3.0883175853242584]
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "MoveJ"
+    $ 4 "a_frog" "breakAfter"
+    movej(get_inverse_kin(a_frog_p, qnear=a_frog_q), a=1.3962634015954636, v=1.0471975511965976)
+    $ 5 "a_tip" "breakAfter"
+    movej(get_inverse_kin(a_tip_p, qnear=a_tip_q), a=1.3962634015954636, v=1.0471975511965976)
+    $ 6 "d_frog" "breakAfter"
+    movej(get_inverse_kin(d_frog_p, qnear=d_frog_q), a=1.3962634015954636, v=1.0471975511965976)
+    $ 7 "d_tip" "breakAfter"
+    movej(get_inverse_kin(d_tip_p, qnear=d_tip_q), a=1.3962634015954636, v=1.0471975511965976)
+  end
+end

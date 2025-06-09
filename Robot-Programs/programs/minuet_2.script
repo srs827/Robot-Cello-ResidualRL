@@ -1,0 +1,86 @@
+def minuet_2():
+  global _hidden_verificationVariable=0
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_7d7f5507_827d_45a3_a990_62ad7db46cf9 = 0.0
+  thread Step_Counter_Thread_e5008f21_156a_4f52_a7d0_f08c9f7adb19():
+    while (True):
+      step_count_7d7f5507_827d_45a3_a990_62ad7db46cf9 = step_count_7d7f5507_827d_45a3_a990_62ad7db46cf9 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_e5008f21_156a_4f52_a7d0_f08c9f7adb19()
+  global Waypoint_5_p=p[.331971133677, .722315253805, .108291185217, -1.644956385011, -2.108101752441, 1.059071402778]
+  global Waypoint_5_q=[-2.263843838368551, -0.37471242368731694, 0.9072483221637171, -1.3311255735209961, -1.3414958159076136, -2.600104633961813]
+  global Waypoint_7_p=p[.338919302833, .665001489926, .114260142464, -1.637779241863, -2.114844316195, 1.080412956872]
+  global Waypoint_7_q=[-2.318634812031852, -0.4877417844585352, 1.1314995924579943, -1.4215563547662775, -1.3917120138751233, -2.643481318150635]
+  global Waypoint_3_p=p[.347509852947, .672219940392, .096149965824, -1.652515614799, -1.651113148294, .642842853528]
+  global Waypoint_3_q=[-2.306358877812521, -0.4347948592952271, 1.185845200215475, -1.7394401035704554, -0.8505542914019983, -2.5264104048358362]
+  global Waypoint_6_p=p[.343274214963, .613132671351, .090094064940, -1.621087047482, -1.667740383899, .695631794035]
+  global Waypoint_6_q=[-2.3557649294482648, -0.5149921935847832, 1.3769319693194935, -1.7580372295775426, -0.8968437353717249, -2.624541107808252]
+  global Waypoint_1_p=p[.324752035740, .765323943505, .130384926002, -1.494390555027, -2.277831043302, 1.156901887730]
+  global Waypoint_1_q=[-2.2175437860100358, -0.2572999179838069, 0.5854005161315633, -1.0825921479197582, -1.448159388314024, -2.6781183971139746]
+  global Waypoint_4_p=p[.347657429206, .719315144627, .143638713953, -1.494399401239, -2.277818707626, 1.156899707682]
+  global Waypoint_4_q=[-2.2732370535480193, -0.37454839170486665, 0.7954018751726917, -1.1715508264353947, -1.48841935793034, -2.716248337422524]
+  def d_eighth():
+    $ 9 "d_eighth" "noBreak"
+    $ 10 "MoveL"
+    $ 11 "Waypoint_5" "breakAfter"
+    movel(pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_5_p)), a=1.2, v=0.25)
+    $ 12 "Waypoint_7" "breakAfter"
+    movel(pose_trans(Plane_2, pose_trans(p[-.360194635270, .718115715874, -.204939404457, -2.768545736098, -.128483155351, -1.367280562827], Waypoint_7_p)), a=1.2, v=0.25)
+  end
+  def g_eighth():
+    $ 13 "g_eighth" "noBreak"
+    $ 14 "MoveL"
+    $ 15 "Waypoint_3" "breakAfter"
+    movel(pose_trans(Plane_3, pose_trans(p[-.260197101788, .688596533220, -.160727498350, -2.730176059312, .049483824131, -1.425223935330], Waypoint_3_p)), a=1.2, v=0.25)
+    $ 16 "Waypoint_6" "breakAfter"
+    movel(pose_trans(Plane_3, pose_trans(p[-.260197101788, .688596533220, -.160727498350, -2.730176059312, .049483824131, -1.425223935330], Waypoint_6_p)), a=1.2, v=0.25)
+  end
+  def a_eighth():
+    $ 17 "a_eighth" "noBreak"
+    $ 18 "MoveL"
+    $ 19 "Waypoint_1" "breakAfter"
+    movel(pose_trans(Plane_1, pose_trans(p[-.156489454785, .686583460113, -.503627994728, 2.208244884172, .247386098160, 1.919508547310], Waypoint_1_p)), a=1.2, v=0.25)
+    $ 20 "Waypoint_4" "breakAfter"
+    movel(pose_trans(Plane_1, pose_trans(p[-.156489454785, .686583460113, -.503627994728, 2.208244884172, .247386098160, 1.919508547310], Waypoint_4_p)), a=1.2, v=0.25)
+  end
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "Call g_eighth"
+    g_eighth()
+    $ 4 "Call d_eighth"
+    d_eighth()
+    $ 5 "Call d_eighth"
+    d_eighth()
+    $ 6 "Call a_eighth"
+    a_eighth()
+    $ 7 "Call d_eighth"
+    d_eighth()
+    $ 8 "Call a_eighth"
+    a_eighth()
+  end
+end

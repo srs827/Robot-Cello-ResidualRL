@@ -1,0 +1,18 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call a_quarter
+     Call d_quarter_2
+   d_quarter_2
+     MoveL
+       'Waypoint_2'
+       'Waypoint_4'
+       Waypoint_5
+   d_quarter
+     MoveL
+       Waypoint_2
+       Waypoint_4
+   a_quarter
+     MoveL
+       Waypoint_1
+       Waypoint_3
