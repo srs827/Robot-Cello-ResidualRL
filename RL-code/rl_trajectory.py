@@ -9,7 +9,7 @@ import time
 import sys
 import os
 import mujoco.viewer 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'midi_robot_pipeline')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Baseline-Runners')))
 import robot_runner  # baseline controller
 
 
@@ -52,7 +52,6 @@ class UR5eCelloTrajectoryEnv(gym.Env):
         self.kp, self.kd, self.ki = kp, kd, ki
         self.total_pid_error = np.zeros(6)
 
-        # --- Baseline controller (unused for reward) ---
         self.base_ctrl = robot_runner.CelloController(
             model_path,
             trajectory=trajectory,
@@ -78,13 +77,25 @@ class UR5eCelloTrajectoryEnv(gym.Env):
         self.total_duration = len(self.demo_traj) * self.sim_dt
         self.start_positions = start_joint_positions
 
-        # Pre-compute site IDs for frog/tip of each string
+        # site IDs for frog/tip of each string
         self.string_sites = {}
         for s in ('A','D','G','C'):
             frog = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE, f'{s}_frog')
             tip  = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE, f'{s}_tip')
             self.string_sites[s] = (frog, tip)
+        print(f'String sites: {self.string_sites}')
 
+        # TODO : from each string site, compute the ideal string line
+        self.string_lines = {}
+        for site in self.string_sites.values():
+            frog, tip = site
+            p1 = self.data.site_xpos[frog]
+            p2 = self.data.site_xpos[tip]
+            string_line = p2 - p1
+            string_line /= np.linalg.norm(string_line) if np.linalg.norm(string_line) > 1e-6 else 1.0
+            # allow for a vertical offset 
+
+            self.string_lines[(frog, tip)] = string_line
         self.render_mode = render_mode
         self.viewer = None
 
@@ -145,15 +156,21 @@ class UR5eCelloTrajectoryEnv(gym.Env):
         # 1) Path deviation from ideal string line (including crossings)
         tcp = self._get_tcp_pos()
         raw_s = self.note_sequence[idx].get('string', '')
+
+        # I don't know about this tbh, we need to factor in string crossings
+        # But not like this... 
         if '-' in raw_s:
+            # we are currently in a string crossing
             target_str = raw_s.split('-')[1]
         else:
             target_str = raw_s
+        # frog and tip IDs for target string (in simulation)
         fid, tid = self.string_sites.get(target_str, (None, None))
         # compute deviation safely
         if fid is None or tid is None:
             dist = 0.0
         else:
+            # distance from TCP to the line segment defined by frog and tip
             p1 = self.data.site_xpos[fid]
             p2 = self.data.site_xpos[tid]
             line_vec = p2 - p1
@@ -164,6 +181,8 @@ class UR5eCelloTrajectoryEnv(gym.Env):
                 dist = 0.0
         r = -dist
         # 2) Collision penalty (non-string collisions)
+        # this is wrong because collisions are only bad during string crossings
+        # we want collisions for regular notes 
         collision, _, _ = contact.detect_collision(self.model, self.data)
         if collision:
             r -= self.contact_penalty
@@ -171,6 +190,23 @@ class UR5eCelloTrajectoryEnv(gym.Env):
         delta_tau = self.data.ctrl[:6] - self.prev_torque
         r -= self.torque_penalty * np.linalg.norm(delta_tau)
         self.prev_torque = self.data.ctrl[:6].copy()
+        # 4) Bow angle alignment penalty
+        if fid is not None and tid is not None:
+            # Get string vector
+            p1 = self.data.site_xpos[fid]
+            p2 = self.data.site_xpos[tid]
+            string_vec = p2 - p1
+            string_vec /= np.linalg.norm(string_vec)
+
+            # Get bow vector from end-effector's orientation (x-axis of ee_link)
+            tcp_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, 'ee_link')
+            bow_vec = self.data.xmat[tcp_id].reshape((3, 3))[:, 0]  # x-axis of ee_link
+            bow_vec /= np.linalg.norm(bow_vec)
+
+            # Compute angle deviation from 90°
+            dot = np.clip(np.dot(bow_vec, string_vec), -1.0, 1.0)
+            angle_error = np.abs(np.pi / 2 - np.arccos(dot))  # radians from 90°
+            r -= 0.5 * angle_error  # scale penalty weight as needed
         return r
 
     def render(self, mode: str = "human"):

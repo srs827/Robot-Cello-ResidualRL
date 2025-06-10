@@ -51,7 +51,7 @@ def main():
             model_path=scene_path,
             trajectory=trajectory,
             note_sequence=note_sequence,
-            render_mode='human',          # leave viewer enabled
+            render_mode=None,          # 'human' for live rendering, None for no rendering
             action_scale=0.05,
             residual_penalty=0.02,
             contact_penalty=0.1,
