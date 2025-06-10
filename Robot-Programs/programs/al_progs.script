@@ -1,0 +1,662 @@
+def unnamed():
+  global _hidden_verificationVariable=0
+  step_count_733ab7fe_4e64_4740_b087_f5747033f5cd = 0.0
+  thread Step_Counter_Thread_82060cd9_1ea9_435d_b1e3_41d44f092783():
+    while (True):
+      step_count_733ab7fe_4e64_4740_b087_f5747033f5cd = step_count_733ab7fe_4e64_4740_b087_f5747033f5cd + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_82060cd9_1ea9_435d_b1e3_41d44f092783()
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global timer_1=0
+  global timer_2=0
+  global timer_3=0
+  global timer_4=0
+  global Waypoint_34_from_p=p[.333344583050, .655475133724, .103653755557, -1.649065512627, -1.798166731311, .665616460882]
+  global Waypoint_34_to_p=p[.316097639502, .723605259848, .117804627567, -1.534907046418, -2.238603189360, 1.127458274753]
+  global Waypoint_35_from_p=p[.267758182462, .455827007006, .063349749855, -1.606428181919, -1.910713011562, .870154329325]
+  global Waypoint_35_to_p=p[.337276530786, .452586703197, .146269575107, -1.608341383034, -2.197753570305, 1.042908460642]
+  global Waypoint_36_from_p=p[.243622563433, .214065708409, .064413250201, -1.587356248470, -1.921222344077, .962045159114]
+  global Waypoint_36_to_p=p[.340791711863, .238623446602, .127333005528, -1.537460961467, -2.122262228845, 1.086358777336]
+  global Waypoint_31_from_p=p[.333313120487, .655493049956, .103663528524, -1.649073752341, -1.798145834644, .665667565374]
+  global Waypoint_31_to_p=p[.245294796125, .570699555185, .053280006356, -1.842437834987, -1.391790257856, .068695928439]
+  global Waypoint_32_from_p=p[.267760727066, .455826858522, .063349254912, -1.606407631435, -1.910723173296, .870120418931]
+  global Waypoint_32_to_p=p[.195265678678, .411464554777, .021275063420, -1.734246932297, -1.516886994157, .432124972846]
+  global Waypoint_33_from_p=p[.243617047038, .214084530532, .064400555830, -1.587358649702, -1.921269879720, .962073083697]
+  global Waypoint_33_to_p=p[.152648028795, .275829729123, -.005998897105, -1.612183667489, -1.600765739824, .740395595580]
+  global Waypoint_28_from_p=p[.333303786205, .655506354116, .103678592078, -1.649073824359, -1.798189650004, .665654941221]
+  global Waypoint_28_to_p=p[.277249741350, .734023914594, .156888218923, 1.738989297660, 2.310394153783, -1.107750078587]
+  global Waypoint_29_from_p=p[.267753255645, .455828287547, .063351710983, -1.606404278733, -1.910715168434, .870148894806]
+  global Waypoint_29_to_p=p[.327363837215, .541728526132, .231866836857, 1.681751983898, 2.324759840670, -1.111441673390]
+  global Waypoint_30_from_p=p[.243622962765, .214066464706, .064408821913, -1.587326215829, -1.921203326537, .962074147699]
+  global Waypoint_30_to_p=p[.374974692999, .359142632157, .303030852466, 1.627469724558, 2.337342342344, -1.114534922057]
+  global Waypoint_25_from_p=p[.316087251829, .723602915222, .117785948188, -1.534897116856, -2.238580377483, 1.127488613076]
+  global Waypoint_25_to_p=p[.245285302051, .570707986784, .053284895193, -1.842505813067, -1.391815245909, .068652086003]
+  global Waypoint_26_from_p=p[.337282996076, .452563611337, .146255332642, -1.608315379440, -2.197770377912, 1.042923882249]
+  global Waypoint_26_to_p=p[.195289857698, .411467596061, .021274690011, -1.734256890751, -1.516878110441, .432059224907]
+  global Waypoint_27_from_p=p[.340786884756, .238628334100, .127315808714, -1.537384367056, -2.122233192013, 1.086388726493]
+  global Waypoint_27_to_p=p[.152628280686, .275821245204, -.005995417926, -1.612115076189, -1.600774559356, .740435210172]
+  global Waypoint_22_from_p=p[.316099710491, .723607754393, .117809182256, -1.534920639814, -2.238598559442, 1.127396100224]
+  global Waypoint_22_to_p=p[.333321723824, .655489360611, .103665815559, -1.649044411293, -1.798211361078, .665606764379]
+  global Waypoint_23_from_p=p[.329883667532, .452806328734, .123116340074, -1.536847322514, -2.173504856038, 1.104499251684]
+  global Waypoint_23_to_p=p[.267754308700, .455820542138, .063354558243, -1.606396902665, -1.910749293666, .870154913767]
+  global Waypoint_24_from_p=p[.340792536623, .238630123222, .127341335307, -1.537439350490, -2.122304653201, 1.086344350411]
+  global Waypoint_24_to_p=p[.243610800371, .214065751833, .064413962009, -1.587325499406, -1.921224696952, .962066714192]
+  global Waypoint_19_from_p=p[.316067690917, .723617775620, .117804789449, -1.534855360745, -2.238683967584, 1.127383365666]
+  global Waypoint_19_to_p=p[.277256409408, .734024098071, .156888935345, 1.738938179976, 2.310440824394, -1.107751838080]
+  global Waypoint_20_from_p=p[.329630332031, .457701737733, .123030372762, -1.536842723975, -2.174720091197, 1.104884193903]
+  global Waypoint_20_to_p=p[.327082434450, .542850471078, .231411949890, 1.682113316106, 2.324655475855, -1.111487670133]
+  global Waypoint_21_from_p=p[.340802620644, .238630658584, .127342253742, -1.537485061952, -2.122298845305, 1.086332418498]
+  global Waypoint_21_to_p=p[.374961036000, .359138186498, .303027276211, 1.627436500866, 2.337347681689, -1.114615354755]
+  global Waypoint_16_from_p=p[.245286532355, .570708443836, .053278903513, -1.842502293121, -1.391808019082, .068672762744]
+  global Waypoint_16_to_p=p[.316071155910, .723615536766, .117782908161, -1.534872869825, -2.238615312745, 1.127462526653]
+  global Waypoint_17_from_p=p[.195298540395, .411479467969, .021277125296, -1.734242055126, -1.516950103186, .432001911580]
+  global Waypoint_17_to_p=p[.337285944175, .452569036058, .146265018012, -1.608372089460, -2.197767580259, 1.042900945455]
+  global Waypoint_18_from_p=p[.152635758102, .275827541365, -.005989746093, -1.612146156589, -1.600807110074, .740421904421]
+  global Waypoint_18_to_p=p[.340805188423, .238621873327, .127328933378, -1.537453083770, -2.122265659409, 1.086334753036]
+  global Waypoint_13_from_p=p[.277253619588, .734023691009, .156890913027, 1.738970805419, 2.310401136634, -1.107748720646]
+  global Waypoint_13_to_p=p[.333303857876, .655497665826, .103666518656, -1.649070160551, -1.798213098617, .665655854321]
+  global Waypoint_14_from_p=p[.327375462571, .541708591936, .231859090742, 1.681690579138, 2.324760508403, -1.111501533731]
+  global Waypoint_14_to_p=p[.267746251982, .455840121562, .063353923651, -1.606391074082, -1.910799854462, .870107932452]
+  global Waypoint_15_from_p=p[.374964844428, .359139176539, .303040350019, 1.627457150652, 2.337358513689, -1.114532632099]
+  global Waypoint_15_to_p=p[.243614230387, .214060107548, .064414114238, -1.587341799752, -1.921198366483, .962057446805]
+  global Waypoint_10_from_p=p[.277235137946, .734031656709, .156893321309, 1.738917573273, 2.310436390289, -1.107738722047]
+  global Waypoint_10_to_p=p[.316092462296, .723605825675, .117800249412, -1.534869178471, -2.238619037750, 1.127417263006]
+  global Waypoint_11_from_p=p[.327074481782, .542849320213, .231416910077, 1.682081295833, 2.324664935358, -1.111469546297]
+  global Waypoint_11_to_p=p[.329631638264, .457692753845, .123026935663, -1.536815220674, -2.174732718353, 1.104926457774]
+  global Waypoint_12_from_p=p[.374964803807, .359133276926, .303035847856, 1.627426527123, 2.337346832218, -1.114565336119]
+  global Waypoint_12_to_p=p[.340799870570, .238630414245, .127344654511, -1.537463295195, -2.122295256923, 1.086329623018]
+  global Waypoint_8_p=p[.316077312490, .723623595662, .117799670871, -1.534889662293, -2.238632259483, 1.127400451889]
+  global Waypoint_8_q=[-2.242021877446584, -0.38165996279939307, 0.8869457297054186, -1.272890832275217, -1.4303469853910338, -2.667787439248039]
+  global Waypoint_9_p=p[.340805991578, .238625252067, .127337845573, -1.537488441739, -2.122265165311, 1.086311360735]
+  global Waypoint_9_q=[-2.929603302251793, -0.933202051050845, 2.156668626473035, -1.9841046493496384, -1.824622541518269, -3.1322683391321924]
+  global Waypoint_5_p=p[.243610476021, .214061638886, .064412523546, -1.587355223959, -1.921172351381, .962086687008]
+  global Waypoint_5_q=[-2.9549880663501185, -0.778457836513855, 2.4107566515551966, -2.33665194133901, -1.6479485670672815, -3.1027520338641565]
+  global Waypoint_7_p=p[.333312557689, .655489735995, .103651356673, -1.649056264470, -1.798188180415, .665660270553]
+  global Waypoint_7_q=[-2.3119227547716825, -0.4844478930367373, 1.2539096509880232, -1.7537381304813895, -0.9781491539918523, -2.578354676134694]
+  global Waypoint_1_p=p[.277236601206, .734032359319, .156891527665, 1.738924275492, 2.310428552465, -1.107753563859]
+  global Waypoint_1_q=[-2.210412708052746, -0.49084595566760747, 0.9551938502229333, -1.302301742823495, -1.605072055336045, -2.4750900912233345]
+  global Waypoint_3_p=p[.267762974132, .455808234594, .063345437552, -1.606424986281, -1.910703793069, .870187401477]
+  global Waypoint_3_q=[-2.4716623465167444, -0.6840538543513794, 1.9009164015399378, -2.012158533135885, -1.2353714148150843, -2.7771764437304896]
+  global Waypoint_2_p=p[.374968604898, .359127022696, .303034911964, 1.627458665305, 2.337349329242, -1.114572205166]
+  global Waypoint_2_q=[-2.7247493443475914, -1.158338378007028, 1.7724153080119223, -1.5486980058846118, -1.9971692127719525, -2.9342161342950686]
+  global Waypoint_6_p=p[.152635568859, .275823570962, -.005983656739, -1.612154415185, -1.600813445868, .740445186757]
+  global Waypoint_6_q=[-2.6791065374957483, -0.465190128689148, 2.417635981236593, -2.6415277920165003, -1.0933659712420862, -2.8936691919909876]
+  global Waypoint_4_p=p[.245283703052, .570710326777, .053265630190, -1.842545665824, -1.391797994920, .068711419486]
+  global Waypoint_4_q=[-2.3077740403406404, -0.4328001930296841, 1.6809992346605778, -2.955228773678524, -0.7451124352554306, -1.9653584271955937]
+  global timer_4_is_counting=False
+  global timer_3_is_counting=False
+  global timer_2_is_counting=False
+  global timer_1_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (timer_4_is_counting):
+        timer_4 = timer_4 + get_steptime()
+      end
+      if (timer_3_is_counting):
+        timer_3 = timer_3 + get_steptime()
+      end
+      if (timer_2_is_counting):
+        timer_2 = timer_2 + get_steptime()
+      end
+      if (timer_1_is_counting):
+        timer_1 = timer_1 + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  def g_to_d():
+    $ 19 "g_to_d" "noBreak"
+    $ 20 "bow_section≔-1"
+    global bow_section=-1
+    $ 21 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 22 "MoveJ"
+      $ 23 "Waypoint_34" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_34_to_p, Waypoint_34_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 24 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 25 "MoveJ"
+        $ 26 "Waypoint_35" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_35_to_p, Waypoint_35_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 27 "Else" "noBreak"
+        $ 28 "MoveJ"
+        $ 29 "Waypoint_36" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_36_to_p, Waypoint_36_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def g_to_c():
+    $ 30 "g_to_c" "noBreak"
+    $ 31 "bow_section≔-1"
+    global bow_section=-1
+    $ 32 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 33 "MoveJ"
+      $ 34 "Waypoint_31" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_31_to_p, Waypoint_31_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 35 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 36 "MoveJ"
+        $ 37 "Waypoint_32" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_32_to_p, Waypoint_32_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 38 "Else" "noBreak"
+        $ 39 "MoveJ"
+        $ 40 "Waypoint_33" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_33_to_p, Waypoint_33_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def g_to_a():
+    $ 41 "g_to_a" "noBreak"
+    $ 42 "bow_section≔-1"
+    global bow_section=-1
+    $ 43 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 44 "MoveJ"
+      $ 45 "Waypoint_28" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_28_to_p, Waypoint_28_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 46 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 47 "MoveJ"
+        $ 48 "Waypoint_29" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_29_to_p, Waypoint_29_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 49 "Else" "noBreak"
+        $ 50 "MoveJ"
+        $ 51 "Waypoint_30" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_30_to_p, Waypoint_30_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def d_to_c():
+    $ 52 "d_to_c" "noBreak"
+    $ 53 "bow_section≔-1"
+    global bow_section=-1
+    $ 54 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 55 "MoveJ"
+      $ 56 "Waypoint_25" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_25_to_p, Waypoint_25_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 57 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 58 "MoveJ"
+        $ 59 "Waypoint_26" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_26_to_p, Waypoint_26_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 60 "Else" "noBreak"
+        $ 61 "MoveJ"
+        $ 62 "Waypoint_27" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_27_to_p, Waypoint_27_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def d_to_g():
+    $ 63 "d_to_g" "noBreak"
+    $ 64 "bow_section≔-1"
+    global bow_section=-1
+    $ 65 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 66 "MoveJ"
+      $ 67 "Waypoint_22" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_22_to_p, Waypoint_22_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 68 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 69 "MoveJ"
+        $ 70 "Waypoint_23" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_23_to_p, Waypoint_23_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 71 "Else" "noBreak"
+        $ 72 "MoveJ"
+        $ 73 "Waypoint_24" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_24_to_p, Waypoint_24_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def d_to_a():
+    $ 74 "d_to_a" "noBreak"
+    $ 75 "bow_section≔1"
+    global bow_section=1
+    $ 76 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 77 "MoveJ"
+      $ 78 "Waypoint_19" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_19_to_p, Waypoint_19_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 79 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 80 "MoveJ"
+        $ 81 "Waypoint_20" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_20_to_p, Waypoint_20_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 82 "Else" "noBreak"
+        $ 83 "MoveJ"
+        $ 84 "Waypoint_21" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_21_to_p, Waypoint_21_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def c_to_d():
+    $ 85 "c_to_d" "noBreak"
+    $ 86 "bow_section≔-1"
+    global bow_section=-1
+    $ 87 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 88 "MoveJ"
+      $ 89 "Waypoint_16" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_16_to_p, Waypoint_16_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 90 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 91 "MoveJ"
+        $ 92 "Waypoint_17" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_17_to_p, Waypoint_17_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 93 "Else" "noBreak"
+        $ 94 "MoveJ"
+        $ 95 "Waypoint_18" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_18_to_p, Waypoint_18_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def a_to_g():
+    $ 96 "a_to_g" "noBreak"
+    $ 97 "bow_section≔-1"
+    global bow_section=-1
+    $ 98 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 99 "MoveJ"
+      $ 100 "Waypoint_13" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_13_to_p, Waypoint_13_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 101 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 102 "MoveJ"
+        $ 103 "Waypoint_14" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_14_to_p, Waypoint_14_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 104 "Else" "noBreak"
+        $ 105 "MoveJ"
+        $ 106 "Waypoint_15" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_15_to_p, Waypoint_15_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def a_to_d():
+    $ 107 "a_to_d" "noBreak"
+    $ 108 "bow_section≔-1"
+    global bow_section=-1
+    $ 109 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 110 "MoveJ"
+      $ 111 "Waypoint_10" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_10_to_p, Waypoint_10_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 112 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 113 "MoveJ"
+        $ 114 "Waypoint_11" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_11_to_p, Waypoint_11_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 115 "Else" "noBreak"
+        $ 116 "MoveJ"
+        $ 117 "Waypoint_12" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_12_to_p, Waypoint_12_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def d_full_bow():
+    $ 118 "d_full_bow" "noBreak"
+    $ 119 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 120 "note_dur≔1"
+    global note_dur=1
+    $ 121 "timer_4: Start"
+    timer_4_is_counting = True
+    $ 122 "If bow_dir≟ False "
+    if (bow_dir ==   False  ):
+      $ 123 "MoveL"
+      $ 124 "Waypoint_8" "breakAfter"
+      global move_thread_flag_124=0
+      thread move_thread_124():
+        enter_critical
+        move_thread_flag_124 = 1
+        movel(Waypoint_8_p, a=1.2, v=0.25)
+        move_thread_flag_124 = 2
+        exit_critical
+      end
+      move_thread_flag_124 = 0
+      move_thread_han_124 = run move_thread_124()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_124
+          stopl(1.2)
+          $ 125 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_124 > 1):
+          join move_thread_han_124
+          break
+        end
+        sync()
+      end
+    else:
+      $ 126 "Else" "noBreak"
+      $ 127 "MoveL"
+      $ 128 "Waypoint_9" "breakAfter"
+      global move_thread_flag_128=0
+      thread move_thread_128():
+        enter_critical
+        move_thread_flag_128 = 1
+        movel(Waypoint_9_p, a=1.2, v=0.25)
+        move_thread_flag_128 = 2
+        exit_critical
+      end
+      move_thread_flag_128 = 0
+      move_thread_han_128 = run move_thread_128()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_128
+          stopl(1.2)
+          $ 129 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_128 > 1):
+          join move_thread_han_128
+          break
+        end
+        sync()
+      end
+    end
+    $ 134 "timer_4: Stop"
+    timer_4_is_counting = False
+    $ 135 "timer_4: Reset"
+    timer_4 = 0
+  end
+  def g_full_bow():
+    $ 136 "g_full_bow" "noBreak"
+    $ 137 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 138 "note_dur≔1"
+    global note_dur=1
+    $ 139 "timer_3: Start"
+    timer_3_is_counting = True
+    $ 140 "If bow_dir"
+    if (bow_dir):
+      $ 141 "MoveL"
+      $ 142 "Waypoint_5" "breakAfter"
+      global move_thread_flag_142=0
+      thread move_thread_142():
+        enter_critical
+        move_thread_flag_142 = 1
+        movel(Waypoint_5_p, a=1.2, v=0.25)
+        move_thread_flag_142 = 2
+        exit_critical
+      end
+      move_thread_flag_142 = 0
+      move_thread_han_142 = run move_thread_142()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_142
+          stopl(1.2)
+          $ 143 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_142 > 1):
+          join move_thread_han_142
+          break
+        end
+        sync()
+      end
+    else:
+      $ 144 "Else" "noBreak"
+      $ 145 "MoveL"
+      $ 146 "Waypoint_7" "breakAfter"
+      global move_thread_flag_146=0
+      thread move_thread_146():
+        enter_critical
+        move_thread_flag_146 = 1
+        movel(Waypoint_7_p, a=1.2, v=0.25)
+        move_thread_flag_146 = 2
+        exit_critical
+      end
+      move_thread_flag_146 = 0
+      move_thread_han_146 = run move_thread_146()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_146
+          stopl(1.2)
+          $ 147 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_146 > 1):
+          join move_thread_han_146
+          break
+        end
+        sync()
+      end
+    end
+    $ 148 "MoveL"
+    $ 149 "Waypoint_1" "breakAfter"
+    movel(Waypoint_1_p, a=1.2, v=0.25)
+    $ 150 "Waypoint_3" "breakAfter"
+    movel(Waypoint_3_p, a=1.2, v=0.25, r=0.05)
+    $ 151 "Waypoint_2" "breakAfter"
+    movel(Waypoint_2_p, a=1.2, v=0.25)
+    $ 152 "timer_3: Stop"
+    timer_3_is_counting = False
+    $ 153 "timer_3: Reset"
+    timer_3 = 0
+  end
+  def c_full_bow():
+    $ 154 "c_full_bow" "noBreak"
+    $ 155 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 156 "note_dur≔1"
+    global note_dur=1
+    $ 157 "timer_2: Start"
+    timer_2_is_counting = True
+    $ 158 "If bow_dir≟ True "
+    if (bow_dir ==   True  ):
+      $ 159 "MoveL"
+      $ 160 "Waypoint_6" "breakAfter"
+      global move_thread_flag_160=0
+      thread move_thread_160():
+        enter_critical
+        move_thread_flag_160 = 1
+        movel(Waypoint_6_p, a=1.2, v=0.25)
+        move_thread_flag_160 = 2
+        exit_critical
+      end
+      move_thread_flag_160 = 0
+      move_thread_han_160 = run move_thread_160()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_160
+          stopl(1.2)
+          $ 161 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_160 > 1):
+          join move_thread_han_160
+          break
+        end
+        sync()
+      end
+    else:
+      $ 162 "Else" "noBreak"
+      $ 163 "MoveL"
+      $ 164 "Waypoint_4" "breakAfter"
+      global move_thread_flag_164=0
+      thread move_thread_164():
+        enter_critical
+        move_thread_flag_164 = 1
+        movel(Waypoint_4_p, a=1.2, v=0.25)
+        move_thread_flag_164 = 2
+        exit_critical
+      end
+      move_thread_flag_164 = 0
+      move_thread_han_164 = run move_thread_164()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_164
+          stopl(1.2)
+          $ 165 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_164 > 1):
+          join move_thread_han_164
+          break
+        end
+        sync()
+      end
+    end
+    $ 170 "timer_2: Stop"
+    timer_2_is_counting = False
+    $ 171 "timer_2: Reset"
+    timer_2 = 0
+  end
+  def a_full_bow():
+    $ 172 "a_full_bow" "noBreak"
+    $ 173 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 174 "note_dur≔3"
+    global note_dur=3
+    $ 175 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 176 "If bow_dir"
+    if (bow_dir):
+      $ 177 "MoveL"
+      $ 178 "Waypoint_2" "breakAfter"
+      global move_thread_flag_178=0
+      thread move_thread_178():
+        enter_critical
+        move_thread_flag_178 = 1
+        movel(Waypoint_2_p, a=1.2, v=0.25)
+        move_thread_flag_178 = 2
+        exit_critical
+      end
+      move_thread_flag_178 = 0
+      move_thread_han_178 = run move_thread_178()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_178
+          stopl(1.2)
+          $ 179 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_178 > 1):
+          join move_thread_han_178
+          break
+        end
+        sync()
+      end
+    else:
+      $ 180 "Else" "noBreak"
+      $ 181 "MoveL"
+      $ 182 "Waypoint_1" "breakAfter"
+      global move_thread_flag_182=0
+      thread move_thread_182():
+        enter_critical
+        move_thread_flag_182 = 1
+        movel(Waypoint_1_p, a=1.2, v=0.25)
+        move_thread_flag_182 = 2
+        exit_critical
+      end
+      move_thread_flag_182 = 0
+      move_thread_han_182 = run move_thread_182()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_182
+          stopl(1.2)
+          $ 183 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_182 > 1):
+          join move_thread_han_182
+          break
+        end
+        sync()
+      end
+    end
+    $ 188 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 189 "timer_1: Reset"
+    timer_1 = 0
+  end
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "string≔1"
+    global string=1
+    $ 4 "note_dur≔1"
+    global note_dur=1
+    $ 5 "bow_dir≔1"
+    global bow_dir=1
+    $ 6 "Call a_full_bow"
+    a_full_bow()
+    $ 7 "Call c_full_bow"
+    c_full_bow()
+    $ 8 "Call g_full_bow"
+    g_full_bow()
+    $ 9 "Call d_full_bow"
+    d_full_bow()
+    $ 10 "Call a_to_d"
+    a_to_d()
+    $ 11 "Call a_to_g"
+    a_to_g()
+    $ 12 "Call c_to_d"
+    c_to_d()
+    $ 13 "Call d_to_a"
+    d_to_a()
+    $ 14 "Call d_to_g"
+    d_to_g()
+    $ 15 "Call d_to_c"
+    d_to_c()
+    $ 16 "Call g_to_a"
+    g_to_a()
+    $ 17 "Call g_to_c"
+    g_to_c()
+    $ 18 "Call g_to_d"
+    g_to_d()
+  end
+end

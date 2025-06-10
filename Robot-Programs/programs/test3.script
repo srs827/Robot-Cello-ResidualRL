@@ -1,0 +1,230 @@
+def unnamed():
+  global _hidden_verificationVariable=0
+  step_count_b27ba5ac_433d_475b_bb86_64806043343c = 0.0
+  thread Step_Counter_Thread_5dd301a0_8753_44fa_8f89_7b1e9cd9d8eb():
+    while (True):
+      step_count_b27ba5ac_433d_475b_bb86_64806043343c = step_count_b27ba5ac_433d_475b_bb86_64806043343c + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_5dd301a0_8753_44fa_8f89_7b1e9cd9d8eb()
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_gravity([0.0, 0.0, 9.82])
+  set_safety_mode_transition_hardness(1)
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global timer_1=0
+  global Waypoint_4_p=p[.316077312490, .723623595662, .117799670871, -1.534889662293, -2.238632259483, 1.127400451889]
+  global Waypoint_4_q=[-2.242021877446584, -0.38165996279939307, 0.8869457297054186, -1.272890832275217, -1.4303469853910338, -2.667787439248039]
+  global Waypoint_5_p=p[.340805991578, .238625252067, .127337845573, -1.537488441739, -2.122265165311, 1.086311360735]
+  global Waypoint_5_q=[-2.929603302251793, -0.933202051050845, 2.156668626473035, -1.9841046493496384, -1.824622541518269, -3.1322683391321924]
+  global Waypoint_9_from_p=p[.277235137946, .734031656709, .156893321309, 1.738917573273, 2.310436390289, -1.107738722047]
+  global Waypoint_9_to_p=p[.340806212075, .238633210950, .127348715283, -1.537485284184, -2.122308392041, 1.086292765938]
+  global Waypoint_2_p=p[.374968604898, .359127022696, .303034911964, 1.627458665305, 2.337349329242, -1.114572205166]
+  global Waypoint_2_q=[-2.7247493443475914, -1.158338378007028, 1.7724153080119223, -1.5486980058846118, -1.9971692127719525, -2.9342161342950686]
+  global Waypoint_1_p=p[.277236601206, .734032359319, .156891527665, 1.738924275492, 2.310428552465, -1.107753563859]
+  global Waypoint_1_q=[-2.210412708052746, -0.49084595566760747, 0.9551938502229333, -1.302301742823495, -1.605072055336045, -2.4750900912233345]
+  global timer_1_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (timer_1_is_counting):
+        timer_1 = timer_1 + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  def d_full_bow():
+    $ 8 "d_full_bow" "noBreak"
+    $ 9 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 10 "note_dur≔1"
+    global note_dur=1
+    $ 11 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 12 "If bow_dir≟ False "
+    if (bow_dir ==   False  ):
+      $ 13 "MoveL"
+      $ 14 "Waypoint_4" "breakAfter"
+      global move_thread_flag_14=0
+      thread move_thread_14():
+        enter_critical
+        move_thread_flag_14 = 1
+        movel(Waypoint_4_p, a=1.2, v=0.25)
+        move_thread_flag_14 = 2
+        exit_critical
+      end
+      move_thread_flag_14 = 0
+      move_thread_han_14 = run move_thread_14()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_14
+          stopl(1.2)
+          $ 15 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_14 > 1):
+          join move_thread_han_14
+          break
+        end
+        sync()
+      end
+    else:
+      $ 16 "Else" "noBreak"
+      $ 17 "MoveL"
+      $ 18 "Waypoint_5" "breakAfter"
+      global move_thread_flag_18=0
+      thread move_thread_18():
+        enter_critical
+        move_thread_flag_18 = 1
+        movel(Waypoint_5_p, a=1.2, v=0.25)
+        move_thread_flag_18 = 2
+        exit_critical
+      end
+      move_thread_flag_18 = 0
+      move_thread_han_18 = run move_thread_18()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_18
+          stopl(1.2)
+          $ 19 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_18 > 1):
+          join move_thread_han_18
+          break
+        end
+        sync()
+      end
+    end
+    $ 24 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 25 "timer_1: Reset"
+    timer_1 = 0
+  end
+  def a_to_d():
+    $ 26 "a_to_d" "noBreak"
+    $ 27 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 28 "MoveJ"
+      $ 29 "Waypoint_9" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_9_to_p, Waypoint_9_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 30 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 31 "MoveJ"
+        $ 32 "Waypoint_9" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_9_to_p, Waypoint_9_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 33 "Else" "noBreak"
+        $ 34 "MoveJ"
+        $ 35 "Waypoint_9" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_9_to_p, Waypoint_9_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+  def a_full_bow():
+    $ 36 "a_full_bow" "noBreak"
+    $ 37 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 38 "note_dur≔1"
+    global note_dur=1
+    $ 39 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 40 "If bow_dir"
+    if (bow_dir):
+      $ 41 "MoveL"
+      $ 42 "Waypoint_2" "breakAfter"
+      global move_thread_flag_42=0
+      thread move_thread_42():
+        enter_critical
+        move_thread_flag_42 = 1
+        movel(Waypoint_2_p, a=1.2, v=0.25)
+        move_thread_flag_42 = 2
+        exit_critical
+      end
+      move_thread_flag_42 = 0
+      move_thread_han_42 = run move_thread_42()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_42
+          stopl(1.2)
+          $ 43 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_42 > 1):
+          join move_thread_han_42
+          break
+        end
+        sync()
+      end
+    else:
+      $ 44 "Else" "noBreak"
+      $ 45 "MoveL"
+      $ 46 "Waypoint_1" "breakAfter"
+      global move_thread_flag_46=0
+      thread move_thread_46():
+        enter_critical
+        move_thread_flag_46 = 1
+        movel(Waypoint_1_p, a=1.2, v=0.25)
+        move_thread_flag_46 = 2
+        exit_critical
+      end
+      move_thread_flag_46 = 0
+      move_thread_han_46 = run move_thread_46()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_46
+          stopl(1.2)
+          $ 47 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_46 > 1):
+          join move_thread_han_46
+          break
+        end
+        sync()
+      end
+    end
+    $ 52 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 53 "timer_1: Reset"
+    timer_1 = 0
+  end
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "bow_section≔-1"
+    global bow_section=-1
+    $ 4 "Call a_full_bow"
+    a_full_bow()
+    $ 5 "Call a_to_d"
+    a_to_d()
+    $ 6 "bow_dir≔ False "
+    global bow_dir=  False  
+    $ 7 "Call d_full_bow"
+    d_full_bow()
+  end
+end

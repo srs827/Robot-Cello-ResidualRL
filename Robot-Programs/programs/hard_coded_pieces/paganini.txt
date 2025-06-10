@@ -1,0 +1,134 @@
+ Program
+   Variables Setup
+   Robot Program
+     'Wait: 30.0'
+     beats: Start
+     MoveL
+       a_tip
+       a_frog
+         Until (expression)
+       'Popup'
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     'Wait: 30.0'
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveJ
+       a_frog
+     beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_tip
+         Until (expression)
+       beats: Reset
+     MoveL
+       a_frog
+         Until (expression)
+       beats: Reset

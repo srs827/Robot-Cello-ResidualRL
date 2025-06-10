@@ -1,0 +1,905 @@
+def paganini():
+  global _hidden_verificationVariable=0
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  step_count_620c2533_03b3_4ec0_8514_22722aeef72f = 0.0
+  thread Step_Counter_Thread_b5bc9fdc_3c7c_4f50_8c9d_fedd838c6379():
+    while (True):
+      step_count_620c2533_03b3_4ec0_8514_22722aeef72f = step_count_620c2533_03b3_4ec0_8514_22722aeef72f + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_b5bc9fdc_3c7c_4f50_8c9d_fedd838c6379()
+  global beats=0
+  global a_tip_p=p[.525205911288, .350983193771, .214779688012, -1.369835518377, -2.336199267606, 1.326965437192]
+  global a_tip_q=[-2.8104675709775435, -0.7777254095899568, 1.4170561331656568, -1.3734529955874306, -2.00764934437745, -3.120955890640845]
+  global a_frog_p=p[.336637615375, .773335607743, .103937252349, -1.369835518384, -2.336199267621, 1.326965437172]
+  global a_frog_q=[-2.2183508256726725, -0.10787170694309989, 0.3315182010864657, -0.8747277688546333, -1.5480837419785658, -2.738136215391106]
+  global beats_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (beats_is_counting):
+        beats = beats + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  $ 2 "Robot Program"
+  $ 4 "beats: Start"
+  beats_is_counting = True
+  $ 5 "MoveL"
+  $ 6 "a_tip" "breakAfter"
+  movel(a_tip_p, a=1.0, v=0.6)
+  $ 7 "a_frog" "breakAfter"
+  global move_thread_flag_7=0
+  thread move_thread_7():
+    enter_critical
+    move_thread_flag_7 = 1
+    movel(a_frog_p, a=1.0, v=0.6)
+    move_thread_flag_7 = 2
+    exit_critical
+  end
+  move_thread_flag_7 = 0
+  move_thread_han_7 = run move_thread_7()
+  while (True):
+    if (beats >= 1):
+      kill move_thread_han_7
+      stopl(1.0)
+      $ 8 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_7 > 1):
+      join move_thread_han_7
+      break
+    end
+    sync()
+  end
+  $ 10 "beats: Reset"
+  beats = 0
+  $ 11 "MoveL"
+  $ 12 "a_tip" "breakAfter"
+  global move_thread_flag_12=0
+  thread move_thread_12():
+    enter_critical
+    move_thread_flag_12 = 1
+    movel(a_tip_p, a=0.4, v=0.15)
+    move_thread_flag_12 = 2
+    exit_critical
+  end
+  move_thread_flag_12 = 0
+  move_thread_han_12 = run move_thread_12()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_12
+      stopl(0.4)
+      $ 13 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_12 > 1):
+      join move_thread_han_12
+      break
+    end
+    sync()
+  end
+  $ 14 "beats: Reset"
+  beats = 0
+  $ 15 "MoveL"
+  $ 16 "a_tip" "breakAfter"
+  global move_thread_flag_16=0
+  thread move_thread_16():
+    enter_critical
+    move_thread_flag_16 = 1
+    movel(a_tip_p, a=1.2, v=0.2)
+    move_thread_flag_16 = 2
+    exit_critical
+  end
+  move_thread_flag_16 = 0
+  move_thread_han_16 = run move_thread_16()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_16
+      stopl(1.2)
+      $ 17 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_16 > 1):
+      join move_thread_han_16
+      break
+    end
+    sync()
+  end
+  $ 18 "beats: Reset"
+  beats = 0
+  $ 19 "MoveL"
+  $ 20 "a_frog" "breakAfter"
+  global move_thread_flag_20=0
+  thread move_thread_20():
+    enter_critical
+    move_thread_flag_20 = 1
+    movel(a_frog_p, a=0.4, v=0.15)
+    move_thread_flag_20 = 2
+    exit_critical
+  end
+  move_thread_flag_20 = 0
+  move_thread_han_20 = run move_thread_20()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_20
+      stopl(0.4)
+      $ 21 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_20 > 1):
+      join move_thread_han_20
+      break
+    end
+    sync()
+  end
+  $ 22 "beats: Reset"
+  beats = 0
+  $ 23 "MoveL"
+  $ 24 "a_frog" "breakAfter"
+  global move_thread_flag_24=0
+  thread move_thread_24():
+    enter_critical
+    move_thread_flag_24 = 1
+    movel(a_frog_p, a=1.2, v=0.25)
+    move_thread_flag_24 = 2
+    exit_critical
+  end
+  move_thread_flag_24 = 0
+  move_thread_han_24 = run move_thread_24()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_24
+      stopl(1.2)
+      $ 25 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_24 > 1):
+      join move_thread_han_24
+      break
+    end
+    sync()
+  end
+  $ 26 "beats: Reset"
+  beats = 0
+  $ 27 "MoveL"
+  $ 28 "a_tip" "breakAfter"
+  global move_thread_flag_28=0
+  thread move_thread_28():
+    enter_critical
+    move_thread_flag_28 = 1
+    movel(a_tip_p, a=1.2, v=0.25)
+    move_thread_flag_28 = 2
+    exit_critical
+  end
+  move_thread_flag_28 = 0
+  move_thread_han_28 = run move_thread_28()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_28
+      stopl(1.2)
+      $ 29 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_28 > 1):
+      join move_thread_han_28
+      break
+    end
+    sync()
+  end
+  $ 30 "beats: Reset"
+  beats = 0
+  $ 31 "MoveJ"
+  $ 32 "a_frog" "breakAfter"
+  movej(get_inverse_kin(a_frog_p, qnear=a_frog_q), a=1.7453292519943295, v=1.7453292519943295)
+  $ 33 "beats: Reset"
+  beats = 0
+  $ 34 "MoveL"
+  $ 35 "a_tip" "breakAfter"
+  global move_thread_flag_35=0
+  thread move_thread_35():
+    enter_critical
+    move_thread_flag_35 = 1
+    movel(a_tip_p, a=0.2, v=0.2)
+    move_thread_flag_35 = 2
+    exit_critical
+  end
+  move_thread_flag_35 = 0
+  move_thread_han_35 = run move_thread_35()
+  while (True):
+    if (beats >= 3):
+      kill move_thread_han_35
+      stopl(0.2)
+      $ 36 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_35 > 1):
+      join move_thread_han_35
+      break
+    end
+    sync()
+  end
+  $ 37 "beats: Reset"
+  beats = 0
+  $ 38 "MoveL"
+  $ 39 "a_frog" "breakAfter"
+  global move_thread_flag_39=0
+  thread move_thread_39():
+    enter_critical
+    move_thread_flag_39 = 1
+    movel(a_frog_p, a=1.0, v=0.6)
+    move_thread_flag_39 = 2
+    exit_critical
+  end
+  move_thread_flag_39 = 0
+  move_thread_han_39 = run move_thread_39()
+  while (True):
+    if (beats >= 1):
+      kill move_thread_han_39
+      stopl(1.0)
+      $ 40 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_39 > 1):
+      join move_thread_han_39
+      break
+    end
+    sync()
+  end
+  $ 41 "beats: Reset"
+  beats = 0
+  $ 42 "MoveL"
+  $ 43 "a_tip" "breakAfter"
+  global move_thread_flag_43=0
+  thread move_thread_43():
+    enter_critical
+    move_thread_flag_43 = 1
+    movel(a_tip_p, a=0.4, v=0.15)
+    move_thread_flag_43 = 2
+    exit_critical
+  end
+  move_thread_flag_43 = 0
+  move_thread_han_43 = run move_thread_43()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_43
+      stopl(0.4)
+      $ 44 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_43 > 1):
+      join move_thread_han_43
+      break
+    end
+    sync()
+  end
+  $ 45 "beats: Reset"
+  beats = 0
+  $ 46 "MoveL"
+  $ 47 "a_tip" "breakAfter"
+  global move_thread_flag_47=0
+  thread move_thread_47():
+    enter_critical
+    move_thread_flag_47 = 1
+    movel(a_tip_p, a=1.2, v=0.25)
+    move_thread_flag_47 = 2
+    exit_critical
+  end
+  move_thread_flag_47 = 0
+  move_thread_han_47 = run move_thread_47()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_47
+      stopl(1.2)
+      $ 48 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_47 > 1):
+      join move_thread_han_47
+      break
+    end
+    sync()
+  end
+  $ 49 "beats: Reset"
+  beats = 0
+  $ 50 "MoveL"
+  $ 51 "a_frog" "breakAfter"
+  global move_thread_flag_51=0
+  thread move_thread_51():
+    enter_critical
+    move_thread_flag_51 = 1
+    movel(a_frog_p, a=0.4, v=0.15)
+    move_thread_flag_51 = 2
+    exit_critical
+  end
+  move_thread_flag_51 = 0
+  move_thread_han_51 = run move_thread_51()
+  while (True):
+    if (beats >= 1.5):
+      kill move_thread_han_51
+      stopl(0.4)
+      $ 52 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_51 > 1):
+      join move_thread_han_51
+      break
+    end
+    sync()
+  end
+  $ 53 "beats: Reset"
+  beats = 0
+  $ 54 "MoveL"
+  $ 55 "a_tip" "breakAfter"
+  global move_thread_flag_55=0
+  thread move_thread_55():
+    enter_critical
+    move_thread_flag_55 = 1
+    movel(a_tip_p, a=1.2, v=0.25)
+    move_thread_flag_55 = 2
+    exit_critical
+  end
+  move_thread_flag_55 = 0
+  move_thread_han_55 = run move_thread_55()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_55
+      stopl(1.2)
+      $ 56 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_55 > 1):
+      join move_thread_han_55
+      break
+    end
+    sync()
+  end
+  $ 57 "beats: Reset"
+  beats = 0
+  $ 58 "MoveL"
+  $ 59 "a_frog" "breakAfter"
+  global move_thread_flag_59=0
+  thread move_thread_59():
+    enter_critical
+    move_thread_flag_59 = 1
+    movel(a_frog_p, a=0.4, v=0.15)
+    move_thread_flag_59 = 2
+    exit_critical
+  end
+  move_thread_flag_59 = 0
+  move_thread_han_59 = run move_thread_59()
+  while (True):
+    if (beats >= 1.5):
+      kill move_thread_han_59
+      stopl(0.4)
+      $ 60 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_59 > 1):
+      join move_thread_han_59
+      break
+    end
+    sync()
+  end
+  $ 61 "beats: Reset"
+  beats = 0
+  $ 62 "MoveL"
+  $ 63 "a_frog" "breakAfter"
+  global move_thread_flag_63=0
+  thread move_thread_63():
+    enter_critical
+    move_thread_flag_63 = 1
+    movel(a_frog_p, a=1.2, v=0.25)
+    move_thread_flag_63 = 2
+    exit_critical
+  end
+  move_thread_flag_63 = 0
+  move_thread_han_63 = run move_thread_63()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_63
+      stopl(1.2)
+      $ 64 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_63 > 1):
+      join move_thread_han_63
+      break
+    end
+    sync()
+  end
+  $ 65 "beats: Reset"
+  beats = 0
+  $ 66 "MoveL"
+  $ 67 "a_tip" "breakAfter"
+  global move_thread_flag_67=0
+  thread move_thread_67():
+    enter_critical
+    move_thread_flag_67 = 1
+    movel(a_tip_p, a=0.15, v=0.1)
+    move_thread_flag_67 = 2
+    exit_critical
+  end
+  move_thread_flag_67 = 0
+  move_thread_han_67 = run move_thread_67()
+  while (True):
+    if (beats >= 3):
+      kill move_thread_han_67
+      stopl(0.15)
+      $ 68 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_67 > 1):
+      join move_thread_han_67
+      break
+    end
+    sync()
+  end
+  $ 69 "beats: Reset"
+  beats = 0
+  $ 70 "MoveL"
+  $ 71 "a_tip" "breakAfter"
+  global move_thread_flag_71=0
+  thread move_thread_71():
+    enter_critical
+    move_thread_flag_71 = 1
+    movel(a_tip_p, a=0.2, v=0.15)
+    move_thread_flag_71 = 2
+    exit_critical
+  end
+  move_thread_flag_71 = 0
+  move_thread_han_71 = run move_thread_71()
+  while (True):
+    if (beats >= 1):
+      kill move_thread_han_71
+      stopl(0.2)
+      $ 72 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_71 > 1):
+      join move_thread_han_71
+      break
+    end
+    sync()
+  end
+  $ 73 "beats: Reset"
+  beats = 0
+  $ 74 "MoveL"
+  $ 75 "a_frog" "breakAfter"
+  global move_thread_flag_75=0
+  thread move_thread_75():
+    enter_critical
+    move_thread_flag_75 = 1
+    movel(a_frog_p, a=1.2, v=0.7)
+    move_thread_flag_75 = 2
+    exit_critical
+  end
+  move_thread_flag_75 = 0
+  move_thread_han_75 = run move_thread_75()
+  while (True):
+    if (beats >= 1):
+      kill move_thread_han_75
+      stopl(1.2)
+      $ 76 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_75 > 1):
+      join move_thread_han_75
+      break
+    end
+    sync()
+  end
+  $ 77 "beats: Reset"
+  beats = 0
+  $ 79 "MoveL"
+  $ 80 "a_tip" "breakAfter"
+  global move_thread_flag_80=0
+  thread move_thread_80():
+    enter_critical
+    move_thread_flag_80 = 1
+    movel(a_tip_p, a=0.4, v=0.15)
+    move_thread_flag_80 = 2
+    exit_critical
+  end
+  move_thread_flag_80 = 0
+  move_thread_han_80 = run move_thread_80()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_80
+      stopl(0.4)
+      $ 81 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_80 > 1):
+      join move_thread_han_80
+      break
+    end
+    sync()
+  end
+  $ 82 "beats: Reset"
+  beats = 0
+  $ 83 "MoveL"
+  $ 84 "a_tip" "breakAfter"
+  global move_thread_flag_84=0
+  thread move_thread_84():
+    enter_critical
+    move_thread_flag_84 = 1
+    movel(a_tip_p, a=1.2, v=0.2)
+    move_thread_flag_84 = 2
+    exit_critical
+  end
+  move_thread_flag_84 = 0
+  move_thread_han_84 = run move_thread_84()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_84
+      stopl(1.2)
+      $ 85 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_84 > 1):
+      join move_thread_han_84
+      break
+    end
+    sync()
+  end
+  $ 86 "beats: Reset"
+  beats = 0
+  $ 87 "MoveL"
+  $ 88 "a_frog" "breakAfter"
+  global move_thread_flag_88=0
+  thread move_thread_88():
+    enter_critical
+    move_thread_flag_88 = 1
+    movel(a_frog_p, a=0.4, v=0.15)
+    move_thread_flag_88 = 2
+    exit_critical
+  end
+  move_thread_flag_88 = 0
+  move_thread_han_88 = run move_thread_88()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_88
+      stopl(0.4)
+      $ 89 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_88 > 1):
+      join move_thread_han_88
+      break
+    end
+    sync()
+  end
+  $ 90 "beats: Reset"
+  beats = 0
+  $ 91 "MoveL"
+  $ 92 "a_frog" "breakAfter"
+  global move_thread_flag_92=0
+  thread move_thread_92():
+    enter_critical
+    move_thread_flag_92 = 1
+    movel(a_frog_p, a=1.2, v=0.25)
+    move_thread_flag_92 = 2
+    exit_critical
+  end
+  move_thread_flag_92 = 0
+  move_thread_han_92 = run move_thread_92()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_92
+      stopl(1.2)
+      $ 93 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_92 > 1):
+      join move_thread_han_92
+      break
+    end
+    sync()
+  end
+  $ 94 "beats: Reset"
+  beats = 0
+  $ 95 "MoveL"
+  $ 96 "a_tip" "breakAfter"
+  global move_thread_flag_96=0
+  thread move_thread_96():
+    enter_critical
+    move_thread_flag_96 = 1
+    movel(a_tip_p, a=1.2, v=0.25)
+    move_thread_flag_96 = 2
+    exit_critical
+  end
+  move_thread_flag_96 = 0
+  move_thread_han_96 = run move_thread_96()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_96
+      stopl(1.2)
+      $ 97 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_96 > 1):
+      join move_thread_han_96
+      break
+    end
+    sync()
+  end
+  $ 98 "beats: Reset"
+  beats = 0
+  $ 99 "MoveJ"
+  $ 100 "a_frog" "breakAfter"
+  movej(get_inverse_kin(a_frog_p, qnear=a_frog_q), a=1.7453292519943295, v=1.7453292519943295)
+  $ 101 "beats: Reset"
+  beats = 0
+  $ 102 "MoveL"
+  $ 103 "a_tip" "breakAfter"
+  global move_thread_flag_103=0
+  thread move_thread_103():
+    enter_critical
+    move_thread_flag_103 = 1
+    movel(a_tip_p, a=0.2, v=0.2)
+    move_thread_flag_103 = 2
+    exit_critical
+  end
+  move_thread_flag_103 = 0
+  move_thread_han_103 = run move_thread_103()
+  while (True):
+    if (beats >= 3):
+      kill move_thread_han_103
+      stopl(0.2)
+      $ 104 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_103 > 1):
+      join move_thread_han_103
+      break
+    end
+    sync()
+  end
+  $ 105 "beats: Reset"
+  beats = 0
+  $ 106 "MoveL"
+  $ 107 "a_frog" "breakAfter"
+  global move_thread_flag_107=0
+  thread move_thread_107():
+    enter_critical
+    move_thread_flag_107 = 1
+    movel(a_frog_p, a=1.0, v=0.6)
+    move_thread_flag_107 = 2
+    exit_critical
+  end
+  move_thread_flag_107 = 0
+  move_thread_han_107 = run move_thread_107()
+  while (True):
+    if (beats >= 1):
+      kill move_thread_han_107
+      stopl(1.0)
+      $ 108 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_107 > 1):
+      join move_thread_han_107
+      break
+    end
+    sync()
+  end
+  $ 109 "beats: Reset"
+  beats = 0
+  $ 110 "MoveL"
+  $ 111 "a_tip" "breakAfter"
+  global move_thread_flag_111=0
+  thread move_thread_111():
+    enter_critical
+    move_thread_flag_111 = 1
+    movel(a_tip_p, a=0.4, v=0.15)
+    move_thread_flag_111 = 2
+    exit_critical
+  end
+  move_thread_flag_111 = 0
+  move_thread_han_111 = run move_thread_111()
+  while (True):
+    if (beats >= 2.5):
+      kill move_thread_han_111
+      stopl(0.4)
+      $ 112 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_111 > 1):
+      join move_thread_han_111
+      break
+    end
+    sync()
+  end
+  $ 113 "beats: Reset"
+  beats = 0
+  $ 114 "MoveL"
+  $ 115 "a_frog" "breakAfter"
+  global move_thread_flag_115=0
+  thread move_thread_115():
+    enter_critical
+    move_thread_flag_115 = 1
+    movel(a_frog_p, a=1.2, v=0.25)
+    move_thread_flag_115 = 2
+    exit_critical
+  end
+  move_thread_flag_115 = 0
+  move_thread_han_115 = run move_thread_115()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_115
+      stopl(1.2)
+      $ 116 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_115 > 1):
+      join move_thread_han_115
+      break
+    end
+    sync()
+  end
+  $ 117 "beats: Reset"
+  beats = 0
+  $ 118 "MoveL"
+  $ 119 "a_tip" "breakAfter"
+  global move_thread_flag_119=0
+  thread move_thread_119():
+    enter_critical
+    move_thread_flag_119 = 1
+    movel(a_tip_p, a=0.4, v=0.15)
+    move_thread_flag_119 = 2
+    exit_critical
+  end
+  move_thread_flag_119 = 0
+  move_thread_han_119 = run move_thread_119()
+  while (True):
+    if (beats >= 1.5):
+      kill move_thread_han_119
+      stopl(0.4)
+      $ 120 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_119 > 1):
+      join move_thread_han_119
+      break
+    end
+    sync()
+  end
+  $ 121 "beats: Reset"
+  beats = 0
+  $ 122 "MoveL"
+  $ 123 "a_frog" "breakAfter"
+  global move_thread_flag_123=0
+  thread move_thread_123():
+    enter_critical
+    move_thread_flag_123 = 1
+    movel(a_frog_p, a=1.2, v=0.25)
+    move_thread_flag_123 = 2
+    exit_critical
+  end
+  move_thread_flag_123 = 0
+  move_thread_han_123 = run move_thread_123()
+  while (True):
+    if (beats >= 0.75):
+      kill move_thread_han_123
+      stopl(1.2)
+      $ 124 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_123 > 1):
+      join move_thread_han_123
+      break
+    end
+    sync()
+  end
+  $ 125 "beats: Reset"
+  beats = 0
+  $ 126 "MoveL"
+  $ 127 "a_tip" "breakAfter"
+  global move_thread_flag_127=0
+  thread move_thread_127():
+    enter_critical
+    move_thread_flag_127 = 1
+    movel(a_tip_p, a=0.8, v=0.4)
+    move_thread_flag_127 = 2
+    exit_critical
+  end
+  move_thread_flag_127 = 0
+  move_thread_han_127 = run move_thread_127()
+  while (True):
+    if (beats >= 2):
+      kill move_thread_han_127
+      stopl(0.8)
+      $ 128 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_127 > 1):
+      join move_thread_han_127
+      break
+    end
+    sync()
+  end
+  $ 129 "beats: Reset"
+  beats = 0
+  $ 130 "MoveL"
+  $ 131 "a_frog" "breakAfter"
+  global move_thread_flag_131=0
+  thread move_thread_131():
+    enter_critical
+    move_thread_flag_131 = 1
+    movel(a_frog_p, a=0.2, v=0.15)
+    move_thread_flag_131 = 2
+    exit_critical
+  end
+  move_thread_flag_131 = 0
+  move_thread_han_131 = run move_thread_131()
+  while (True):
+    if (beats >= 3):
+      kill move_thread_han_131
+      stopl(0.2)
+      $ 132 "Until (expression)"
+      break
+    end
+    sleep(1.0E-10)
+    if (move_thread_flag_131 > 1):
+      join move_thread_han_131
+      break
+    end
+    sync()
+  end
+  $ 133 "beats: Reset"
+  beats = 0
+end

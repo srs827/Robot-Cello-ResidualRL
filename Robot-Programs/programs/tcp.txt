@@ -1,0 +1,20 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call d_quarter
+     var_1≔Waypoint_4
+     Call d_quarter_1
+   d_quarter_1
+     MoveL
+       Waypoint_4
+       Wait: 10.0
+       path_d
+   d_quarter
+     MoveL
+       Waypoint_2
+       Waypoint_4
+       path_d≔pose_dist(Waypoint_2, Waypoint_4)
+   a_quarter
+     MoveL
+       Waypoint_1
+       Waypoint_3

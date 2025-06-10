@@ -1,0 +1,22 @@
+ Program
+   Variables Setup
+   Robot Program
+     MoveJ
+       Waypoint_1
+     Call a_full_bow
+     Call a_d_x
+     Call d_full_bow
+   a_d_x
+     MoveJ
+       Waypoint_7
+   d_full_bow
+     timer_1: Start
+     MoveL
+       Waypoint_6
+         Until (expression)
+       timer_1≔0
+   a_full_bow
+     timer_2: Start
+     MoveL
+       Waypoint_2
+         Until (expression)

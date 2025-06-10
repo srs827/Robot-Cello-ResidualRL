@@ -1,0 +1,63 @@
+ Program
+   Variables Setup
+   Robot Program
+     Wait: 10.0
+     Call d_eighth
+     Call d_eighthUp
+     Call d_quarter
+     Call d_quarterUp
+     Call d_quarter
+     Call d_quarterUp
+     Wait: 1.0
+     Call d_eighth
+     Call d_eighthUp
+     Call d_quarter
+     Call d_quarterUp
+     Call a_quarter
+     Call d_quarterUp
+     Wait: 1.0
+     Call d_eighth
+     Call d_eighthUp
+     Call a_quarter
+     Call a_quarterUp
+     Call d_quarter
+     Call d_quarterUp
+     Call d_quarter
+     Call a_quarterUp
+     Call a_quarter
+     Call d_quarterUp
+     Call a_quarter
+     Call d_quarterUp
+     Wait: 2.0
+   a_eighth
+     MoveL
+       Waypoint_15
+       Waypoint_16
+   a_eighthUp
+     MoveL
+       Waypoint_13
+       Waypoint_14
+   a_quarterUp
+     MoveL
+       Waypoint_11
+       Waypoint_12
+   a_quarter
+     MoveL
+       Waypoint_9
+       Waypoint_10
+   d_quarterUp
+     MoveL
+       Waypoint_7
+       Waypoint_8
+   d_quarter
+     MoveL
+       Waypoint_5
+       Waypoint_6
+   d_eighthUp
+     MoveL
+       Waypoint_2
+       Waypoint_4
+   d_eighth
+     MoveL
+       Waypoint_1
+       Waypoint_3

@@ -7,22 +7,93 @@ import sys
 sys.path.append('/home/skamanski/Downloads/rtde-2.7.2-release/rtde-2.7.2') # Adjust this path if needed
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
+import random
+import math # For infinity
+
+import numpy as np
+def generate_random_sequence(num_notes: int = 64,
+                             min_note_dur: float = 0.25,
+                             max_note_dur: float = 2.0,
+                             transition_dur: float = 0.20,
+                             strings = ('A', 'D', 'G', 'C')
+                            ):
+    """
+    Return a list of dicts identical to what `parse_midi` produces, but filled
+    with pseudo-random notes and (optional) string-crossing transitions.
+
+    • Durations are uniform in [min_note_dur, max_note_dur].  
+    • First bowing is hardcoded as 'up'.  
+    • Bowings alternate up/down after that.  
+    • When the next note is on a *different* string, insert a transition
+      event whose 'string' looks like 'A-D' so that `script_funcs` resolves.
+    """
+    events, t, last_string, last_bow = [], 0.0, None, None  # ← no default bowing
+
+    for idx in range(num_notes):
+        string = np.random.choice(strings)
+        midi_number = {
+            'A': np.random.randint(57, 60),  # ~A3
+            'D': np.random.randint(50, 55),  # ~D3
+            'G': np.random.randint(43, 48),  # ~G2
+            'C': np.random.randint(36, 41)   # ~C2
+        }[string]
+        note_name = get_note_name(midi_number)
+        dur = float(np.random.uniform(min_note_dur, max_note_dur))
+
+        if last_string and string != last_string:
+            events.append({
+                'number'     : 'transition',
+                'note'       : f'transition {last_string}->{string}',
+                'duration_sec': transition_dur,
+                'string'     : f'{last_string}-{string}',
+                'start_time_sec': t,
+                'end_time_sec'  : t + transition_dur,
+                'bowing'     : 'transition',
+                'is_transition': True,
+                'event_index': -1
+            })
+            t += transition_dur
+
+        # --- enforce first bowing is 'up' -------------------------------
+        if last_bow is None:
+            bowing = 'up'
+        else:
+            bowing = 'up' if last_bow == 'down' else 'down'
+
+        events.append({
+            'number'     : midi_number,
+            'note'       : note_name,
+            'duration_sec': dur,
+            'string'     : string,
+            'start_time_sec': t,
+            'end_time_sec'  : t + dur,
+            'bowing'     : bowing,
+            'is_transition': False,
+            'event_index': idx
+        })
+
+        t += dur
+        last_string, last_bow = string, bowing
+
+    print(f"Generated {len(events)} random events.")
+    return events
 
 
 # --- Configuration ---
-ROBOT_IP = "128.46.75.202"
+ROBOT_IP = "128.46.75.201"
 UR_PORT = 30001
 RTDE_PORT = 30004
-CLEF = "bass" # "bass" or "tenor"
-# this only works on my old mac or on the desktop in the lab
+CLEF = "bass" # Or "tenor"
+midi_name = "allegro"
 CONFIG_FILENAME = "/home/skamanski/Downloads/rtde-2.7.2-release/rtde-2.7.2/examples/cello_configuration.xml" # Adjust path
-MIDI_FILE_PATH = "/home/skamanski/Downloads/Robot-Cello-main(2)/Robot-Cello-main/midi_robot_pipeline/midi_files/minuet_no_2v2.mid" # Adjust path
-BOWING_FILE = "None" # Or path to your bowing file
-SONG_SCRIPT_TEMPLATE = "/home/skamanski/Downloads/Robot-Cello-main(2)/Robot-Cello-main/song.script" # Adjust path
-OUTPUT_LOG_FILENAME = "minuet-log-detailed.csv"
+MIDI_FILE_PATH = "/home/skamanski/Robot-Cello-ResidualRL/MIDI-Files/allegro.mid" # Adjust path
+# MIDI_FILE_PATH = f"/home/skamanski/Downloads/Robot-Cello-main(2)/Robot-Cello-main/midi_robot_pipeline/midi_files/{midi_name}.mid" # Adjust path
+BOWING_FILE = "/home/skamanski/Robot-Cello-ResidualRL/Pieces-Bowings/allegro_bowings.txt" # Or path to your bowing file
+SONG_SCRIPT_TEMPLATE = "/home/skamanski/Robot-Cello-ResidualRL/URScripts/song.script" # Adjust path
+OUTPUT_LOG_FILENAME = f"/home/skamanski/Robot-Cello-ResidualRL/generated_cello_script.txt"
 DEFAULT_TEMPO_BPM = 120 # Used if no tempo message is found in MIDI
 
-# --- RTDE Connection Setup (doens't work with apple silicon chip) ---
+# --- RTDE Connection Setup ---
 try:
     conf = rtde_config.ConfigFile(CONFIG_FILENAME)
     # Specify the recipe name from your XML file that contains the desired outputs
@@ -242,6 +313,7 @@ def parse_midi(file_path, bowing_file="None", clef="bass"):
     # Final sort ensures transitions are correctly placed if tracks were processed out of order
     note_events.sort(key=lambda x: x['start_time_sec'])
     print(f"Parsed {len(note_events)} events (notes and transitions).")
+    print(note_events)
     return note_events
 
 
@@ -276,6 +348,33 @@ def get_function_sequence(note_sequence):
             # Make sure duration isn't negative or extremely small
             safe_duration = max(0.01, note_duration_sec)
             res += f"{function}({bowing_value}, {safe_duration:.4f})\n  stay()\n  "
+    # starting_pose = f"a_bow_poses.frog_p"
+
+    # bowings = [
+    #     f"movej(p[{starting_pose}[0], {starting_pose}[1], {starting_pose}[2], {starting_pose}[3], {starting_pose}[4], {starting_pose}[5]])", "\ta_bow(True, 1)"]
+    # strings = ['a', 'c', 'g', 'd']
+    # prev_string = 'a'
+    # timings = []
+
+    # for i in range(112):
+    #     if i % 9 == 0:
+    #         next_string = random.choice(strings)
+    #     else:
+    #         next_string = prev_string
+
+    #     if next_string != prev_string:
+    #         bowings.append("\t" + prev_string + "_to_" + next_string + "()")
+    #         time = 0.2
+    #     else:
+    #         bowings.append(f"\tstay()")
+    #         time = max(random.random() * 2, 0.25)
+    #         bowings.append(f"\t{next_string}_bow({i % 2 == 0}, {time})")
+
+
+    #     prev_string = next_string
+    
+    # res = "\n".join(bowings)
+    print(res)
     return res
 
 # Alternative function (if bowing logic is purely alternating in script)
@@ -305,8 +404,9 @@ def send_urscript(urscript, speed_scaling, note_sequence_timed):
     current_note_idx = -1
 
     print("--- URScript to be sent ---")
-    # print(full_urscript) # Optionally print the full script
+    print(full_urscript) # Optionally print the full script
     print("--- End URScript ---")
+    # exit()
     print(f"Connecting to RTDE at {ROBOT_IP}:{RTDE_PORT}...")
 
     try:
@@ -349,11 +449,12 @@ def send_urscript(urscript, speed_scaling, note_sequence_timed):
         # --- RTDE Data Logging Loop ---
         print("--- Starting RTDE Data Logging (Press Ctrl+C to stop early) ---")
         start_log_time = time.time()
+        note = -1
 
         while rtde_running:
             try:
                 # Receive data - this blocks until a packet arrives or timeout
-                state = con.receive(True) # Use binary=True for efficiency if supported by library version
+                state = con.receive() # Use binary=True for efficiency if supported by library version
 
                 if state is None:
                     # print("RTDE receive timed out or disconnected?") # Debug print
@@ -375,8 +476,12 @@ def send_urscript(urscript, speed_scaling, note_sequence_timed):
 
                 # --- Flag Change Detection (Event Logging) ---
                 current_flag = state.output_int_register_0
+                bow_dir = state.output_int_register_1
+                if current_flag != last_event_label:
+                    note += 1
+                
                 event_label = None
-                if current_flag != last_flag:
+                if True:
                     event_label = interpret_flag(current_flag)
                     print(f"[{current_rtde_time_sec:.3f}s] Event: {event_label} (Flag: {current_flag})")
                     last_flag = current_flag
@@ -434,13 +539,14 @@ def send_urscript(urscript, speed_scaling, note_sequence_timed):
                 data_log.append({
                     "timestamp_robot": state.timestamp, # Raw robot timestamp
                     "time_elapsed_sec": current_rtde_time_sec,
-                    "event_flag": current_flag,
+                    # "event_flag": current_flag,
                     "event_label": last_event_label, # Log the last *detected* event label
                     "current_event_type": current_event_type, # What MIDI event is active by time
-                    "current_note_number": current_note_info.get('number', None) if current_note_info else None,
-                    "current_note_name": current_note_info.get('note', None) if current_note_info else None,
+                    # "current_note_number": current_note_info.get('number', None) if current_note_info else None,
+                    # "current_note_name": current_note_info.get('note', None) if current_note_info else None,
                     "current_string": current_note_info.get('string', None) if current_note_info else None,
                     "remaining_duration_sec": remaining_duration_sec,
+                    "bow_direction": bow_dir,   
                     "TCP_pose_x": state.actual_TCP_pose[0],
                     "TCP_pose_y": state.actual_TCP_pose[1],
                     "TCP_pose_z": state.actual_TCP_pose[2],
@@ -453,12 +559,18 @@ def send_urscript(urscript, speed_scaling, note_sequence_timed):
                     "q_wrist1": state.actual_q[3],
                     "q_wrist2": state.actual_q[4],
                     "q_wrist3": state.actual_q[5],
-                    "TCP_force_x": state.actual_TCP_force[0],
-                    "TCP_force_y": state.actual_TCP_force[1],
-                    "TCP_force_z": state.actual_TCP_force[2],
-                    "TCP_force_rx": state.actual_TCP_force[3],
-                    "TCP_force_ry": state.actual_TCP_force[4],
-                    "TCP_force_rz": state.actual_TCP_force[5],
+                    "qd_base": state.actual_qd[0],
+                    "qd_shoulder": state.actual_qd[1],
+                    "qd_elbow": state.actual_qd[2],
+                    "qd_wrist1": state.actual_qd[3],
+                    "qd_wrist2": state.actual_qd[4],
+                    "qd_wrist3": state.actual_qd[5],
+                    # "TCP_force_x": state.actual_TCP_force[0],
+                    # "TCP_force_y": state.actual_TCP_force[1],
+                    # "TCP_force_z": state.actual_TCP_force[2],
+                    # "TCP_force_rx": state.actual_TCP_force[3],
+                    # "TCP_force_ry": state.actual_TCP_force[4],
+                    # "TCP_force_rz": state.actual_TCP_force[5],
                 })
 
                 # Simplified End Condition: Check for a known final flag if you have one
@@ -525,12 +637,40 @@ def save_data(log_data, filename):
         # Create DataFrame with specific column order if desired
         # (Ensure columns match keys in the logged dictionary)
         columns = [
-            "timestamp_robot", "time_elapsed_sec", "event_flag", "event_label",
-            "current_event_type", "current_note_number", "current_note_name",
-            "current_string", "remaining_duration_sec",
-            "TCP_pose_x", "TCP_pose_y", "TCP_pose_z", "TCP_pose_rx", "TCP_pose_ry", "TCP_pose_rz",
-            "q_base", "q_shoulder", "q_elbow", "q_wrist1", "q_wrist2", "q_wrist3",
-            "TCP_force_x", "TCP_force_y", "TCP_force_z", "TCP_force_rx", "TCP_force_ry", "TCP_force_rz"
+            "timestamp_robot", 
+            "time_elapsed_sec", 
+            # "event_flag", 
+            "event_label",
+            "current_event_type", 
+            # "current_note_number", 
+            # "current_note_name",
+            "bow_direction",
+            "current_string", 
+            "remaining_duration_sec",
+            "TCP_pose_x", 
+            "TCP_pose_y", 
+            "TCP_pose_z", 
+            "TCP_pose_rx", 
+            "TCP_pose_ry", 
+            "TCP_pose_rz",
+            "q_base", 
+            "q_shoulder", 
+            "q_elbow", 
+            "q_wrist1", 
+            "q_wrist2", 
+            "q_wrist3",
+            "qd_base", 
+            "qd_shoulder", 
+            "qd_elbow", 
+            "qd_wrist1", 
+            "qd_wrist2", 
+            "qd_wrist3",
+            # "TCP_force_x", 
+            # "TCP_force_y", 
+            # "TCP_force_z", 
+            # "TCP_force_rx", 
+            # "TCP_force_ry", 
+            # "TCP_force_rz"
         ]
         # Filter out any keys in data_log not in columns to avoid errors
         filtered_log_data = [{k: d.get(k, None) for k in columns} for d in log_data]
@@ -544,18 +684,23 @@ def save_data(log_data, filename):
 
 # --- Script Execution ---
 if __name__ == "__main__":
-    print("Parsing MIDI file...")
-    note_sequence_timed = parse_midi(MIDI_FILE_PATH, BOWING_FILE, CLEF)
+    # print("Parsing MIDI file...")
+    use_random_sequence = False         # ← toggle here
+
+    if use_random_sequence:
+        note_sequence_timed = generate_random_sequence()
+    else:
+        note_sequence_timed = parse_midi(MIDI_FILE_PATH, BOWING_FILE, CLEF)
 
     if not note_sequence_timed:
         print("❌ No note events parsed from MIDI. Exiting.")
         sys.exit(1)
 
-    # print("\n--- Parsed Note Sequence (with seconds) ---")
-    # for note in note_sequence_timed[:10]: # Print first few notes
-    #     print(f"  {note['start_time_sec']:.3f}s - {note['end_time_sec']:.3f}s ({note['duration_sec']:.3f}s): "
-    #           f"{note['note']} ({note['string']}) Bow: {note['bowing']} Transition: {note['is_transition']}")
-    # print("...\n")
+    print("\n--- Parsed Note Sequence (with seconds) ---")
+    for note in note_sequence_timed[:10]: # Print first few notes
+        print(f"  {note['start_time_sec']:.3f}s - {note['end_time_sec']:.3f}s ({note['duration_sec']:.3f}s): "
+              f"{note['note']} ({note['string']}) Bow: {note['bowing']} Transition: {note['is_transition']}")
+    print("...\n")
 
 
     print("Generating URScript function sequence...")
@@ -570,7 +715,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Inject the generated function calls into the template
-    final_script = script_template.replace("# $$$ CODE HERE $$$", function_sequence)
+    starting_pose = f"{note_sequence_timed[0]['string'].lower()}_bow_poses.frog_p"
+    final_script = script_template.replace("# $$$ CODE HERE $$$", f"""
+        movej(p[{starting_pose}[0], {starting_pose}[1], {starting_pose}[2], {starting_pose}[3], {starting_pose}[4], {starting_pose}[5]])
+        {function_sequence}
+        """)
 
     # print("\n--- Generated URScript (snippet) ---")
     # print(function_sequence[:500] + "...") # Print beginning of generated part
@@ -578,7 +727,7 @@ if __name__ == "__main__":
 
     # Save the generated script for inspection (optional)
     try:
-        with open('generated_cello_script.txt', "w") as test_file:
+        with open('generated_cello_script2.txt', "w") as test_file:
             test_file.write(final_script)
         print("✅ Saved full generated URScript to 'generated_cello_script.txt'")
     except Exception as e:
@@ -586,6 +735,7 @@ if __name__ == "__main__":
 
 
     print("Starting robot execution and data logging...")
-    send_urscript(final_script, 0.8, note_sequence_timed) # Adjust speed scaling (0.1 to 1.0)
+    
+    send_urscript(final_script, 0.25, []) # Adjust speed scaling (0.1 to 1.0)
 
     print("--- Script Finished ---")

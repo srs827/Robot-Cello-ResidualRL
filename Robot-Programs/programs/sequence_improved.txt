@@ -1,0 +1,26 @@
+ Program
+   Variables Setup
+   Robot Program
+     Call a_2
+     Call d_4
+     Call g_2
+     Call c_fix
+     Call g_2
+     Call d_4
+     Call a_2
+   a_2
+     MoveL
+       Waypoint_1
+       Waypoint_2
+   d_4
+     MoveL
+       Waypoint_3
+       Waypoint_4
+   g_2
+     MoveL
+       Waypoint_5
+       Waypoint_6
+   c_fix
+     MoveL
+       Waypoint_7
+       Waypoint_8

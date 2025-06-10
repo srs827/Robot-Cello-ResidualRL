@@ -1,0 +1,13 @@
+ Program
+   Variables Setup
+   Robot Program
+     MoveJ
+       Waypoint_10
+       Waypoint_2
+     MoveJ
+       Waypoint_7
+       Waypoint_3
+     MoveJ
+       Waypoint_4
+     MoveJ
+       Waypoint_1

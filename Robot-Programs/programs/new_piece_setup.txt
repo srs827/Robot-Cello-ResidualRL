@@ -1,0 +1,8 @@
+ Program
+   Variables Setup
+   Robot Program
+     MoveJ
+       a_frog
+       a_tip
+       d_frog
+       d_tip

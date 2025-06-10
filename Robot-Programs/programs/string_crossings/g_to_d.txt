@@ -1,0 +1,13 @@
+ Program
+   Variables Setup
+   Robot Program
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_2
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_1
+     Else
+       MoveJ
+         Waypoint_3

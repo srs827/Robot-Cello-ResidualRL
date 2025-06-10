@@ -1,0 +1,16 @@
+ Program
+   Variables Setup
+   Robot Program
+     var_1≔...
+     Call d_4
+     var_1≔Waypoint_3
+     Call a_2
+     var_1≔Waypoint_2
+   a_2
+     MoveL
+       var_1
+       Waypoint_2
+   d_4
+     MoveL
+       var_1
+       Waypoint_3

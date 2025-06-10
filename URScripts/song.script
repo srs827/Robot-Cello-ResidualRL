@@ -32,18 +32,18 @@ def song():
   global _event_flag = 0
 
   global a_bow_poses = struct(
-    tip_p=[.473129539189, .413197423330, .256308427905, -1.460522581833, -2.310115543652, 1.445803824327], 
-    frog_p=[.300717266074, .793568239540, .099710283103, -1.543522183454, -2.354885618328, 1.346770272474]
+    tip_p=[.503944722298, .346408836311, .307545174120, -1.445765657039, -2.206137823741, 1.350854033579], 
+    frog_p=[.328805982137, .799655164207, .124141658769, -1.433722722069, -2.107495228396, 1.443121424219]
   )
 
   global d_bow_poses = struct(
-    tip_p=[.340413993945, .280157415162, .176342071758, -1.614553612482, -2.044810993523, 1.042279199535],
-    frog_p=[.302785064368, .749849181019, .117254426008, -1.664082298752, -2.084265434693, 1.037965163360]
+    frog_p=[.354161710205, .752955908966, .112349859366, -1.407181324552, -1.865715022814, 1.158881956124],
+    tip_p=[.382368811402, .223017743741, .171533344751, -1.510283213906, -1.949973843994, 1.044123502748]
   )
 
   global g_bow_poses = struct(
-    tip_p=[.162016291992, .201320984957, .059414774157, -1.929772636560, -1.931323067217, .555055912517], 
-    frog_p=[.281203376642, .681662588607, .104672526365, -1.812194031755, -1.940153681829, .493747597283]
+    tip_p=[.243610476021, .214061638886, .064412523546, -1.587355223959, -1.921172351381, .962086687008], 
+    frog_p=[.333312557689, .655489735995, .103651356673, -1.649056264470, -1.798188180415, .665660270553]
   )
 
   global c_bow_poses = struct(
@@ -176,30 +176,46 @@ def song():
   end
 
   def string_crossing(start_bow_poses, end_bow_poses, next_dir):
-    # local a_to_d_frog=[ 0.03885732, -0.01042583, -0.03909307, -3.27378675, -4.54905543, 2.23515599]
-    # local a_to_d_mid=[2.55715648e-03, -8.51565664e-02, -1.08389974e-01, -3.21889652e+00, -4.49939765e+00,  2.21639600e+00]
-    # local a_to_d_tip=[-0.03416493, -0.12050286, -0.17569119, -3.16488982, -4.45964209, 2.20089496]
-
     local tcp_pose = get_actual_tcp_pose()
     local start_p = [tcp_pose[0], tcp_pose[1], tcp_pose[2], tcp_pose[3], tcp_pose[4], tcp_pose[5]]
 
-    local bow_len = norm(end_bow_poses.tip_p - end_bow_poses.frog_p)
-    local direction_vector = (end_bow_poses.tip_p - end_bow_poses.frog_p) / bow_len
+    local acc = 0.2
+    local speed = 0.2
 
-    local dist_from_tip = norm(end_bow_poses.tip_p - end_bow_poses.frog_p) * norm(start_p - start_bow_poses.frog_p) / norm(start_bow_poses.tip_p - start_bow_poses.frog_p)
+    # Compute bow vector on start and end strings
+    local start_vec = start_bow_poses.tip_p - start_bow_poses.frog_p
+    local end_vec = end_bow_poses.tip_p - end_bow_poses.frog_p
 
-    local out = [0.89583677, 0.04158029, 0.44243367, 0, 0, 0]
-    local step1 = start_p + out * 0.03
-    # local step2 = end_bow_poses.frog_p + direction_vector *  dist_from_tip * 0.25 #+ out * 0.04
-    local target_pose = end_bow_poses.frog_p + direction_vector *  dist_from_tip
-    movep(p[step1[0], step1[1], step1[2], start_p[3], start_p[4], start_p[5]])
-    movep(p[step1[0], step1[1], step1[2], d_bow_poses.frog_p[3], d_bow_poses.frog_p[4], d_bow_poses.frog_p[5]])
+    local start_len = norm(start_vec)
+    local end_len = norm(end_vec)
+
+    # Normalize to unit vectors
+    local start_dir = start_vec / start_len
+    local end_dir = end_vec / end_len
+
+    # Project current TCP onto start bow trajectory
+    local rel_to_frog = start_p - start_bow_poses.frog_p
+    local t_start = dot(rel_to_frog, start_dir)
+    local t_start_clamped = min(max(t_start, 0.0), start_len)  # Clamp within bow
+
+    # Compute exact point on start and end bow paths
+    local projected_start = start_bow_poses.frog_p + t_start_clamped * start_dir
+    local projected_end = end_bow_poses.frog_p + t_start_clamped * end_dir
+
+    # Use TCP orientation from current pose for start and end points
+    local step1 = [projected_start[0], projected_start[1], projected_start[2],
+                   start_p[3], start_p[4], start_p[5]]
+
+    local step2 = [projected_end[0], projected_end[1], projected_end[2],
+                   start_p[3], start_p[4], start_p[5]]
+
+    # Optional: short linear move to align onto bow plane
+    movep(p[step1[0], step1[1], step1[2], step1[3], step1[4], step1[5]], a=acc, v=speed)
     sync()
-    # movej(p[step2[0], step2[1], step2[2], step2[3], step2[4], step2[5]])
-    # sync()
-    movep(p[target_pose[0], target_pose[1], target_pose[2], target_pose[3], target_pose[4], target_pose[5]])
-    # sync()
 
+    # "Roll" across to the same relative point on next string
+    movep(p[step2[0], step2[1], step2[2], step2[3], step2[4], step2[5]], a=acc, v=speed)
+    sync()
   end
 
   def a_to_d(next_dir=0):

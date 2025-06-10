@@ -1,0 +1,43 @@
+def unnamed():
+  global _hidden_verificationVariable=0
+  step_count_002bc164_3ae5_4981_8c74_60562e95d8b4 = 0.0
+  thread Step_Counter_Thread_183f9d1b_f392_450c_a275_fad6989cc7f6():
+    while (True):
+      step_count_002bc164_3ae5_4981_8c74_60562e95d8b4 = step_count_002bc164_3ae5_4981_8c74_60562e95d8b4 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_183f9d1b_f392_450c_a275_fad6989cc7f6()
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_safety_mode_transition_hardness(1)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_gravity([0.0, 0.0, 9.82])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global Waypoint_1_p=p[.410852406937, .621901535797, .415980837782, -1.524933085651, -2.218155038975, 1.146465953129]
+  global Waypoint_1_q=[-2.416837804074121, -0.7389777001817182, 0.7880773536677168, -0.7872306259393405, -1.5484764851963986, -2.7925235919859497]
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "MoveJ"
+    $ 4 "Waypoint_1" "breakAfter"
+    movej(get_inverse_kin(Waypoint_1_p, qnear=Waypoint_1_q), a=1.3962634015954636, v=1.0471975511965976)
+  end
+end

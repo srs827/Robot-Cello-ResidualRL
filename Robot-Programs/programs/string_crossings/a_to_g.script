@@ -1,0 +1,64 @@
+def a_to_g():
+  global _hidden_verificationVariable=0
+  step_count_b27ba5ac_433d_475b_bb86_64806043343c = 0.0
+  thread Step_Counter_Thread_5dd301a0_8753_44fa_8f89_7b1e9cd9d8eb():
+    while (True):
+      step_count_b27ba5ac_433d_475b_bb86_64806043343c = step_count_b27ba5ac_433d_475b_bb86_64806043343c + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_5dd301a0_8753_44fa_8f89_7b1e9cd9d8eb()
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_gravity([0.0, 0.0, 9.82])
+  set_safety_mode_transition_hardness(1)
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global Waypoint_2_from_p=p[.277253619588, .734023691009, .156890913027, 1.738970805419, 2.310401136634, -1.107748720646]
+  global Waypoint_2_to_p=p[.333303857876, .655497665826, .103666518656, -1.649070160551, -1.798213098617, .665655854321]
+  global Waypoint_1_from_p=p[.327375462571, .541708591936, .231859090742, 1.681690579138, 2.324760508403, -1.111501533731]
+  global Waypoint_1_to_p=p[.267746251982, .455840121562, .063353923651, -1.606391074082, -1.910799854462, .870107932452]
+  global Waypoint_3_from_p=p[.374964844428, .359139176539, .303040350019, 1.627457150652, 2.337358513689, -1.114532632099]
+  global Waypoint_3_to_p=p[.243614230387, .214060107548, .064414114238, -1.587341799752, -1.921198366483, .962057446805]
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "bow_section≔-1"
+    global bow_section=-1
+    $ 4 "If bow_section≟-1"
+    if (bow_section == -1):
+      $ 5 "MoveJ"
+      $ 6 "Waypoint_2" "breakAfter"
+      movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_2_to_p, Waypoint_2_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+    else:
+      $ 7 "ElseIf bow_section≟0"
+      if (bow_section == 0):
+        $ 8 "MoveJ"
+        $ 9 "Waypoint_1" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_1_to_p, Waypoint_1_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      else:
+        $ 10 "Else" "noBreak"
+        $ 11 "MoveJ"
+        $ 12 "Waypoint_3" "breakAfter"
+        movej(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_3_to_p, Waypoint_3_from_p)), a=1.3962634015954636, v=1.0471975511965976)
+      end
+    end
+  end
+end

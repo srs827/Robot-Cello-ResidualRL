@@ -1,0 +1,43 @@
+def g_str():
+  global _hidden_verificationVariable=0
+  step_count_b689d062_43af_4e7d_a502_d268bdc304bc = 0.0
+  thread Step_Counter_Thread_db7f5b44_4a4c_4d6b_b8cd_d937033a5c5d():
+    while (True):
+      step_count_b689d062_43af_4e7d_a502_d268bdc304bc = step_count_b689d062_43af_4e7d_a502_d268bdc304bc + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_db7f5b44_4a4c_4d6b_b8cd_d937033a5c5d()
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global Waypoint_1_p=p[.244536814929, .603171944766, .091746993125, -1.746710419839, -2.094804797466, .807656086869]
+  global Waypoint_1_q=[-2.2819626967059534, -0.6259936851314087, 1.5676019827472132, -1.9206177196898402, -1.2910974661456507, -2.544013325368063]
+  global Waypoint_2_from_p=p[.244521073137, .603181819387, .091749361360, -1.746716934447, -2.094834799544, .807650042444]
+  global Waypoint_2_to_p=p[.300326863987, .207838494561, .008819542335, -1.236658477725, -1.730478699854, 1.136023561914]
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "MoveL"
+    $ 4 "Waypoint_1" "breakAfter"
+    movel(Waypoint_1_p, a=1.2, v=0.25)
+    $ 5 "Waypoint_2" "breakAfter"
+    movel(pose_add(get_target_tcp_pose(), pose_sub(Waypoint_2_to_p, Waypoint_2_from_p)), a=1.2, v=0.25)
+  end
+end

@@ -1,0 +1,45 @@
+ Program
+   Variables Setup
+   Robot Program
+     bow_dir≔ True 
+     Call a_full_bow
+     Popup: tet
+     'Call a_to_d'
+     Popup: tet
+     bow_dir≔ False 
+     Call d_full_bow
+     Popup: tet
+   d_to_a
+     MoveJ
+       Waypoint_6
+   a_to_d
+     MoveJ
+       Waypoint_9
+   a_full_bow
+     note_dur≔1
+     timer_1: Start
+     If bow_dir
+       MoveL
+         Waypoint_2
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_1
+           Until (expression)
+     'MoveL'
+     timer_1: Stop
+     timer_1: Reset
+   d_full_bow
+     note_dur≔1
+     timer_1: Start
+     If bow_dir≟ False 
+       MoveL
+         Waypoint_4
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_5
+           Until (expression)
+     'MoveL'
+     timer_1: Stop
+     timer_1: Reset

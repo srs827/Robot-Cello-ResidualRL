@@ -1,0 +1,181 @@
+ Program
+   Variables Setup
+   Robot Program
+     string≔1
+     note_dur≔1
+     bow_dir≔1
+     Call a_full_bow
+     Call c_full_bow
+     Call g_full_bow
+     Call d_full_bow
+     Call a_to_d
+     Call a_to_g
+     Call c_to_d
+     Call d_to_a
+     Call d_to_g
+     Call d_to_c
+     Call g_to_a
+     Call g_to_c
+     Call g_to_d
+   g_to_d
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_34
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_35
+     Else
+       MoveJ
+         Waypoint_36
+   g_to_c
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_31
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_32
+     Else
+       MoveJ
+         Waypoint_33
+   g_to_a
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_28
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_29
+     Else
+       MoveJ
+         Waypoint_30
+   d_to_c
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_25
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_26
+     Else
+       MoveJ
+         Waypoint_27
+   d_to_g
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_22
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_23
+     Else
+       MoveJ
+         Waypoint_24
+   d_to_a
+     bow_section≔1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_19
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_20
+     Else
+       MoveJ
+         Waypoint_21
+   c_to_d
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_16
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_17
+     Else
+       MoveJ
+         Waypoint_18
+   a_to_g
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_13
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_14
+     Else
+       MoveJ
+         Waypoint_15
+   a_to_d
+     bow_section≔-1
+     If bow_section≟-1
+       MoveJ
+         Waypoint_10
+     ElseIf bow_section≟0
+       MoveJ
+         Waypoint_11
+     Else
+       MoveJ
+         Waypoint_12
+   d_full_bow
+     bow_dir≔ True 
+     note_dur≔1
+     timer_4: Start
+     If bow_dir≟ False 
+       MoveL
+         Waypoint_8
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_9
+           Until (expression)
+     'MoveL'
+     timer_4: Stop
+     timer_4: Reset
+   g_full_bow
+     bow_dir≔ True 
+     note_dur≔1
+     timer_3: Start
+     If bow_dir
+       MoveL
+         Waypoint_5
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_7
+           Until (expression)
+     MoveL
+       Waypoint_1
+       Waypoint_3
+       Waypoint_2
+     timer_3: Stop
+     timer_3: Reset
+   c_full_bow
+     bow_dir≔ True 
+     note_dur≔1
+     timer_2: Start
+     If bow_dir≟ True 
+       MoveL
+         Waypoint_6
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_4
+           Until (expression)
+     'MoveL'
+     timer_2: Stop
+     timer_2: Reset
+   a_full_bow
+     bow_dir≔ True 
+     note_dur≔3
+     timer_1: Start
+     If bow_dir
+       MoveL
+         Waypoint_2
+           Until (expression)
+     Else
+       MoveL
+         Waypoint_1
+           Until (expression)
+     'MoveL'
+     timer_1: Stop
+     timer_1: Reset

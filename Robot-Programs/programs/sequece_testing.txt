@@ -1,0 +1,48 @@
+ Program
+   Variables Setup
+   Robot Program
+     bow_dir≔bow_dir≟ True 
+     note_dir≔1
+     Call a_full_bow
+     Call a_to_d
+     Call d_full_bow
+     Call d_to_g
+     Call g_full_bow
+     Call g_to_c
+     Call c_full_bow
+   g_to_c
+     MoveJ
+       Waypoint_15
+   d_to_g
+     MoveJ
+       Waypoint_14
+   a_to_d
+     MoveJ
+       Waypoint_13
+   c_full_bow
+     MoveL
+       Waypoint_10
+       Waypoint_11
+       Waypoint_12
+   g_full_bow
+     MoveL
+       Waypoint_7
+       Waypoint_8
+       Waypoint_9
+   d_full_bow
+     MoveL
+       Waypoint_4
+       Waypoint_5
+       Waypoint_6
+   a_full_bow
+     MoveL
+       Waypoint_1
+       Waypoint_3
+       Waypoint_2
+   a_full_bow_1
+     If ...
+       <empty>
+     MoveL
+       Waypoint_1
+       Waypoint_3
+       Waypoint_2
