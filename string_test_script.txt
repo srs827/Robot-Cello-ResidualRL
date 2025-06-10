@@ -301,7 +301,19 @@ def song():
     write_output_integer_register(0, _event_flag)
   end
 
-  # $$$ CODE HERE $$$
+  popup("Starting A string")
+  a_bow(0, 3.0)
+  stay()
+  popup("Starting D string")
+  d_bow(0, 3.0)
+  stay()
+  popup("Starting G string")
+  g_bow(0, 3.0)
+  stay()
+  popup("Starting C string")
+  c_bow(0, 3.0)
+  stay()
+  popup("Finished all strings")
   
 end
 
