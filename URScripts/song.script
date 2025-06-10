@@ -32,24 +32,27 @@ def song():
   global _event_flag = 0
 
   global a_bow_poses = struct(
-    tip_p=[.503944722298, .346408836311, .307545174120, -1.445765657039, -2.206137823741, 1.350854033579], 
-    frog_p=[.328805982137, .799655164207, .124141658769, -1.433722722069, -2.107495228396, 1.443121424219]
+    frog_p=[0.9096045418660197, -0.2588044569343866, 0.541003, -0.06060243967666461, 2.9929390935818714, -0.913310449637719],
+    tip_p=[0.6598094581339804, -0.2689245430656134, 0.541003, -0.06060243967666461, 2.9929390935818714, -0.913310449637719]
   )
-
   global d_bow_poses = struct(
-    frog_p=[.354161710205, .752955908966, .112349859366, -1.407181324552, -1.865715022814, 1.158881956124],
-    tip_p=[.382368811402, .223017743741, .171533344751, -1.510283213906, -1.949973843994, 1.044123502748]
+    frog_p=[0.8946223326266852, -0.2685354188867812, 0.541219, -0.013636038441305823, 2.9992924465998407, -0.9256471157813614],
+    tip_p=[0.6446326673733146, -0.27080858111321887, 0.541219, -0.013636038441305823, 2.9992924465998407, -0.9256471157813614]
   )
-
   global g_bow_poses = struct(
-    tip_p=[.243610476021, .214061638886, .064412523546, -1.587355223959, -1.921172351381, .962086687008], 
-    frog_p=[.333312557689, .655489735995, .103651356673, -1.649056264470, -1.798188180415, .665660270553]
+    frog_p=[0.6293845311772893, -0.2678204300780099, 0.5421385, 2.5411257601855066, -0.016096847168606893, -0.004983072771393007],
+    tip_p=[0.8793644688227106, -0.2709875699219901, 0.5421385, 2.5411257601855066, -0.016096847168606893, -0.004983072771393007]
+  )
+  global c_bow_poses = struct(
+    frog_p=[0.6139039926517809, -0.26083734280774956, 0.541003, 2.553178541679736, -0.033484640772030456, -0.010142425714514788],
+    tip_p=[0.8638180073482191, -0.26739365719225044, 0.541003, 2.553178541679736, -0.033484640772030456, -0.010142425714514788]
   )
 
-  global c_bow_poses = struct(
-    tip_p=[.079815569355, .285182178102, -.086654726588, -1.819646014269, -1.658258006768, .180930717120],
-    frog_p=[.256662516098, .610082591416, .062624387196, -1.743236422252, -1.524514092756, .163823228357]
-  )
+  global a_orient = [-0.06060243967666461, 2.9929390935818714, -0.913310449637719]
+  global d_orient = [-0.013636038441305823, 2.9992924465998407, -0.9256471157813614]
+  global g_orient = [2.5411257601855066, -0.016096847168606893, -0.004983072771393007]
+  global c_orient = [2.553178541679736, -0.033484640772030456, -0.010142425714514788]
+
 
   def ease_scale(note_dur):
     if note_dur > 3:
@@ -61,7 +64,7 @@ def song():
 
   
   
-  def bow(bow_dir, note_dur, bow_poses):
+  def bow(bow_dir, note_dur, bow_poses, orient):
     if note_dur > 3:
       note_dur = 3
     end
@@ -72,7 +75,7 @@ def song():
     local frog_p=bow_poses.frog_p
     
     local tcp_pose = get_actual_tcp_pose()
-    local start_p = [tcp_pose[0], tcp_pose[1], tcp_pose[2], tcp_pose[3], tcp_pose[4], tcp_pose[5]]
+    local start_p = [tcp_pose[0], tcp_pose[1], tcp_pose[2], orient[0], orient[1], orient[2]]
     local end_p = frog_p
 
     local direction_vector = (tip_p - frog_p) / norm(tip_p - frog_p)
@@ -118,7 +121,7 @@ def song():
     _event_flag = 1  # START a_bow
     write_output_integer_register(0, _event_flag)
     write_output_integer_register(1, bow_dir)
-    bow(bow_dir, note_dur, a_bow_poses)
+    bow(bow_dir, note_dur, a_bow_poses, a_orient)
     _event_flag = 2  # END a_bow
     write_output_integer_register(0, _event_flag)
   end
@@ -127,7 +130,7 @@ def song():
     _event_flag = 3  # START d_bow
     write_output_integer_register(1, bow_dir)
     write_output_integer_register(0, _event_flag)
-    bow(bow_dir, note_dur, d_bow_poses)
+    bow(bow_dir, note_dur, d_bow_poses, d_orient)
     _event_flag = 4  # END d_bow
     write_output_integer_register(0, _event_flag)
   end
@@ -136,7 +139,7 @@ def song():
     _event_flag = 5  # START g_bow
     write_output_integer_register(1, bow_dir)
     write_output_integer_register(0, _event_flag)
-    bow(bow_dir, note_dur, g_bow_poses)
+    bow(bow_dir, note_dur, g_bow_poses, g_orient)
     _event_flag = 6  # END g_bow
     write_output_integer_register(0, _event_flag)
   end
@@ -145,7 +148,7 @@ def song():
     _event_flag = 7  # START c_bow
     write_output_integer_register(1, bow_dir)
     write_output_integer_register(0, _event_flag)
-    bow(bow_dir, note_dur, c_bow_poses)
+    bow(bow_dir, note_dur, c_bow_poses, c_orient)
     _event_flag = 8  # END c_bow
     write_output_integer_register(0, _event_flag)
   end
@@ -175,7 +178,7 @@ def song():
     end
   end
 
-  def string_crossing(start_bow_poses, end_bow_poses, next_dir):
+  def string_crossing(start_bow_poses, end_bow_poses, start_orient, end_orient, next_dir):
     local tcp_pose = get_actual_tcp_pose()
     local start_p = [tcp_pose[0], tcp_pose[1], tcp_pose[2], tcp_pose[3], tcp_pose[4], tcp_pose[5]]
 
@@ -204,10 +207,10 @@ def song():
 
     # Use TCP orientation from current pose for start and end points
     local step1 = [projected_start[0], projected_start[1], projected_start[2],
-                   start_p[3], start_p[4], start_p[5]]
+               start_orient[0], start_orient[1], start_orient[2]]
 
     local step2 = [projected_end[0], projected_end[1], projected_end[2],
-                   start_p[3], start_p[4], start_p[5]]
+               end_orient[0], end_orient[1], end_orient[2]]
 
     # Optional: short linear move to align onto bow plane
     movep(p[step1[0], step1[1], step1[2], step1[3], step1[4], step1[5]], a=acc, v=speed)
@@ -221,7 +224,7 @@ def song():
   def a_to_d(next_dir=0):
     _event_flag = 101
     write_output_integer_register(0, _event_flag)
-    string_crossing(a_bow_poses, d_bow_poses, next_dir)
+    string_crossing(a_bow_poses, d_bow_poses, a_orient, d_orient, next_dir)
     _event_flag = 102
     write_output_integer_register(0, _event_flag)
   end
@@ -229,7 +232,7 @@ def song():
   def a_to_g(next_dir=0):
     _event_flag = 109
     write_output_integer_register(0, _event_flag)
-    string_crossing(a_bow_poses, g_bow_poses, next_dir)
+    string_crossing(a_bow_poses, g_bow_poses, a_orient, g_orient, next_dir)
     _event_flag = 110
     write_output_integer_register(0, _event_flag)
   end
@@ -237,7 +240,7 @@ def song():
   def d_to_a(next_dir=0):
     _event_flag = 103
     write_output_integer_register(0, _event_flag)
-    string_crossing(d_bow_poses, a_bow_poses, next_dir)
+    string_crossing(d_bow_poses, a_bow_poses, d_orient, a_orient, next_dir)
     _event_flag = 104
     write_output_integer_register(0, _event_flag)
   end
@@ -245,7 +248,7 @@ def song():
   def d_to_g(next_dir=0):
     _event_flag = 105
     write_output_integer_register(0, _event_flag)
-    string_crossing(d_bow_poses, g_bow_poses, next_dir)
+    string_crossing(d_bow_poses, g_bow_poses, d_orient, g_orient, next_dir)
     _event_flag = 106
     write_output_integer_register(0, _event_flag)
   end
@@ -253,7 +256,7 @@ def song():
   def d_to_c(next_dir=0):
     _event_flag = 113
     write_output_integer_register(0, _event_flag)
-    string_crossing(d_bow_poses, c_bow_poses, next_dir)
+    string_crossing(d_bow_poses, c_bow_poses, d_orient, c_orient, next_dir)
     _event_flag = 114
     write_output_integer_register(0, _event_flag)
   end
@@ -261,7 +264,7 @@ def song():
   def g_to_a(next_dir=0):
     _event_flag = 111
     write_output_integer_register(0, _event_flag)
-    string_crossing(g_bow_poses, a_bow_poses, next_dir)
+    string_crossing(g_bow_poses, a_bow_poses, g_orient, a_orient, next_dir)
     _event_flag = 112
     write_output_integer_register(0, _event_flag)
   end
@@ -269,7 +272,7 @@ def song():
   def g_to_d(next_dir=0):
     _event_flag = 107
     write_output_integer_register(0, _event_flag)
-    string_crossing(g_bow_poses, d_bow_poses, next_dir)
+    string_crossing(g_bow_poses, d_bow_poses, g_orient, d_orient, next_dir)
     _event_flag = 108
     write_output_integer_register(0, _event_flag)
   end
@@ -277,7 +280,7 @@ def song():
   def g_to_c(next_dir=0):
     _event_flag = 117
     write_output_integer_register(0, _event_flag)
-    string_crossing(g_bow_poses, c_bow_poses, next_dir)
+    string_crossing(g_bow_poses, c_bow_poses, g_orient, c_orient, next_dir)
     _event_flag = 118
     write_output_integer_register(0, _event_flag)
   end
@@ -285,7 +288,7 @@ def song():
   def c_to_d(next_dir=0):
     _event_flag = 115
     write_output_integer_register(0, _event_flag)
-    string_crossing(c_bow_poses, d_bow_poses, next_dir)
+    string_crossing(c_bow_poses, d_bow_poses, c_orient, d_orient, next_dir)
     _event_flag = 116
     write_output_integer_register(0, _event_flag)
   end
@@ -293,7 +296,7 @@ def song():
   def c_to_g(next_dir=0):
     _event_flag = 119
     write_output_integer_register(0, _event_flag)
-    string_crossing(c_bow_poses, g_bow_poses, next_dir)
+    string_crossing(c_bow_poses, g_bow_poses, c_orient, g_orient, next_dir)
     _event_flag = 120
     write_output_integer_register(0, _event_flag)
   end
