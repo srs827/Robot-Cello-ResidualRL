@@ -6,6 +6,17 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import BaseCallback
 from rl_trajectory import UR5eCelloTrajectoryEnv
 
+a_frog = [0.43487182,  0.39604015, -0.213195,   -1.37183167, -2.21080519,  1.27344916]
+a_tip = [0.40931818,  0.69494985, -0.213195,   -1.37183167, -2.21080519,  1.27344916]
+d_frog = [0.33455062,  0.31949893, -0.24925,    -1.5619303,  -1.97043579,  0.98332491]
+d_tip = [0.34919938,  0.61914107, -0.24925,    -1.5619303,  -1.97043579,  0.98332491]
+g_frog = [0.27658556,  0.26608705, -0.31557,    -1.51549779, -1.6723598,   0.7564576 ]
+g_tip = [0.29907444,  0.56524295, -0.31557,    -1.51549779, -1.6723598,   0.7564576 ]
+c_frog = [0.20489384,  0.23316687, -0.37714,    -1.55305625, -1.45776501,  0.41142248]
+c_tip = [0.23001616,  0.53211313, -0.37714,    -1.55305625, -1.45776501,  0.41142248]
+
+
+
 
 class RenderCallback(BaseCallback):
     def __init__(self, every_n_steps: int = 1):
@@ -20,6 +31,12 @@ class RenderCallback(BaseCallback):
 def generate_fake_trajectory(note_sequence, start_joint_positions):
     # For simulation only: create placeholder joint trajectories based on note count
     return [start_joint_positions for _ in range(len(note_sequence) + 1)]
+
+
+def generate_real_trajectory(note_sequence):
+    for note in note_sequence:
+        if note['note'] == 'a_bow':
+
 
 def main():
     # Load and parse MIDI file
