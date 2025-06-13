@@ -36,13 +36,23 @@ string_points['C_string'] = {
     "middle-t": [0.13730, 0.17509, -0.43691, 2.871, 2.768, -0.905]
 }
 
+offset_string_points = {}
+for string, points in string_points.items():
+    offset_string_points[string] = {}
+    for key, value in points.items():
+        # Apply the offset to the first three coordinates
+        offset_string_points[string][key] = [
+            value[0] - 0.0,  # x offset
+            value[1] + 0.0,  # y offset
+            value[2] - 0.0   # z offset
+        ] + value[3:]  # Keep the last three values unchanged
 
 def unit_vector(vec):
     return vec / np.linalg.norm(vec)
 
-def compute_bowing_vectors(string_points):
+def compute_bowing_vectors(offset_string_points):
     bowing_info = {}
-    for string, points in string_points.items():
+    for string, points in offset_string_points.items():
         nut_f = np.array(points['nut-f'][:3])
         nut_t = np.array(points['nut-t'][:3])
         bridge_f = np.array(points['bridge-f'][:3])
@@ -67,18 +77,18 @@ def compute_bowing_vectors(string_points):
         }
     return bowing_info
 
-bowing_info = compute_bowing_vectors(string_points)
-print(bowing_info)
+bowing_info = compute_bowing_vectors(offset_string_points)
+#print(bowing_info)
 
 from scipy.spatial.transform import Rotation as R
 from scipy.spatial.transform import Slerp
 
-def compute_axis_angles(bowing_info, string_points):
+def compute_axis_angles(bowing_info, offset_string_points):
     result = {}
     for string, info in bowing_info.items():
         # Extract middle rotations from both frog and tip ends
-        middle_f_rot = np.array(string_points[string]['middle-f'][3:6])
-        middle_t_rot = np.array(string_points[string]['middle-t'][3:6])
+        middle_f_rot = np.array(offset_string_points[string]['middle-f'][3:6])
+        middle_t_rot = np.array(offset_string_points[string]['middle-t'][3:6])
 
         # Create Rotation objects
         r_f = R.from_rotvec(middle_f_rot)
@@ -101,13 +111,26 @@ def compute_axis_angles(bowing_info, string_points):
     return result
 
 # Recompute poses
-poses = compute_axis_angles(bowing_info, string_points)
+poses = compute_axis_angles(bowing_info, offset_string_points)
 
 # Convert to DataFrame for display
 import pandas as pd
 pose_df = pd.DataFrame.from_dict(poses, orient='index')
-print(pose_df['frog_pose'].apply(lambda x: x.tolist()).to_list())
-print(pose_df['tip_pose'].apply(lambda x: x.tolist()).to_list())
-print(pose_df['orientation_rpy'].apply(lambda x: x.tolist()).to_list())
+# print(pose_df['frog_pose'].apply(lambda x: x.tolist()).to_list())
+# print(pose_df['tip_pose'].apply(lambda x: x.tolist()).to_list())
+# print(pose_df['orientation_rpy'].apply(lambda x: x.tolist()).to_list())
 # Save the poses to a CSV file
 pose_df.to_csv('bowing_poses.csv', index_label='string')
+
+def mujoco_string_sites(offset_string_points):
+    sites = {}
+    for string, points in offset_string_points.items():
+        middle_f = np.array(points["middle-f"][:3])
+        middle_t = np.array(points["middle-t"][:3])
+        midpoint = (middle_f + middle_t) / 2
+        sites[string] = midpoint.tolist()
+    return sites
+
+print(mujoco_string_sites(offset_string_points))
+print(" ")
+print(offset_string_points)

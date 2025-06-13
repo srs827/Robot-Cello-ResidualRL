@@ -1,0 +1,132 @@
+def d_full_bow():
+  global _hidden_verificationVariable=0
+  step_count_db132347_31d2_4545_98c6_f20b54240faf = 0.0
+  thread Step_Counter_Thread_fb8ca14a_9a38_40f6_a6b0_7cbd58039a9b():
+    while (True):
+      step_count_db132347_31d2_4545_98c6_f20b54240faf = step_count_db132347_31d2_4545_98c6_f20b54240faf + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_fb8ca14a_9a38_40f6_a6b0_7cbd58039a9b()
+  set_tcp(p[0.028210348281514253,-0.09610723587300697,-0.09969041498611403,0.0,0.0,0.0])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.260000, [0.050000, -0.008000, 0.024000], [0.000163, 0.000163, 0.000163, 0.000000, 0.000000, 0.000000])
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  global Plane_1=p[0.32571614183608727,0.7933870146316717,0.11820742021636722,-2.208244884171713,-0.24738609815952348,-1.9195085473101943]
+  global Plane_2=p[0.3436052139151623,0.7478032414335104,0.10077839665899768,2.768545736097797,0.1284831553507919,1.3672805628273381]
+  global Plane_3=p[0.31945151854627996,0.6757990361168175,0.09459088830114093,2.7301760593116526,-0.049483824131046385,1.4252239353300047]
+  global Plane_4=p[0.3372257363094211,0.6222230974198586,0.07001667903587716,2.621672423508307,-0.12240385890263918,1.4373011913128484]
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  global timer_1=0
+  global Waypoint_1_p=p[.302785064368, .749849181019, .117254426008, -1.664082298752, -2.084265434693, 1.037965163360]
+  global Waypoint_1_q=[-2.2151745001422327, -0.36674900472674565, 0.8685625235186976, -1.3223977845958252, -1.2866409460650843, -2.5482025782214563]
+  global Waypoint_3_p=p[.340413993945, .280157415162, .176342071758, -1.614553612482, -2.044810993523, 1.042279199535]
+  global Waypoint_3_q=[-2.854044739400045, -1.0390942853740235, 2.105422321950094, -1.8165775738158167, -1.7034710089312952, -3.0262449423419397]
+  global timer_1_is_counting=False
+  thread Timer_Thread():
+    while (True):
+      if (timer_1_is_counting):
+        timer_1 = timer_1 + get_steptime()
+      end
+      sync()
+    end
+  end
+  run Timer_Thread()
+  while (True):
+    $ 2 "Robot Program"
+    $ 3 "MoveL"
+    $ 4 "Waypoint_1" "breakAfter"
+    movel(Waypoint_1_p, a=1.2, v=0.25)
+    $ 5 "Waypoint_3" "breakAfter"
+    movel(Waypoint_3_p, a=1.2, v=0.25)
+    $ 6 "MoveL"
+    $ 7 "Waypoint_3" "breakAfter"
+    movel(Waypoint_3_p, a=1.2, v=0.25)
+    $ 8 "Waypoint_1" "breakAfter"
+    movel(Waypoint_1_p, a=1.2, v=0.25)
+    $ 9 "Wait: 300.0"
+    sleep(300.0)
+    $ 10 "bow_dir≔ True "
+    global bow_dir=  True  
+    $ 11 "note_dur≔1"
+    global note_dur=1
+    $ 12 "timer_1: Start"
+    timer_1_is_counting = True
+    $ 13 "If bow_dir≟ False "
+    if (bow_dir ==   False  ):
+      $ 14 "MoveL"
+      $ 15 "Waypoint_1" "breakAfter"
+      global move_thread_flag_15=0
+      thread move_thread_15():
+        enter_critical
+        move_thread_flag_15 = 1
+        movel(Waypoint_1_p, a=1.2, v=0.25)
+        move_thread_flag_15 = 2
+        exit_critical
+      end
+      move_thread_flag_15 = 0
+      move_thread_han_15 = run move_thread_15()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_15
+          stopl(1.2)
+          $ 16 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_15 > 1):
+          join move_thread_han_15
+          break
+        end
+        sync()
+      end
+    else:
+      $ 17 "Else" "noBreak"
+      $ 18 "MoveL"
+      $ 19 "Waypoint_3" "breakAfter"
+      global move_thread_flag_19=0
+      thread move_thread_19():
+        enter_critical
+        move_thread_flag_19 = 1
+        movel(Waypoint_3_p, a=1.2, v=0.25)
+        move_thread_flag_19 = 2
+        exit_critical
+      end
+      move_thread_flag_19 = 0
+      move_thread_han_19 = run move_thread_19()
+      while (True):
+        if (timer_1 == note_dur):
+          kill move_thread_han_19
+          stopl(1.2)
+          $ 20 "Until (expression)"
+          break
+        end
+        sleep(1.0E-10)
+        if (move_thread_flag_19 > 1):
+          join move_thread_han_19
+          break
+        end
+        sync()
+      end
+    end
+    $ 25 "timer_1: Stop"
+    timer_1_is_counting = False
+    $ 26 "timer_1: Reset"
+    timer_1 = 0
+  end
+end

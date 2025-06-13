@@ -20,5 +20,9 @@
   <worldbody>
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <site name="A" pos="0.422095 0.545495 -0.213195" size="0.005" rgba="1 0 0 1"/>
+    <site name="D" pos="0.341875 0.46932 -0.24925" size="0.005" rgba="0 1 0 1"/>
+    <site name="G" pos="0.28783 0.415665 -0.31557" size="0.005" rgba="0 0 1 1"/>
+    <site name="C" pos="0.217455 0.38264 -0.37714" size="0.005" rgba="1 1 0 1"/>
   </worldbody>
 </mujoco>
