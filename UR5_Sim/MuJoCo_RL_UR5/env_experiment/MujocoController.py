@@ -27,12 +27,12 @@ class MJ_Controller(object):
     to perform tasks on an already instantiated simulation.
     """
 
-    def __init__(self, model=None, simulation=None, viewer=None):
+    def __init__(self, model_path=None, simulation=None, viewer=None):
         path = os.path.realpath(__file__)
         path = str(Path(path).parent.parent.parent)
         # model_path = os.path.join(os.path.dirname(__file__), "universal_robots_ur5e/ur5e2.xml")
-        model_path = os.path.join(os.path.dirname(__file__), "UR5+gripper/UR5gripper_reacher.xml")
-
+        #model_path = os.path.join(os.path.dirname(__file__), "UR5+gripper/UR5gripper_reacher.xml")
+        model_path = os.path.join(path, model_path)
         # Ensure the file exists before loading
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"MuJoCo XML file not found: {model_path}")

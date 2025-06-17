@@ -18,6 +18,8 @@ import matplotlib.pyplot as plt
 import copy
 # from decorators import debug
 from ikpy.chain import Chain
+from scipy.spatial.transform import Rotation as R
+import numpy as np
 
 class MJ_Controller(object):
     """
@@ -27,55 +29,27 @@ class MJ_Controller(object):
     to perform tasks on an already instantiated simulation.
     """
 
-    def __init__(self, model=None, simulation=None, viewer=None):
-        path = os.path.realpath(__file__)
-        path = str(Path(path).parent.parent.parent)
-        # if model is None:
-        #     self.model = mujoco.MjModel.from_xml_path(path + "/UR5+gripper/UR5gripper_2_finger.xml")
-        # else:
-        #     self.model = model
-        #self.model = mujoco.MjModel.from_xml_path(model)  # Load the XML file
+    def __init__(self, model_path=None, simulation=None, viewer=None):
+        # Step 1: Resolve model path
+        if model_path is None:
+            base_path = Path(__file__).resolve().parent.parent.parent
+            model_path = os.path.join(base_path, "UR5+gripper", "UR5gripper_reacher.xml")
+        else:
+            model_path = os.path.abspath(model_path)
+            base_path = Path(model_path).parent.parent  # Dynamically infer base
 
-        # model_path = os.path.join(os.path.dirname(__file__), "../../UR5+gripper/UR5gripper_2_finger.xml")
-        # model_path = os.path.abspath(model_path)  # Convert to absolute path
-
-        # if not os.path.exists(model_path):
-        #     raise FileNotFoundError(f"MuJoCo XML file not found: {model_path}")
-
-        # self.model = mujoco.MjModel.from_xml_path(model_path)
-
-
-        # #self.data = mujoco.MjData(self.model)  # Initialize MuJoCo data
-        # #self.viewer = mujoco.viewer.launch(self.model) if viewer is None else viewer  # Remove 'data'
-
-
-        # self.data = mujoco.MjData(self.model)  # Create MjData using the loaded model
-        # self.sim = mujoco.viewer.launch(model, self.data)
-        # self.viewer = mujoco.viewer.launch(self.model) if viewer is None else viewer
-        #self.sim = mp.MjSim(self.model) if simulation is None else simulation
-        #self.viewer = mp.MjViewer(self.sim) if viewer is None else viewer
-
-        # Resolve the absolute path of the MuJoCo XML model
-        # model_path = os.path.join(os.path.dirname(__file__), "../../UR5+gripper/UR5gripper_2_finger.xml")
-
-        model_path = os.path.abspath(model_path)  # Convert to absolute path
-
-        # Ensure the file exists before loading
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"MuJoCo XML file not found: {model_path}")
 
-        # Load MuJoCo model and data
+        # Step 2: Load model and data
         self.model = mujoco.MjModel.from_xml_path(model_path)
-        self.data = mujoco.MjData(self.model)  # Create MuJoCo data
+        self.data = mujoco.MjData(self.model)
 
-        # Launch viewer only if `viewer` is not provided
-        if viewer is None:
-            self.viewer = mujoco.viewer.launch(self.model)  # Do NOT pass `data`
-        else:
-            self.viewer = viewer
-
-        mujoco.mj_step(self.model, self.data)
-
+        # Step 3: Launch viewer if needed
+        self.viewer = mujoco.viewer.launch(self.model) if viewer is None else viewer
+        #mujoco.mj_step(self.model, self.data)
+        mujoco.mj_forward(self.model, self.data)
+        # Step 4: Setup controller and IK chain
         self.create_lists()
         self.groups = defaultdict(list)
         self.groups["All"] = list(range(len(self.data.ctrl)))
@@ -85,11 +59,65 @@ class MJ_Controller(object):
         self.reached_target = False
         self.current_output = np.zeros(len(self.data.ctrl))
         self.image_counter = 0
-        self.ee_chain = Chain.from_urdf_file(path + "/UR5+gripper/ur5_gripper.urdf")
+
+        # ✅ FIXED: Use base_path instead of undefined 'path'
+        urdf_path = os.path.join(base_path, "UR5+gripper", "ur5_gripper.urdf")
+        self.ee_chain = Chain.from_urdf_file(urdf_path)
+
         self.cam_matrix = None
         self.cam_init = False
         self.last_movement_steps = 0
-        # self.move_group_to_joint_target()
+
+    # def __init__(self, model_path=None, simulation=None, viewer=None):
+    #     if model_path is None:
+    #         # Use default relative path logic only if model_path not explicitly passed
+    #         base_path = Path(__file__).resolve().parent.parent.parent
+    #         # default path (change to your actual default if needed)
+    #         model_path = os.path.join(base_path, "UR5+gripper/UR5gripper_reacher.xml")
+    #     else:
+    #         model_path = os.path.abspath(model_path)  # Convert to absolute path
+
+    #     # Ensure the file exists before loading
+    #     if not os.path.exists(model_path):
+    #         raise FileNotFoundError(f"MuJoCo XML file not found: {model_path}")
+
+    #     # Load MuJoCo model and data
+    #     self.model = mujoco.MjModel.from_xml_path(model_path)
+    #     self.data = mujoco.MjData(self.model)
+
+
+    #     model_path = os.path.abspath(model_path)  # Convert to absolute path
+
+    #     # Ensure the file exists before loading
+    #     if not os.path.exists(model_path):
+    #         raise FileNotFoundError(f"MuJoCo XML file not found: {model_path}")
+
+    #     # Load MuJoCo model and data
+    #     self.model = mujoco.MjModel.from_xml_path(model_path)
+    #     self.data = mujoco.MjData(self.model)  # Create MuJoCo data
+
+    #     # Launch viewer only if `viewer` is not provided
+    #     if viewer is None:
+    #         self.viewer = mujoco.viewer.launch(self.model)  # Do NOT pass `data`
+    #     else:
+    #         self.viewer = viewer
+
+    #     mujoco.mj_step(self.model, self.data)
+
+    #     self.create_lists()
+    #     self.groups = defaultdict(list)
+    #     self.groups["All"] = list(range(len(self.data.ctrl)))
+    #     self.create_group("Arm", list(range(6)))
+    #     self.create_group("Gripper", [6])
+    #     self.actuated_joint_ids = np.array([i[2] for i in self.actuators])
+    #     self.reached_target = False
+    #     self.current_output = np.zeros(len(self.data.ctrl))
+    #     self.image_counter = 0
+    #     self.ee_chain = Chain.from_urdf_file(os.path.join(path, "UR5+gripper/ur5_gripper.urdf"))
+    #     self.cam_matrix = None
+    #     self.cam_init = False
+    #     self.last_movement_steps = 0
+    #     # self.move_group_to_joint_target()
 
     def create_group(self, group_name, idx_list):
         """
@@ -530,7 +558,7 @@ class MJ_Controller(object):
             ee_position_base = (
                 ee_position - self.data.body_xpos[self.model.body_name2id("base_link")]
             )
-
+            # base_position = self.data.body('base_link').xpos
             # By adding the appr. distance between ee_link and grasp center, we can now specify a world target position
             # for the grasp center instead of the ee_link
             gripper_center_position = ee_position_base + [0, -0.005, 0.16]
@@ -539,9 +567,11 @@ class MJ_Controller(object):
             # initial_position=[0, *self.sim.data.qpos[self.actuated_joint_ids][self.groups['Arm']], 0]
             # joint_angles = self.ee_chain.inverse_kinematics(gripper_center_position, [0,0,-1], orientation_mode='X', initial_position=initial_position, regularization_parameter=0.05)
             joint_angles = self.ee_chain.inverse_kinematics(
-                gripper_center_position, [0, 0, -1], orientation_mode="X"
+                target_position=gripper_center_position,
+                target_orientation=[0, 0, -1],
+                orientation_mode="X",
+                active_links_mask=[False] + [True] * (len(self.ee_chain.links) - 1)
             )
-
             prediction = (
                 self.ee_chain.forward_kinematics(joint_angles)[:3, 3]
                 + self.data.body_xpos[self.model.body_name2id("base_link")]
@@ -559,26 +589,42 @@ class MJ_Controller(object):
             print(e)
             print("Could not find an inverse kinematics solution.")
 
-    def ik_2(self, pose_target):
+    def ik_2(self, pose_target, initial_position=None):
         """
-        TODO: Implement orientation.
+        Solves inverse kinematics for a full 6D pose using position + orientation (quaternion).
+
+        Args:
+            pose_target: A list or array of length 7,
+                        where pose_target[:3] is XYZ position (world coordinates),
+                        and pose_target[3:] is a quaternion (x, y, z, w)
+        
+        Returns:
+            joint_angles: List of 6 joint angles if solution found, else None.
         """
-        target_position = pose_target[:3]
-        target_position -= self.data.body_xpos[self.model.body_name2id("base_link")]
-        orientation = Quaternion(pose_target[3:])
-        target_orientation = orientation.rotation_matrix
-        target_matrix = orientation.transformation_matrix
-        target_matrix[0][-1] = target_position[0]
-        target_matrix[1][-1] = target_position[1]
-        target_matrix[2][-1] = target_position[2]
-        print(target_matrix)
-        self.current_carthesian_target = pose_target[:3]
-        joint_angles = self.ee_chain.inverse_kinematics_frame(
-            target_matrix, initial_position=self.initial_position, orientation_mode="all"
-        )
-        joint_angles = joint_angles[1:-1]
-        current_finger_values = self.data.qpos[self.actuated_joint_ids][6:]
-        target = [*joint_angles, *current_finger_values]
+        try:
+            if len(pose_target) == 7:
+                pos = pose_target[:3]
+                quat = pose_target[3:]
+                rotation_matrix = R.from_quat(quat).as_matrix()
+            else:
+                raise ValueError("Pose target must be 7D: [x, y, z, qx, qy, qz, qw]")
+
+            transform = np.eye(4)
+            transform[:3, :3] = rotation_matrix
+            transform[:3, 3] = pos
+
+            print(f"IK_2: pose_target={pose_target},\nrotation_matrix={rotation_matrix}, pos={pos}")
+            print(f"Transform matrix:\n{transform}")
+
+            ik_result = self.ee_chain.inverse_kinematics_frame(transform, initial_position=initial_position)
+            return ik_result
+        except Exception as e:
+            print(f"IK_2 error: {e}")
+            return None
+
+
+
+
 
     def display_current_values(self):
         """

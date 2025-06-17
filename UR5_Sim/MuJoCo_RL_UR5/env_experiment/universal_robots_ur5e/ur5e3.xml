@@ -1,6 +1,6 @@
 <mujoco model="ur5e">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
-  <include file="BaseAdj/BaseAdj.xml"/>
+  <include file="Base/Base.xml"/>
 
   <option integrator="implicitfast"/>
 
@@ -130,7 +130,7 @@
               <body name="wrist_2_link" pos="0 0.127 0">
                 <inertial mass="1.219" pos="0 0 0.1" diaginertia="0.0025599 0.0025599 0.0021942"/>
                 <joint name="wrist_2_joint" axis="0 0 1" class="size1"/>
-                <geom name="wrist2_0" mesh="wrist2_0" material="black" class="visual" contype="1" conaffinity="1"/>
+                <geom mesh="wrist2_0" material="black" class="visual" contype="1" conaffinity="1"/>
                 <geom mesh="wrist2_1" material="urblue" class="visual" contype="1" conaffinity="1"/>
                 <geom mesh="wrist2_2" material="jointgray" class="visual" contype="1" conaffinity="1"/>
                 <geom class="collision" size="0.04 0.06" pos="0 0 0.04"/>
@@ -154,7 +154,7 @@
                     <geom mesh="GripperBow_7" material="0.921569_0.705882_0.470588_0.000000_0.000000" class="visual"/>
                     <geom mesh="GripperBow_8" material="0.231373_0.380392_0.705882_0.000000_0.000000" class="visual"/>
                     <geom mesh="GripperBow_9" material="0.768627_0.886275_0.952941_0.000000_0.000000" class="visual"/>
-                    <geom name="GripperBow col0" mesh="GripperBow_collision_0" rgba="0.8830719240833379 0.9694187576009292 0.02174679723191808 1" class="collision"/>
+                    <geom mesh="GripperBow_collision_0" rgba="0.8830719240833379 0.9694187576009292 0.02174679723191808 1" class="collision"/>
                     <geom mesh="GripperBow_collision_1" rgba="0.10404431504547218 0.9985556061204591 0.0893572362052153 1" class="collision"/>
                     <geom mesh="GripperBow_collision_2" rgba="0.2933043500683049 0.37820582798772495 0.7342368790243478 1" class="collision"/>
 
@@ -172,36 +172,32 @@
      <!-- Define the cello strings as capsule geoms with appropriate physical properties -->
     <body name="cello_strings" pos="0 0 0" quat="0.7071068 0 0 0.7071068">
         <!-- G string -->
-        <geom name="G_string" type="capsule" fromto="0.754749 -0.239845 0.584309 0.754 -0.298963 0.497968" 
+        <geom name="G_string" type="capsule" fromto="0.754749 -0.208095 0.584309 0.754 -0.267213 0.497968" 
                 size="0.000700" rgba="0.8 0.6 0.2 1" 
                 material="string_material"/>
         <site name="G_string_mid" pos="0.754375 -0.237654 0.541139" size="0.001"/>
         <!-- <joint name="G_string_vibration" type="slide" axis="0 1 0" range="-0.003 0.003" stiffness="100" damping="0.5"/> -->
         
         <!-- C string -->
-        <geom name="C_string" type="capsule" fromto="0.739636 -0.234574 0.584309 0.738086 -0.293657 0.495697" 
+        <geom name="C_string" type="capsule" fromto="0.739636 -0.202824 0.584309 0.738086 -0.261907 0.495697" 
                 size="0.000850" rgba="0.8 0.6 0.2 1"
                 material="string_material"/>
         <site name="C_string_mid" pos="0.738861 -0.232366 0.540003" size="0.001"/>
         <!-- <joint name="C_string_vibration" type="slide" axis="0 1 0" range="-0.003 0.003" stiffness="200" damping="0.5"/> -->
         
         <!-- D string -->
-        <geom name="D_string" type="capsule" fromto="0.769354 -0.239594 0.584309 0.769901 -0.29975 0.496129" 
+        <geom name="D_string" type="capsule" fromto="0.769354 -0.207844 0.584309 0.769901 -0.268 0.496129" 
                 size="0.000508" rgba="0.7 0.7 0.7 1"
                 material="string_material"/>
         <site name="D_string_mid" pos="0.769628 -0.237922 0.540219" size="0.001"/>
         <!-- <joint name="D_string_vibration" type="slide" axis="0 1 0" range="-0.002 0.002" stiffness="300" damping="0.5"/> -->
         
         <!-- A string (highest) -->
-        <geom name="A_string" type="capsule" fromto="0.7835 -0.234072 0.584309 0.785914 -0.293657 0.495697" 
+        <geom name="A_string" type="capsule" fromto="0.7835 -0.202322 0.584309 0.785914 -0.261907 0.495697" 
                 size="0.000508" rgba="0.7 0.7 0.7 1"
                 material="string_material"/>
         <site name="A_string_mid" pos="0.784707 -0.232115 0.540003" size="0.001"/>
         <!-- <joint name="A_string_vibration" type="slide" axis="0 1 0" range="-0.002 0.002" stiffness="400" damping="0.5"/> -->
-    </body>
-
-    <body name="box" pos="0 0 0" quat="0.7071068 0 0 0.7071068">
-      <geom name="box" type="box" fromto="0.785914 -0.293657 0.49  0.738086 -.5 0.2" size="0.01"></geom>
     </body>
   </worldbody>
 

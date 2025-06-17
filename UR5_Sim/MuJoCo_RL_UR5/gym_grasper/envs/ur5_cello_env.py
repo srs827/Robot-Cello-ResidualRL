@@ -28,37 +28,37 @@ class UR5eCelloEnv(gym.Env):
 
     def __init__(self):
         super(UR5eCelloEnv, self).__init__()
-        self.controller = MujocoController("UR5+gripper/UR5gripper_2_finger.xml")
+        self.controller = MujocoController("/Users/skamanski/Documents/GitHub/Robot-Cello-ResidualRL/UR5_Sim/MuJoCo_RL_UR5/env_experiment/universal_robots_ur5e/ur5e3.xml")
 
-        self.lstm = UR5eLSTM(input_dim=33, hidden_dim=128, output_dim=24, num_layers=2)
-        # will need to replace the path
-        model_path = "/Users/samanthasudhoff/Desktop/midi_robot_pipeline/pretrained_ur5e_lstm3.pth"
-        if not torch.cuda.is_available():
-            device = torch.device("cpu")
-        else:
-            device = torch.device("cuda")
+        # self.lstm = UR5eLSTM(input_dim=33, hidden_dim=128, output_dim=24, num_layers=2)
+        # # will need to replace the path
+        # model_path = "/Users/samanthasudhoff/Desktop/midi_robot_pipeline/pretrained_ur5e_lstm3.pth"
+        # if not torch.cuda.is_available():
+        #     device = torch.device("cpu")
+        # else:
+        #     device = torch.device("cuda")
 
-        if not torch.cuda.is_available():
-            self.lstm.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
-        else:
-            self.lstm.load_state_dict(torch.load(model_path))
+        # if not torch.cuda.is_available():
+        #     self.lstm.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
+        # else:
+        #     self.lstm.load_state_dict(torch.load(model_path))
 
-        self.lstm.to(device)
-        # set to inference mode 
-        self.lstm.eval()  
+        # self.lstm.to(device)
+        # # set to inference mode 
+        # self.lstm.eval()  
 
 
         self.action_space = spaces.Box(low=-1.0, high=1.0, shape=(24,), dtype=np.float32)
         self.observation_space = spaces.Box(low=-1.0, high=1.0, shape=(24,), dtype=np.float32)
 
-        self.lookback = 10
+        #self.lookback = 10
         self.current_pos = np.zeros(6, dtype=np.float32)
         self.previous_pos = np.zeros(6, dtype=np.float32)
         # set to initial TCP pos
         self.target_pos = np.array([0.3, 0.7, 0.1, -1.5, -2.2, 1.1])  
 
         # Maintain past states for LSTM input
-        self.state_history = np.zeros((self.lookback, 33), dtype=np.float32)  # 33 features per step
+        #self.state_history = np.zeros((self.lookback, 33), dtype=np.float32)  # 33 features per step
 
     def step(self, action):
         """Apply PPO action, update Mujoco, and return full 24-value observation."""
@@ -117,16 +117,10 @@ class UR5eCelloEnv(gym.Env):
         velocity_penalty = np.linalg.norm(self.controller.data.qvel[:6])
 
         # transition reward: encourage small joint movement when switching strings
-        previous_string = np.array(self.state_history[-2, -4:])  # last string vals
-        current_string = np.array(self.state_history[-1, -4:])   # current string vals
+        # TODO 
 
-        if not np.array_equal(previous_string, current_string):  # If switching strings only
-            joint_change = np.linalg.norm(self.controller.data.qpos[:6] - self.previous_pos)
-            transition_reward = np.exp(-joint_change) * 5  # higher reward for smaller changes
-        else: # same string
-            transition_reward = 0  
-
-        reward = (progress_reward - 0.1 * velocity_penalty  + transition_reward  + 0.5 * np.exp(-np.linalg.norm(self.current_pos - self.target_pos)))
+       # add transition reward 
+        reward = (progress_reward - 0.1 * velocity_penalty + 0.5 * np.exp(-np.linalg.norm(self.current_pos - self.target_pos)))
 
         # bonus for being close to target
         if distance_after < 0.05:
@@ -142,10 +136,13 @@ class UR5eCelloEnv(gym.Env):
         self.state_history = np.zeros((self.lookback, 33), dtype=np.float32)
 
         # Use LSTM to initialize movement
-        lstm_input = torch.tensor(self.state_history, dtype=torch.float32).unsqueeze(0)  
-        lstm_prediction = self.lstm(lstm_input).detach().numpy().flatten()
+        # lstm_input = torch.tensor(self.state_history, dtype=torch.float32).unsqueeze(0)  
+        # lstm_prediction = self.lstm(lstm_input).detach().numpy().flatten()
+        
+        # we want to change this to use the baseline controller for initializing movement 
 
-        self.current_pos = lstm_prediction[:6]
+        # self.current_pos = lstm_prediction[:6]
+        self.current_pos = 
         obs = np.concatenate([
             self.controller.data.qpos[:6],  
             self.controller.data.qpos[6:12],  
