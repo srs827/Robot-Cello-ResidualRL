@@ -597,17 +597,24 @@ class MJ_Controller(object):
             pose_target: A list or array of length 7,
                         where pose_target[:3] is XYZ position (world coordinates),
                         and pose_target[3:] is a quaternion (x, y, z, w)
-        
+
         Returns:
             joint_angles: List of 6 joint angles if solution found, else None.
         """
         try:
-            if len(pose_target) == 7:
-                pos = pose_target[:3]
-                quat = pose_target[3:]
-                rotation_matrix = R.from_quat(quat).as_matrix()
-            else:
+            if len(pose_target) != 7:
                 raise ValueError("Pose target must be 7D: [x, y, z, qx, qy, qz, qw]")
+            base_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "base_link")
+            base_pos = self.data.xpos[base_id]
+            pos = np.array(pose_target[:3]) - base_pos
+            pos = pos + np.array([0, -0.005, 0.16])  # offset to gripper center
+            # Transform to base frame
+            #pos = np.array(pose_target[:3]) - self.data.body_xpos[self.model.body_name2id("base_link")]
+            # Adjust for gripper center (same offset used in ik())
+            #pos = pos + np.array([0, -0.005, 0.16])
+
+            quat = pose_target[3:]
+            rotation_matrix = R.from_quat(quat).as_matrix()
 
             transform = np.eye(4)
             transform[:3, :3] = rotation_matrix
@@ -615,9 +622,28 @@ class MJ_Controller(object):
 
             print(f"IK_2: pose_target={pose_target},\nrotation_matrix={rotation_matrix}, pos={pos}")
             print(f"Transform matrix:\n{transform}")
+            print(f"Distance to target: {np.linalg.norm(pos):.3f}")
 
-            ik_result = self.ee_chain.inverse_kinematics_frame(transform, initial_position=initial_position)
+            # Build active link mask
+            active_links = [False] + [True] * (len(self.ee_chain.links) - 1)
+
+            if initial_position is None or len(initial_position) != len(active_links):
+                initial_position = [0.0] * len(active_links)
+                print("⚠️ Using default initial_position (zeros)")
+
+            print(f"Expected DOF: {len(active_links)}")
+            print(f"Initial position: {initial_position} (len={len(initial_position)})")
+
+            ik_result = self.ee_chain.inverse_kinematics_frame(
+                transform,
+                initial_position=initial_position
+            )
+
+            # Optionally strip base and dummy joints
+            ik_result = ik_result[1:-2]
+
             return ik_result
+
         except Exception as e:
             print(f"IK_2 error: {e}")
             return None

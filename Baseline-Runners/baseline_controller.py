@@ -65,7 +65,7 @@ def generate_log(midi_path, output_csv):
 
         pose_target = list(tcp_pose[:3]) + list(quat)  # [x, y, z, qx, qy, qz, qw]
         joint_angles = mj_ctrl.ik_2(pose_target)
-
+        print(f"IK for event at t={t_event}s: {joint_angles}")
         if joint_angles is None:
             print(f"⚠️ IK failed for event at t={t_event}s. Skipping...")
             continue
