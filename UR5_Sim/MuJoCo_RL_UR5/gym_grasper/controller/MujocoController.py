@@ -590,63 +590,27 @@ class MJ_Controller(object):
             print("Could not find an inverse kinematics solution.")
 
     def ik_2(self, pose_target, initial_position=None):
-        """
-        Solves inverse kinematics for a full 6D pose using position + orientation (quaternion).
+        target_position = pose_target[:3]
+        target_position -= self.data.body_xpos[self.model.body_name2id("base_link")]
+        orientation = Quaternion(pose_target[3:])
+        target_orientation = orientation.rotation_matrix
+        target_matrix = orientation.transformation_matrix
+        target_matrix[0][-1] = target_position[0]
+        target_matrix[1][-1] = target_position[1]
+        target_matrix[2][-1] = target_position[2]
 
-        Args:
-            pose_target: A list or array of length 7,
-                        where pose_target[:3] is XYZ position (world coordinates),
-                        and pose_target[3:] is a quaternion (x, y, z, w)
+        print(target_matrix)
+        self.current_carthesian_target = pose_target[:3]
 
-        Returns:
-            joint_angles: List of 6 joint angles if solution found, else None.
-        """
-        try:
-            if len(pose_target) != 7:
-                raise ValueError("Pose target must be 7D: [x, y, z, qx, qy, qz, qw]")
-            base_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "base_link")
-            base_pos = self.data.xpos[base_id]
-            pos = np.array(pose_target[:3]) - base_pos
-            pos = pos + np.array([0, -0.005, 0.16])  # offset to gripper center
-            # Transform to base frame
-            #pos = np.array(pose_target[:3]) - self.data.body_xpos[self.model.body_name2id("base_link")]
-            # Adjust for gripper center (same offset used in ik())
-            #pos = pos + np.array([0, -0.005, 0.16])
+        if initial_position is None:
+            print("⚠️ Using default initial_position (zeros)")
+            initial_position = [0.0] * self.ee_chain.number_of_joints  # or pass something smarter
 
-            quat = pose_target[3:]
-            rotation_matrix = R.from_quat(quat).as_matrix()
-
-            transform = np.eye(4)
-            transform[:3, :3] = rotation_matrix
-            transform[:3, 3] = pos
-
-            print(f"IK_2: pose_target={pose_target},\nrotation_matrix={rotation_matrix}, pos={pos}")
-            print(f"Transform matrix:\n{transform}")
-            print(f"Distance to target: {np.linalg.norm(pos):.3f}")
-
-            # Build active link mask
-            active_links = [False] + [True] * (len(self.ee_chain.links) - 1)
-
-            if initial_position is None or len(initial_position) != len(active_links):
-                initial_position = [0.0] * len(active_links)
-                print("⚠️ Using default initial_position (zeros)")
-
-            print(f"Expected DOF: {len(active_links)}")
-            print(f"Initial position: {initial_position} (len={len(initial_position)})")
-
-            ik_result = self.ee_chain.inverse_kinematics_frame(
-                transform,
-                initial_position=initial_position
-            )
-
-            # Optionally strip base and dummy joints
-            ik_result = ik_result[1:-2]
-
-            return ik_result
-
-        except Exception as e:
-            print(f"IK_2 error: {e}")
-            return None
+        joint_angles = self.ee_chain.inverse_kinematics_frame(
+            target_matrix, initial_position=initial_position, orientation_mode="all"
+        )
+        joint_angles = joint_angles[1:-1]  # strip fixed base and gripper
+        return joint_angles
 
 
 

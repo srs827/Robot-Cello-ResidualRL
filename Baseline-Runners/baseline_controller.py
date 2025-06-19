@@ -6,6 +6,15 @@ import sys
 import os 
 import mujoco
 from scipy.spatial.transform import Rotation as R
+import torch
+sys.path.append("/Users/skamanski/Documents/GitHub/Robot-Cello-ResidualRL/Data-Files/Big-Logs")
+from ik_model import IKNet
+
+device = torch.device("cpu")
+# Load trained model
+ik_net = IKNet().to(device)
+ik_net.load_state_dict(torch.load("ik_net.pth", map_location=device))
+ik_net.eval()
 
 # Add MujocoController to sys.path from full path
 sys.path.append("/Users/skamanski/Documents/GitHub/Robot-Cello-ResidualRL/UR5_Sim/MuJoCo_RL_UR5/gym_grasper/controller/")

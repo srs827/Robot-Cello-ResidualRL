@@ -4,10 +4,21 @@ import socket
 import mido
 from mido import MidiFile, tempo2bpm, bpm2tempo
 import sys
-sys.path.append('/home/skamanski/Downloads/rtde-2.7.2-release/rtde-2.7.2') # Adjust this path if needed
-import rtde.rtde as rtde
-import rtde.rtde_config as rtde_config
+import numpy as np
+#sys.path.append('/home/skamanski/Downloads/rtde-2.7.2-release/rtde-2.7.2') # Adjust this path if needed
+#import rtde.rtde as rtde
+#import rtde.rtde_config as rtde_config
 
+BOW_POSES = {
+    "A": {"tip": np.array([.473129539189, .413197423330, .256308427905, -1.460522581833, -2.310115543652, 1.445803824327]),
+           "frog": np.array([.300717266074, .793568239540, .099710283103, -1.543522183454, -2.354885618328, 1.346770272474])},
+    "D": {"tip": np.array([.340413993945, .280157415162, .176342071758, -1.614553612482, -2.044810993523, 1.042279199535]),
+           "frog": np.array([.302785064368, .749849181019, .117254426008, -1.664082298752, -2.084265434693, 1.037965163360])},
+    "G": {"tip": np.array([.162016291992, .201320984957, .059414774157, -1.929772636560, -1.931323067217, .555055912517]),
+           "frog": np.array([.281203376642, .681662588607, .104672526365, -1.812194031755, -1.940153681829, .493747597283])},
+    "C": {"tip": np.array([.079815569355, .285182178102, -.086654726588, -1.819646014269, -1.658258006768, .180930717120]),
+           "frog": np.array([.256662516098, .610082591416, .062624387196, -1.743236422252, -1.524514092756, .163823228357])}
+}
 
 # --- Configuration ---
 ROBOT_IP = "128.46.75.202"
@@ -16,34 +27,34 @@ RTDE_PORT = 30004
 CLEF = "bass" # "bass" or "tenor"
 # this only works on my old mac or on the desktop in the lab
 CONFIG_FILENAME = "/home/skamanski/Downloads/rtde-2.7.2-release/rtde-2.7.2/examples/cello_configuration.xml" # Adjust path
-MIDI_FILE_PATH = "/home/skamanski/Downloads/Robot-Cello-main(2)/Robot-Cello-main/midi_robot_pipeline/midi_files/minuet_no_2v2.mid" # Adjust path
+MIDI_FILE_PATH = "/Users/skamanski/Documents/GitHub/Robot-Cello-ResidualRL/MIDI-Files/minuet_no_2v2.mid" # Adjust path
 BOWING_FILE = "None" # Or path to your bowing file
-SONG_SCRIPT_TEMPLATE = "/home/skamanski/Downloads/Robot-Cello-main(2)/Robot-Cello-main/song.script" # Adjust path
+SONG_SCRIPT_TEMPLATE = "/Users/skamanski/Documents/GitHub/Robot-Cello-ResidualRL/URScripts/song.script" # Adjust path
 OUTPUT_LOG_FILENAME = "minuet-log-detailed.csv"
 DEFAULT_TEMPO_BPM = 120 # Used if no tempo message is found in MIDI
 
 # --- RTDE Connection Setup (doens't work with apple silicon chip) ---
-try:
-    conf = rtde_config.ConfigFile(CONFIG_FILENAME)
-    # Specify the recipe name from your XML file that contains the desired outputs
-    # Make sure your XML recipe includes: "timestamp", "output_int_register_0", "actual_TCP_pose", "actual_q", "actual_TCP_force"
-    output_names, output_types = conf.get_recipe("state") # Adjust recipe name if needed
+# try:
+#     #conf = rtde_config.ConfigFile(CONFIG_FILENAME)
+#     # Specify the recipe name from your XML file that contains the desired outputs
+#     # Make sure your XML recipe includes: "timestamp", "output_int_register_0", "actual_TCP_pose", "actual_q", "actual_TCP_force"
+#     output_names, output_types = conf.get_recipe("state") # Adjust recipe name if needed
 
-    con = rtde.RTDE(ROBOT_IP, RTDE_PORT)
-except FileNotFoundError:
-    print(f"❌ Error: RTDE Configuration file not found at {CONFIG_FILENAME}")
-    sys.exit(1)
-except KeyError as e:
-    print(f"❌ Error: Recipe 'state' (or your chosen name) not found or missing fields in {CONFIG_FILENAME}. Details: {e}")
-    sys.exit(1)
-except Exception as e:
-    print(f"❌ Error setting up RTDE configuration: {e}")
-    sys.exit(1)
+#     con = rtde.RTDE(ROBOT_IP, RTDE_PORT)
+# except FileNotFoundError:
+#     print(f"❌ Error: RTDE Configuration file not found at {CONFIG_FILENAME}")
+#     sys.exit(1)
+# except KeyError as e:
+#     print(f"❌ Error: Recipe 'state' (or your chosen name) not found or missing fields in {CONFIG_FILENAME}. Details: {e}")
+#     sys.exit(1)
+# except Exception as e:
+#     print(f"❌ Error setting up RTDE configuration: {e}")
+#     sys.exit(1)
 
 
 # --- Data Log ---
 data_log = []
-rtde_running = True
+rtde_running = False
 cntrl_c = False
 
 # --- Helper Functions ---
@@ -586,6 +597,6 @@ if __name__ == "__main__":
 
 
     print("Starting robot execution and data logging...")
-    send_urscript(final_script, 0.8, note_sequence_timed) # Adjust speed scaling (0.1 to 1.0)
+    #send_urscript(final_script, 0.8, note_sequence_timed) # Adjust speed scaling (0.1 to 1.0)
 
     print("--- Script Finished ---")
