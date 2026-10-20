@@ -1,0 +1,8 @@
+*.wav
+*.aiff
+*.npy
+data/raw/
+data/proc/
+retrained/
+outputs/*_retrained/
+__pycache__/

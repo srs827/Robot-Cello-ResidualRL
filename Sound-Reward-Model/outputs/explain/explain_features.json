@@ -1,0 +1,130 @@
+{
+  "model": "ensemble12",
+  "n_clips": 327,
+  "n_good": 197,
+  "n_bad": 130,
+  "feature_correlations": [
+    {
+      "feature": "hnr_min (worst third)",
+      "spearman_r": 0.53,
+      "p": 4.393115391188118e-25
+    },
+    {
+      "feature": "hnr",
+      "spearman_r": 0.502,
+      "p": 2.651369453357635e-22
+    },
+    {
+      "feature": "energy steadiness (cv)",
+      "spearman_r": -0.473,
+      "p": 1.128017617991705e-19
+    },
+    {
+      "feature": "energy slope (end vs start)",
+      "spearman_r": 0.29,
+      "p": 9.362479428914961e-08
+    },
+    {
+      "feature": "brightness steadiness (centroid std)",
+      "spearman_r": -0.278,
+      "p": 3.269695831826461e-07
+    },
+    {
+      "feature": "envelope roughness",
+      "spearman_r": -0.268,
+      "p": 8.733793891439059e-07
+    },
+    {
+      "feature": "spectral flatness (noisiness)",
+      "spearman_r": -0.254,
+      "p": 3.3170101898731624e-06
+    },
+    {
+      "feature": "log flatness",
+      "spearman_r": -0.254,
+      "p": 3.3170101898731624e-06
+    },
+    {
+      "feature": "brightness (centroid mean)",
+      "spearman_r": 0.247,
+      "p": 6.237413129165431e-06
+    },
+    {
+      "feature": "high-frequency energy (harshness)",
+      "spearman_r": 0.131,
+      "p": 0.017764140551868465
+    },
+    {
+      "feature": "dynamics dip",
+      "spearman_r": 0.127,
+      "p": 0.021759958594864032
+    },
+    {
+      "feature": "tone consistency (hnr - hnr_min)",
+      "spearman_r": 0.029,
+      "p": 0.6073546471488827
+    }
+  ],
+  "group_means": [
+    {
+      "feature": "hnr",
+      "good_mean": 2.044,
+      "bad_mean": 1.307
+    },
+    {
+      "feature": "hnr_min (worst third)",
+      "good_mean": 1.428,
+      "bad_mean": 0.78
+    },
+    {
+      "feature": "energy steadiness (cv)",
+      "good_mean": 0.283,
+      "bad_mean": 0.424
+    },
+    {
+      "feature": "dynamics dip",
+      "good_mean": 0.4,
+      "bad_mean": 0.371
+    },
+    {
+      "feature": "energy slope (end vs start)",
+      "good_mean": -0.356,
+      "bad_mean": -0.603
+    },
+    {
+      "feature": "brightness (centroid mean)",
+      "good_mean": 0.214,
+      "bad_mean": 0.194
+    },
+    {
+      "feature": "brightness steadiness (centroid std)",
+      "good_mean": 0.066,
+      "bad_mean": 0.119
+    },
+    {
+      "feature": "spectral flatness (noisiness)",
+      "good_mean": 0.001,
+      "bad_mean": 0.005
+    },
+    {
+      "feature": "high-frequency energy (harshness)",
+      "good_mean": 0.049,
+      "bad_mean": 0.066
+    },
+    {
+      "feature": "envelope roughness",
+      "good_mean": 0.201,
+      "bad_mean": 0.232
+    },
+    {
+      "feature": "log flatness",
+      "good_mean": -3.079,
+      "bad_mean": -2.596
+    },
+    {
+      "feature": "tone consistency (hnr - hnr_min)",
+      "good_mean": 0.616,
+      "bad_mean": 0.526
+    }
+  ]
+}

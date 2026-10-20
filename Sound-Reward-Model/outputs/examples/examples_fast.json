@@ -1,0 +1,167 @@
+{
+ "good_take": {
+  "clip": "loc_record_audio_note_110_D3",
+  "status": "ok",
+  "reward": 0.724,
+  "raw": 1.108,
+  "parts": {
+   "start": 0.779,
+   "middle": 0.773,
+   "end": 0.604
+  },
+  "weakest_part": "end",
+  "aspects": [
+   {
+    "aspect": "ending",
+    "name": "ending holds up",
+    "value": -0.9502,
+    "better_than_good_takes": 0.349,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0438
+   },
+   {
+    "aspect": "tone_clean",
+    "name": "tone cleanliness (HNR)",
+    "value": 2.4615,
+    "better_than_good_takes": 0.815,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "tone_worst_part",
+    "name": "cleanliness of the worst part",
+    "value": 1.7966,
+    "better_than_good_takes": 0.917,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "volume_steady",
+    "name": "volume steadiness",
+    "value": 0.4663,
+    "better_than_good_takes": 0.604,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "brightness_steady",
+    "name": "tone colour steadiness",
+    "value": 0.1295,
+    "better_than_good_takes": 0.711,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "noise",
+    "name": "noisiness",
+    "value": 0.0004,
+    "better_than_good_takes": 0.898,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   }
+  ],
+  "improve": [],
+  "summary": "reward 0.72; weakest part: end; all aspects are within the range of good takes"
+ },
+ "bad_take": {
+  "clip": "loc_record_audio_note_037_C2",
+  "status": "ok",
+  "reward": 0.2299,
+  "raw": -1.5243,
+  "parts": {
+   "start": 0.075,
+   "middle": 0.379,
+   "end": 0.33
+  },
+  "weakest_part": "start",
+  "aspects": [
+   {
+    "aspect": "tone_clean",
+    "name": "tone cleanliness (HNR)",
+    "value": 1.1299,
+    "better_than_good_takes": 0.013,
+    "status": "problem",
+    "advice": "cleaner tone: less scratch / noise in the sound",
+    "impact": 0.2435
+   },
+   {
+    "aspect": "tone_worst_part",
+    "name": "cleanliness of the worst part",
+    "value": 0.6145,
+    "better_than_good_takes": 0.102,
+    "status": "weak",
+    "advice": "one part of the note is scratchy: keep the tone clean through the whole note",
+    "impact": 0.2112
+   },
+   {
+    "aspect": "ending",
+    "name": "ending holds up",
+    "value": -0.7094,
+    "better_than_good_takes": 0.432,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0196
+   },
+   {
+    "aspect": "volume_steady",
+    "name": "volume steadiness",
+    "value": 0.5094,
+    "better_than_good_takes": 0.534,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "brightness_steady",
+    "name": "tone colour steadiness",
+    "value": 0.2023,
+    "better_than_good_takes": 0.513,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   },
+   {
+    "aspect": "noise",
+    "name": "noisiness",
+    "value": 0.0019,
+    "better_than_good_takes": 0.625,
+    "status": "ok",
+    "advice": "",
+    "impact": 0.0
+   }
+  ],
+  "improve": [
+   "cleaner tone: less scratch / noise in the sound",
+   "one part of the note is scratchy: keep the tone clean through the whole note"
+  ],
+  "summary": "reward 0.23; weakest part: start; main issue: tone cleanliness (HNR) -> cleaner tone: less scratch / noise in the sound"
+ },
+ "compare_good_vs_bad": {
+  "status": "ok",
+  "better": "a",
+  "p_a_better": 0.933,
+  "reward_a": 0.724,
+  "reward_b": 0.2299,
+  "why": [
+   {
+    "aspect": "cleanliness of the worst part",
+    "gap": 0.815
+   },
+   {
+    "aspect": "tone cleanliness (HNR)",
+    "gap": 0.802
+   },
+   {
+    "aspect": "noisiness",
+    "gap": 0.273
+   }
+  ],
+  "summary": "take a is better (p=0.93), mainly: cleanliness of the worst part, tone cleanliness (HNR), noisiness"
+ }
+}

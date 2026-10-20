@@ -1,0 +1,21 @@
+{
+  "model": "ensemble12",
+  "n_clips": 160,
+  "position_contribution": {
+    "first": {
+      "n": 160,
+      "spearman_with_full": 0.922,
+      "p": 5.3855725365047464e-67
+    },
+    "middle": {
+      "n": 95,
+      "spearman_with_full": 0.923,
+      "p": 2.348308396976582e-40
+    },
+    "last": {
+      "n": 160,
+      "spearman_with_full": 0.883,
+      "p": 6.967959279879801e-54
+    }
+  }
+}
