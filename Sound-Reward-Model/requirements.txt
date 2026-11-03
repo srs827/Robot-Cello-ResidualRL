@@ -7,3 +7,4 @@ soundfile==0.14.0
 scikit-learn==1.7.2
 requests==2.34.2
 remotezip==0.12.6
+pretty_midi==0.2.11.post0

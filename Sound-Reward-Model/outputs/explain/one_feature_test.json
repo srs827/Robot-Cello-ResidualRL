@@ -1,0 +1,229 @@
+{
+ "model": "ensemble12",
+ "n_clips": 75,
+ "original_mean_reward": 0.6368,
+ "tests": {
+  "noise": {
+   "description": "White noise at SNR 30 / 20 / 10 / 0 dB.",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.6288,
+     "mean_drop": 0.008,
+     "share_lower": 0.333,
+     "target_aspect": "tone_clean",
+     "share_flagged": 0.133,
+     "mean_feature_change": -0.0681
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.5592,
+     "mean_drop": 0.0776,
+     "share_lower": 0.96,
+     "target_aspect": "tone_clean",
+     "share_flagged": 0.88,
+     "mean_feature_change": -0.4118
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.3136,
+     "mean_drop": 0.3232,
+     "share_lower": 1.0,
+     "target_aspect": "tone_clean",
+     "share_flagged": 1.0,
+     "mean_feature_change": -1.2027
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.1393,
+     "mean_drop": 0.4975,
+     "share_lower": 1.0,
+     "target_aspect": "tone_clean",
+     "share_flagged": 1.0,
+     "mean_feature_change": -2.1711
+    }
+   ]
+  },
+  "volume_wobble": {
+   "description": "Random (non-periodic) loudness changes of depth 15 / 30 / 50 / 75 %.",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.6318,
+     "mean_drop": 0.005,
+     "share_lower": 0.227,
+     "target_aspect": "volume_steady",
+     "share_flagged": 0.027,
+     "mean_feature_change": 0.0106
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.6194,
+     "mean_drop": 0.0174,
+     "share_lower": 0.653,
+     "target_aspect": "volume_steady",
+     "share_flagged": 0.027,
+     "mean_feature_change": 0.0307
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.5917,
+     "mean_drop": 0.0451,
+     "share_lower": 0.867,
+     "target_aspect": "volume_steady",
+     "share_flagged": 0.027,
+     "mean_feature_change": 0.0655
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.4848,
+     "mean_drop": 0.152,
+     "share_lower": 0.96,
+     "target_aspect": "volume_steady",
+     "share_flagged": 0.027,
+     "mean_feature_change": 0.1647
+    }
+   ]
+  },
+  "fading_end": {
+   "description": "The last 40 % of the note fades to 70 / 50 / 30 / 10 % volume.",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.6421,
+     "mean_drop": -0.0053,
+     "share_lower": 0.053,
+     "target_aspect": "ending",
+     "share_flagged": 0.107,
+     "mean_feature_change": -0.1834
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.6419,
+     "mean_drop": -0.0051,
+     "share_lower": 0.12,
+     "target_aspect": "ending",
+     "share_flagged": 0.133,
+     "mean_feature_change": -0.3275
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.6364,
+     "mean_drop": 0.0004,
+     "share_lower": 0.24,
+     "target_aspect": "ending",
+     "share_flagged": 0.133,
+     "mean_feature_change": -0.4962
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.6205,
+     "mean_drop": 0.0163,
+     "share_lower": 0.413,
+     "target_aspect": "ending",
+     "share_flagged": 0.133,
+     "mean_feature_change": -0.6993
+    }
+   ]
+  },
+  "colour_wobble": {
+   "description": "Tone colour swings between brighter and darker 3 times per second (EQ tilt 3 / 6 / 9 / 12 dB per octave).",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.4202,
+     "mean_drop": 0.2166,
+     "share_lower": 1.0,
+     "target_aspect": "brightness_steady",
+     "share_flagged": 0.173,
+     "mean_feature_change": 0.1823
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.1167,
+     "mean_drop": 0.5202,
+     "share_lower": 1.0,
+     "target_aspect": "brightness_steady",
+     "share_flagged": 0.773,
+     "mean_feature_change": 0.3808
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.0371,
+     "mean_drop": 0.5997,
+     "share_lower": 1.0,
+     "target_aspect": "brightness_steady",
+     "share_flagged": 0.693,
+     "mean_feature_change": 0.4909
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.025,
+     "mean_drop": 0.6119,
+     "share_lower": 1.0,
+     "target_aspect": "brightness_steady",
+     "share_flagged": 0.16,
+     "mean_feature_change": 0.2709
+    }
+   ]
+  },
+  "control_quieter": {
+   "description": "Control: only quieter (-3 / -6 / -9 / -12 dB); should not change the score.",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.6368,
+     "mean_drop": 0.0,
+     "share_lower": 0.0
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.6368,
+     "mean_drop": 0.0,
+     "share_lower": 0.0
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.6368,
+     "mean_drop": 0.0,
+     "share_lower": 0.0
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.6368,
+     "mean_drop": 0.0,
+     "share_lower": 0.0
+    }
+   ]
+  },
+  "control_eq": {
+   "description": "Control: fixed EQ tilt of +1 / +2 / +3 / +4 dB per octave; should barely change the score.",
+   "levels": [
+    {
+     "level": 1,
+     "mean_reward": 0.6299,
+     "mean_drop": 0.0069,
+     "share_lower": 0.24
+    },
+    {
+     "level": 2,
+     "mean_reward": 0.6166,
+     "mean_drop": 0.0202,
+     "share_lower": 0.72
+    },
+    {
+     "level": 3,
+     "mean_reward": 0.5935,
+     "mean_drop": 0.0433,
+     "share_lower": 0.853
+    },
+    {
+     "level": 4,
+     "mean_reward": 0.5588,
+     "mean_drop": 0.078,
+     "share_lower": 0.987
+    }
+   ]
+  }
+ }
+}

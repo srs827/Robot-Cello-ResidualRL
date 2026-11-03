@@ -44,6 +44,20 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
   ```
   From the command line: `python reward/reward.py take.wav` (explain) or `python reward/reward.py a.wav b.wav` (compare).
 
+## reward/piece_reward.py  ← score a whole song note by note
+- **Input:** a recording of a whole piece (numpy array or wav / mp3 file) plus where the notes are: the MIDI score (`--midi`), the robot run log csv (`--log`, uses `time_elapsed_sec`, `current_note_number`, `remaining_duration_sec`), or a list of `(start_s, end_s, midi_pitch)`. With none of them it cuts notes by detected pitch (less exact: repeated notes merge).
+- **What it does:** finds every note (MIDI: lines the score up with the recording by pitch and splits repeated notes at bow changes), then gives each note a reward and its main issue (same aspects as `explain()`, without the "ending" one, which the cause test showed the model does not really use) and how far its pitch is from the score in cents.
+- **Output:** a dict: `reward` (average over notes), `share_good` (share of notes ≥ 0.5), `issue_counts`, `worst_notes`, and `notes` = one row per note (`start`, `end`, `note`, `reward`, `issue`, `cents_off`).
+- **How to run:**
+  ```python
+  import sys; sys.path.insert(0, "path/to/reward")
+  from piece_reward import PieceReward, notes_from_log
+  R = PieceReward("fast")
+  res = R.piece(audio, sr=22050, midi="song.mid")                                  # with the score
+  res = R.piece(audio, sr=22050, notes=notes_from_log("run.csv"), check_pitch=False)  # in the RL loop, ~80 ms per note
+  ```
+  From the command line: `python reward/piece_reward.py song.mp3 --midi song.mid --out result.json`. Needs `pretty_midi` only for `--midi`.
+
 ## reward/build_reference.py
 - **Input:** the trained models in `checkpoints/` and the built dataset (`data/proc/`).
 - **What it does:** scores the 384 good reference takes with every model and stores their acoustic features; `reward.py` needs this to turn raw scores into 0–1 and to compare aspects.
@@ -133,6 +147,18 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 - **Output:** `outputs/explain/explain_position.json`
 - **How to run:** `python analysis/explain_position.py`
 
+## analysis/one_feature_test.py
+- **Input:** a model, the built dataset.
+- **What it does:** cause test: takes 75 held-out good takes, changes only one thing at 4 strengths (added noise, volume wobble, fading end, tone-colour wobble, plus two controls: quieter and fixed EQ) and measures how much the reward drops and whether `explain()` flags the matching aspect.
+- **Output:** `outputs/explain/one_feature_test.json`
+- **How to run:** `python analysis/one_feature_test.py`
+
+## analysis/score_pieces.py
+- **Input:** recordings with a MIDI file of the same name (default: the robot recordings in `../lol/Robot/` and scores in `../lol/Midi/` of this repo).
+- **What it does:** runs `piece_reward.py` on every song: score per note, per song average, main issues, pitch per note.
+- **Output:** `outputs/pieces/pieces.json`
+- **How to run:** `python analysis/score_pieces.py` (or `--audio_dir ... --midi_dir ...`; about 0.5 s of compute per second of audio on CPU, mostly pitch detection).
+
 ## analysis/example_outputs.py
 - **Input:** a model, the built dataset.
 - **What it does:** runs `explain()` and `compare()` on one good and one bad real take.
@@ -149,6 +175,6 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 
 ## outputs/
 - **Input:** –
-- **What it does:** results of the shipped models: `evaluation/` (summary.csv, evaluation.json, and `all_models_original_run.md` = every model from the original runs incl. the old RL reward), `explain/` (feature and position analysis), `examples/` (explain / compare outputs for a good and a bad take).
+- **What it does:** results of the shipped models: `evaluation/` (summary.csv, evaluation.json, and `all_models_original_run.md` = every model from the original runs incl. the old RL reward), `explain/` (feature and position analysis), `examples/` (explain / compare outputs for a good and a bad take), `pieces/` (note-by-note scores of 5 robot songs).
 - **Output:** –
 - **How to run:** –
