@@ -17,6 +17,9 @@
     5,
     60
    ],
+   "slower_than_score": 2.6,
+   "timing_dev_median": 0.035,
+   "share_on_time": 0.845,
    "notes": [
     {
      "index": 0,
@@ -26,7 +29,9 @@
      "reward": 0.5526,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 0.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.107
     },
     {
      "index": 1,
@@ -36,7 +41,9 @@
      "reward": 0.318,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 0.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.054
     },
     {
      "index": 2,
@@ -46,7 +53,9 @@
      "reward": 0.481,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 1.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 3,
@@ -56,7 +65,9 @@
      "reward": 0.3516,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 1.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.054
     },
     {
      "index": 4,
@@ -66,7 +77,9 @@
      "reward": 0.0663,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 2.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 5,
@@ -76,7 +89,9 @@
      "reward": 0.074,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 2.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.072
     },
     {
      "index": 6,
@@ -86,7 +101,9 @@
      "reward": 0.0712,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 2.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 7,
@@ -96,7 +113,9 @@
      "reward": 0.0439,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 2.75,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 8,
@@ -106,7 +125,9 @@
      "reward": 0.5075,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 9,
@@ -116,7 +137,9 @@
      "reward": 0.3469,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.768
     },
     {
      "index": 10,
@@ -126,7 +149,9 @@
      "reward": 0.5965,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 4.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 11,
@@ -136,7 +161,9 @@
      "reward": 0.5123,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 4.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 12,
@@ -146,7 +173,9 @@
      "reward": 0.5165,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 5.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 13,
@@ -156,7 +185,9 @@
      "reward": 0.5564,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 5.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 14,
@@ -166,7 +197,9 @@
      "reward": 0.3637,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 15,
@@ -176,7 +209,9 @@
      "reward": 0.2841,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 6.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 16,
@@ -186,7 +221,9 @@
      "reward": 0.3149,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 17,
@@ -196,7 +233,9 @@
      "reward": 0.2723,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 18,
@@ -206,7 +245,9 @@
      "reward": 0.6723,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 7.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.572
     },
     {
      "index": 19,
@@ -216,7 +257,9 @@
      "reward": 0.5409,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.089
     },
     {
      "index": 20,
@@ -226,7 +269,9 @@
      "reward": 0.4856,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 21,
@@ -236,7 +281,9 @@
      "reward": 0.561,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 22,
@@ -246,7 +293,9 @@
      "reward": 0.5505,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 23,
@@ -256,7 +305,9 @@
      "reward": 0.2661,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 24,
@@ -266,7 +317,9 @@
      "reward": 0.2613,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 25,
@@ -276,7 +329,9 @@
      "reward": 0.2714,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 26,
@@ -286,7 +341,9 @@
      "reward": 0.2604,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 27,
@@ -296,7 +353,9 @@
      "reward": 0.5451,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 11.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 28,
@@ -306,7 +365,9 @@
      "reward": 0.5312,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 11.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.215
     },
     {
      "index": 29,
@@ -316,7 +377,9 @@
      "reward": 0.5419,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 12.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 30,
@@ -326,7 +389,9 @@
      "reward": 0.5637,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 12.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.018
     },
     {
      "index": 31,
@@ -336,7 +401,9 @@
      "reward": 0.5147,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 13.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 32,
@@ -346,7 +413,9 @@
      "reward": 0.5868,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 13.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 33,
@@ -356,7 +425,9 @@
      "reward": 0.3758,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 14.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.037
     },
     {
      "index": 34,
@@ -366,7 +437,9 @@
      "reward": 0.379,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 14.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 35,
@@ -376,7 +449,9 @@
      "reward": 0.3873,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 14.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 36,
@@ -386,7 +461,9 @@
      "reward": 0.3342,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 14.75,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 37,
@@ -396,7 +473,9 @@
      "reward": 0.6628,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 15.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.357
     },
     {
      "index": 38,
@@ -406,7 +485,9 @@
      "reward": 0.5795,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 16.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 39,
@@ -416,7 +497,9 @@
      "reward": 0.4557,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 16.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 40,
@@ -426,7 +509,9 @@
      "reward": 0.4732,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 17.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.947
     },
     {
      "index": 41,
@@ -436,7 +521,9 @@
      "reward": 0.5473,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 17.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.643
     },
     {
      "index": 42,
@@ -446,7 +533,9 @@
      "reward": 0.5544,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 43,
@@ -456,7 +545,9 @@
      "reward": 0.4669,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 44,
@@ -466,7 +557,9 @@
      "reward": 0.5267,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.929
     },
     {
      "index": 45,
@@ -476,7 +569,9 @@
      "reward": 0.5553,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 19.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.697
     },
     {
      "index": 46,
@@ -486,7 +581,9 @@
      "reward": 0.5902,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 20.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 47,
@@ -496,7 +593,9 @@
      "reward": 0.4579,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 20.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.089
     },
     {
      "index": 48,
@@ -506,7 +605,9 @@
      "reward": 0.4961,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 21.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.001
     },
     {
      "index": 49,
@@ -516,7 +617,9 @@
      "reward": 0.469,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 21.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 50,
@@ -526,7 +629,9 @@
      "reward": 0.5427,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 22.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.84
     },
     {
      "index": 51,
@@ -536,7 +641,9 @@
      "reward": 0.5531,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 22.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 52,
@@ -546,7 +653,9 @@
      "reward": 0.6778,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 23.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.545
     },
     {
      "index": 53,
@@ -556,7 +665,9 @@
      "reward": 0.5757,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 24.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 54,
@@ -566,7 +677,9 @@
      "reward": 0.5236,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 24.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 55,
@@ -576,7 +689,9 @@
      "reward": 0.5561,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 25.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 56,
@@ -586,7 +701,9 @@
      "reward": 0.5844,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 25.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 57,
@@ -596,7 +713,9 @@
      "reward": 0.2791,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 58,
@@ -606,7 +725,9 @@
      "reward": 0.3049,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 59,
@@ -616,7 +737,9 @@
      "reward": 0.2814,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 60,
@@ -626,7 +749,9 @@
      "reward": 0.2544,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 61,
@@ -636,7 +761,9 @@
      "reward": 0.4991,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.036
     },
     {
      "index": 62,
@@ -646,7 +773,9 @@
      "reward": 0.4717,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.197
     },
     {
      "index": 63,
@@ -656,7 +785,9 @@
      "reward": 0.55,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 28.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.053
     },
     {
      "index": 64,
@@ -666,7 +797,9 @@
      "reward": 0.5788,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 28.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 65,
@@ -676,7 +809,9 @@
      "reward": 0.5409,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 29.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 66,
@@ -686,7 +821,9 @@
      "reward": 0.5873,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 29.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.018
     },
     {
      "index": 67,
@@ -696,7 +833,9 @@
      "reward": 0.4136,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 30.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.035
     },
     {
      "index": 68,
@@ -706,7 +845,9 @@
      "reward": 0.3181,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 30.25,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 69,
@@ -716,7 +857,9 @@
      "reward": 0.366,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 30.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.037
     },
     {
      "index": 70,
@@ -726,7 +869,9 @@
      "reward": 0.3737,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 30.75,
+     "cents_off": 20.6,
+     "timing_dev": -0.072
     },
     {
      "index": 71,
@@ -736,11 +881,22 @@
      "reward": 0.5954,
      "issue": null,
      "issue_name": null,
+     "score_start": 31.0,
      "cents_off": 10.6
     }
    ],
    "seconds_audio": 95.5,
-   "seconds_compute": 44.7
+   "seconds_compute": 37.7,
+   "timing_by_next_note": {
+    "same_note_next": {
+     "n": 60,
+     "timing_dev_median": 0.035
+    },
+    "string_change_next": {
+     "n": 11,
+     "timing_dev_median": 0.768
+    }
+   }
   },
   "long-long-ago": {
    "status": "ok",
@@ -759,6 +915,9 @@
     49,
     46
    ],
+   "slower_than_score": 3.018,
+   "timing_dev_median": 0.492,
+   "share_on_time": 0.31,
    "notes": [
     {
      "index": 0,
@@ -768,7 +927,9 @@
      "reward": 0.1456,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 0.0,
+     "cents_off": 70.6,
+     "timing_dev": -0.631
     },
     {
      "index": 1,
@@ -778,7 +939,9 @@
      "reward": 0.2468,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 75.6
+     "score_start": 0.5,
+     "cents_off": 75.6,
+     "timing_dev": -0.569
     },
     {
      "index": 2,
@@ -788,7 +951,9 @@
      "reward": 0.2286,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 0.75,
+     "cents_off": 70.6,
+     "timing_dev": -0.569
     },
     {
      "index": 3,
@@ -798,7 +963,9 @@
      "reward": 0.1796,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 75.6
+     "score_start": 1.0,
+     "cents_off": 75.6,
+     "timing_dev": -0.569
     },
     {
      "index": 4,
@@ -808,7 +975,9 @@
      "reward": 0.1909,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 1.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.539
     },
     {
      "index": 5,
@@ -818,7 +987,9 @@
      "reward": 0.2491,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 1.75,
+     "cents_off": 50.6,
+     "timing_dev": 1.216
     },
     {
      "index": 6,
@@ -828,7 +999,9 @@
      "reward": 0.4756,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 2.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.03
     },
     {
      "index": 7,
@@ -838,7 +1011,9 @@
      "reward": 0.2826,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 2.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.169
     },
     {
      "index": 8,
@@ -848,7 +1023,9 @@
      "reward": 0.3518,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 2.75,
+     "cents_off": 20.6,
+     "timing_dev": 1.277
     },
     {
      "index": 9,
@@ -858,7 +1035,9 @@
      "reward": 0.3872,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 3.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.377
     },
     {
      "index": 10,
@@ -868,7 +1047,9 @@
      "reward": 0.4087,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 4.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.492
     },
     {
      "index": 11,
@@ -878,7 +1059,9 @@
      "reward": 0.1679,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 4.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.294
     },
     {
      "index": 12,
@@ -888,7 +1071,9 @@
      "reward": 0.1682,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 4.75,
+     "cents_off": 60.6,
+     "timing_dev": -0.292
     },
     {
      "index": 13,
@@ -898,7 +1083,9 @@
      "reward": 0.1728,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 55.6
+     "score_start": 5.0,
+     "cents_off": 55.6,
+     "timing_dev": -0.677
     },
     {
      "index": 14,
@@ -908,7 +1095,9 @@
      "reward": 0.3532,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 6.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.093
     },
     {
      "index": 15,
@@ -918,7 +1107,9 @@
      "reward": 0.4501,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 6.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.693
     },
     {
      "index": 16,
@@ -928,7 +1119,9 @@
      "reward": 0.2458,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 6.75,
+     "cents_off": 60.6,
+     "timing_dev": -0.139
     },
     {
      "index": 17,
@@ -938,7 +1131,9 @@
      "reward": 0.2063,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 7.0,
+     "cents_off": 60.6,
+     "timing_dev": -0.8
     },
     {
      "index": 18,
@@ -948,7 +1143,9 @@
      "reward": 0.4102,
      "issue": null,
      "issue_name": null,
-     "cents_off": 60.6
+     "score_start": 8.0,
+     "cents_off": 60.6,
+     "timing_dev": 0.738
     },
     {
      "index": 19,
@@ -958,7 +1155,9 @@
      "reward": 0.2348,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 8.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.632
     },
     {
      "index": 20,
@@ -968,7 +1167,9 @@
      "reward": 0.2209,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 8.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.107
     },
     {
      "index": 21,
@@ -978,7 +1179,9 @@
      "reward": 0.1038,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 9.0,
+     "cents_off": 60.6,
+     "timing_dev": -0.569
     },
     {
      "index": 22,
@@ -988,7 +1191,9 @@
      "reward": 0.2494,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 9.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.723
     },
     {
      "index": 23,
@@ -998,7 +1203,9 @@
      "reward": 0.1592,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 9.75,
+     "cents_off": 50.6,
+     "timing_dev": 1.954
     },
     {
      "index": 24,
@@ -1008,7 +1215,9 @@
      "reward": 0.5408,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.169
     },
     {
      "index": 25,
@@ -1018,7 +1227,9 @@
      "reward": 0.3027,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 10.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.169
     },
     {
      "index": 26,
@@ -1028,7 +1239,9 @@
      "reward": 0.3042,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 10.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.247
     },
     {
      "index": 27,
@@ -1038,7 +1251,9 @@
      "reward": 0.2395,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 11.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.354
     },
     {
      "index": 28,
@@ -1048,7 +1263,9 @@
      "reward": 0.6011,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 12.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.477
     },
     {
      "index": 29,
@@ -1058,7 +1275,9 @@
      "reward": 0.3086,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 12.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.046
     },
     {
      "index": 30,
@@ -1068,7 +1287,9 @@
      "reward": 0.2882,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 12.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.169
     },
     {
      "index": 31,
@@ -1078,7 +1299,9 @@
      "reward": 0.2575,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 13.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.554
     },
     {
      "index": 32,
@@ -1088,7 +1311,9 @@
      "reward": 0.5341,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 13.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.708
     },
     {
      "index": 33,
@@ -1098,7 +1323,9 @@
      "reward": 0.2729,
      "issue": "volume_steady",
      "issue_name": "volume steadiness",
-     "cents_off": 50.6
+     "score_start": 13.75,
+     "cents_off": 50.6,
+     "timing_dev": 2.893
     },
     {
      "index": 34,
@@ -1108,7 +1335,9 @@
      "reward": 0.49,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 14.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.619
     },
     {
      "index": 35,
@@ -1118,7 +1347,9 @@
      "reward": 0.5628,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 16.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.477
     },
     {
      "index": 36,
@@ -1128,7 +1359,9 @@
      "reward": 0.1582,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 16.5,
+     "cents_off": 60.6,
+     "timing_dev": 0.539
     },
     {
      "index": 37,
@@ -1138,7 +1371,9 @@
      "reward": 0.2272,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 16.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.108
     },
     {
      "index": 38,
@@ -1148,7 +1383,9 @@
      "reward": 0.2929,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 17.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.001
     },
     {
      "index": 39,
@@ -1158,7 +1395,9 @@
      "reward": 0.1336,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": -69.4
+     "score_start": 17.5,
+     "cents_off": -69.4,
+     "timing_dev": 1.492
     },
     {
      "index": 40,
@@ -1168,7 +1407,9 @@
      "reward": 0.1559,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 17.75,
+     "cents_off": 20.6,
+     "timing_dev": 1.309
     },
     {
      "index": 41,
@@ -1178,7 +1419,9 @@
      "reward": 0.354,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 18.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.015
     },
     {
      "index": 42,
@@ -1188,7 +1431,9 @@
      "reward": 0.1658,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 18.5,
+     "cents_off": 60.6,
+     "timing_dev": -0.169
     },
     {
      "index": 43,
@@ -1198,7 +1443,9 @@
      "reward": 0.3193,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 18.75,
+     "cents_off": 50.6,
+     "timing_dev": 2.047
     },
     {
      "index": 44,
@@ -1208,7 +1455,9 @@
      "reward": 0.3394,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 19.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.238
     },
     {
      "index": 45,
@@ -1218,7 +1467,9 @@
      "reward": 0.5579,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 20.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.492
     },
     {
      "index": 46,
@@ -1228,7 +1479,9 @@
      "reward": 0.1439,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 20.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.539
     },
     {
      "index": 47,
@@ -1238,7 +1491,9 @@
      "reward": 0.2569,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 20.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.139
     },
     {
      "index": 48,
@@ -1248,7 +1503,9 @@
      "reward": 0.3293,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 21.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.016
     },
     {
      "index": 49,
@@ -1258,7 +1515,9 @@
      "reward": 0.14,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 21.5,
+     "cents_off": 20.6,
+     "timing_dev": 1.524
     },
     {
      "index": 50,
@@ -1268,7 +1527,9 @@
      "reward": 0.1659,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 21.75,
+     "cents_off": 20.6,
+     "timing_dev": 1.277
     },
     {
      "index": 51,
@@ -1278,7 +1539,9 @@
      "reward": 0.2365,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 22.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.0
     },
     {
      "index": 52,
@@ -1288,7 +1551,9 @@
      "reward": 0.2446,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 22.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.23
     },
     {
      "index": 53,
@@ -1298,7 +1563,9 @@
      "reward": 0.2555,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 22.75,
+     "cents_off": 60.6,
+     "timing_dev": -0.092
     },
     {
      "index": 54,
@@ -1308,7 +1575,9 @@
      "reward": 0.4136,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 23.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.442
     },
     {
      "index": 55,
@@ -1318,7 +1587,9 @@
      "reward": 0.4284,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 24.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.384
     },
     {
      "index": 56,
@@ -1328,7 +1599,9 @@
      "reward": 0.4747,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 24.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.601
     },
     {
      "index": 57,
@@ -1338,7 +1611,9 @@
      "reward": 0.2078,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 24.75,
+     "cents_off": 60.6,
+     "timing_dev": 2.446
     },
     {
      "index": 58,
@@ -1348,7 +1623,9 @@
      "reward": 0.2176,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 25.0,
+     "cents_off": 60.6,
+     "timing_dev": -0.584
     },
     {
      "index": 59,
@@ -1358,7 +1635,9 @@
      "reward": 0.2179,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 25.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.107
     },
     {
      "index": 60,
@@ -1368,7 +1647,9 @@
      "reward": 0.1513,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 65.6
+     "score_start": 25.75,
+     "cents_off": 65.6,
+     "timing_dev": 0.846
     },
     {
      "index": 61,
@@ -1378,7 +1659,9 @@
      "reward": 0.5149,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 26.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.169
     },
     {
      "index": 62,
@@ -1388,7 +1671,9 @@
      "reward": 0.257,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 26.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.139
     },
     {
      "index": 63,
@@ -1398,7 +1683,9 @@
      "reward": 0.2538,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 26.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.277
     },
     {
      "index": 64,
@@ -1408,7 +1695,9 @@
      "reward": 0.3071,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 27.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.477
     },
     {
      "index": 65,
@@ -1418,7 +1707,9 @@
      "reward": 0.441,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 28.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.477
     },
     {
      "index": 66,
@@ -1428,7 +1719,9 @@
      "reward": 0.1716,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 28.5,
+     "cents_off": 60.6,
+     "timing_dev": -0.446
     },
     {
      "index": 67,
@@ -1438,7 +1731,9 @@
      "reward": 0.1012,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 28.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.015
     },
     {
      "index": 68,
@@ -1448,7 +1743,9 @@
      "reward": 0.2146,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 29.0,
+     "cents_off": 60.6,
+     "timing_dev": -0.6
     },
     {
      "index": 69,
@@ -1458,7 +1755,9 @@
      "reward": 0.3349,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 29.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.755
     },
     {
      "index": 70,
@@ -1468,7 +1767,9 @@
      "reward": 0.2645,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 29.75,
+     "cents_off": 50.6,
+     "timing_dev": -0.139
     },
     {
      "index": 71,
@@ -1478,11 +1779,22 @@
      "reward": 0.1785,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
+     "score_start": 30.0,
      "cents_off": 60.6
     }
    ],
    "seconds_audio": 102.7,
-   "seconds_compute": 51.0
+   "seconds_compute": 20.2,
+   "timing_by_next_note": {
+    "same_note_next": {
+     "n": 51,
+     "timing_dev_median": 0.446
+    },
+    "string_change_next": {
+     "n": 20,
+     "timing_dev_median": 0.492
+    }
+   }
   },
   "minuet": {
    "status": "ok",
@@ -1500,6 +1812,9 @@
     83,
     137
    ],
+   "slower_than_score": 2.6,
+   "timing_dev_median": 0.535,
+   "share_on_time": 0.384,
    "notes": [
     {
      "index": 0,
@@ -1509,7 +1824,9 @@
      "reward": 0.0978,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 0.0,
+     "cents_off": 60.6,
+     "timing_dev": 1.714
     },
     {
      "index": 1,
@@ -1519,7 +1836,9 @@
      "reward": 0.2767,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 0.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 2,
@@ -1529,7 +1848,9 @@
      "reward": 0.2572,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 0.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.571
     },
     {
      "index": 3,
@@ -1539,7 +1860,9 @@
      "reward": 0.1743,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 0.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 4,
@@ -1549,7 +1872,9 @@
      "reward": 0.1457,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 1.0,
+     "cents_off": null,
+     "timing_dev": 3.0
     },
     {
      "index": 5,
@@ -1559,7 +1884,9 @@
      "reward": 0.2326,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 1.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 6,
@@ -1569,7 +1896,9 @@
      "reward": 0.4485,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 1.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.0
     },
     {
      "index": 7,
@@ -1579,7 +1908,9 @@
      "reward": 0.2409,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 40.6
+     "score_start": 2.0,
+     "cents_off": 40.6,
+     "timing_dev": 0.286
     },
     {
      "index": 8,
@@ -1589,7 +1920,9 @@
      "reward": 0.3175,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 2.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.035
     },
     {
      "index": 9,
@@ -1599,7 +1932,9 @@
      "reward": 0.2137,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 3.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.643
     },
     {
      "index": 10,
@@ -1609,7 +1944,9 @@
      "reward": 0.285,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 3.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 11,
@@ -1619,7 +1956,9 @@
      "reward": 0.2794,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.714
     },
     {
      "index": 12,
@@ -1629,7 +1968,9 @@
      "reward": 0.2569,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.465
     },
     {
      "index": 13,
@@ -1639,7 +1980,9 @@
      "reward": 0.3242,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 4.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.68
     },
     {
      "index": 14,
@@ -1649,7 +1992,9 @@
      "reward": 0.373,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 4.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 15,
@@ -1659,7 +2004,9 @@
      "reward": 0.3142,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 4.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.001
     },
     {
      "index": 16,
@@ -1669,7 +2016,9 @@
      "reward": 0.2005,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 5.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.518
     },
     {
      "index": 17,
@@ -1679,7 +2028,9 @@
      "reward": 0.3582,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 5.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.375
     },
     {
      "index": 18,
@@ -1689,7 +2040,9 @@
      "reward": 0.4933,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 19,
@@ -1699,7 +2052,9 @@
      "reward": 0.3399,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 20,
@@ -1709,7 +2064,9 @@
      "reward": 0.2441,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 7.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 21,
@@ -1719,7 +2076,9 @@
      "reward": 0.1718,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 7.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.572
     },
     {
      "index": 22,
@@ -1729,7 +2088,9 @@
      "reward": 0.5603,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 7.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.089
     },
     {
      "index": 23,
@@ -1739,7 +2100,9 @@
      "reward": 0.4835,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 24,
@@ -1749,7 +2112,9 @@
      "reward": 0.2667,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 8.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 25,
@@ -1759,7 +2124,9 @@
      "reward": 0.2146,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 8.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.429
     },
     {
      "index": 26,
@@ -1769,7 +2136,9 @@
      "reward": 0.6413,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 9.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.125
     },
     {
      "index": 27,
@@ -1779,7 +2148,9 @@
      "reward": 0.3154,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 9.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 28,
@@ -1789,7 +2160,9 @@
      "reward": 0.3308,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 29,
@@ -1799,7 +2172,9 @@
      "reward": 0.3439,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 10.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 30,
@@ -1809,7 +2184,9 @@
      "reward": 0.3595,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 31,
@@ -1819,7 +2196,9 @@
      "reward": 0.4395,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 10.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.262
     },
     {
      "index": 32,
@@ -1829,7 +2208,9 @@
      "reward": 0.2078,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 12.0,
+     "cents_off": 50.6,
+     "timing_dev": 3.18
     },
     {
      "index": 33,
@@ -1839,7 +2220,9 @@
      "reward": 0.3607,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 34,
@@ -1849,7 +2232,9 @@
      "reward": 0.3084,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.5,
+     "cents_off": 10.6,
+     "timing_dev": 2.215
     },
     {
      "index": 35,
@@ -1859,7 +2244,9 @@
      "reward": 0.2834,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.358
     },
     {
      "index": 36,
@@ -1869,7 +2256,9 @@
      "reward": 0.325,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 30.6
+     "score_start": 13.0,
+     "cents_off": 30.6,
+     "timing_dev": 2.357
     },
     {
      "index": 37,
@@ -1879,7 +2268,9 @@
      "reward": 0.2436,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 13.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 38,
@@ -1889,7 +2280,9 @@
      "reward": 0.4614,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 13.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.465
     },
     {
      "index": 39,
@@ -1899,7 +2292,9 @@
      "reward": 0.4466,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 14.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.25
     },
     {
      "index": 40,
@@ -1909,7 +2304,9 @@
      "reward": 0.5234,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 14.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.0
     },
     {
      "index": 41,
@@ -1919,7 +2316,9 @@
      "reward": 0.3463,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 15.0,
+     "cents_off": 50.6,
+     "timing_dev": 4.502
     },
     {
      "index": 42,
@@ -1929,7 +2328,9 @@
      "reward": 0.3863,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 15.25,
+     "cents_off": 20.6,
+     "timing_dev": -0.143
     },
     {
      "index": 43,
@@ -1939,7 +2340,9 @@
      "reward": 0.3102,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 15.5,
+     "cents_off": 20.6,
+     "timing_dev": 2.429
     },
     {
      "index": 44,
@@ -1949,7 +2352,9 @@
      "reward": 0.3133,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 15.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.715
     },
     {
      "index": 45,
@@ -1959,7 +2364,9 @@
      "reward": 0.3555,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 16.0,
+     "cents_off": 20.6,
+     "timing_dev": 2.288
     },
     {
      "index": 46,
@@ -1969,7 +2376,9 @@
      "reward": 0.3586,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 16.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 47,
@@ -1979,7 +2388,9 @@
      "reward": 0.4654,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 16.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.322
     },
     {
      "index": 48,
@@ -1989,7 +2400,9 @@
      "reward": 0.427,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 17.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.554
     },
     {
      "index": 49,
@@ -1999,7 +2412,9 @@
      "reward": 0.5886,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 17.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.805
     },
     {
      "index": 50,
@@ -2009,7 +2424,9 @@
      "reward": 0.3446,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.25
     },
     {
      "index": 51,
@@ -2019,7 +2436,9 @@
      "reward": 0.307,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 18.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 52,
@@ -2029,7 +2448,9 @@
      "reward": 0.4003,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 15.6
+     "score_start": 18.75,
+     "cents_off": 15.6,
+     "timing_dev": -0.0
     },
     {
      "index": 53,
@@ -2039,7 +2460,9 @@
      "reward": 0.3343,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 19.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.002
     },
     {
      "index": 54,
@@ -2049,7 +2472,9 @@
      "reward": 0.4039,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 55,
@@ -2059,7 +2484,9 @@
      "reward": 0.5026,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 56,
@@ -2069,7 +2496,9 @@
      "reward": 0.3395,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 20.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 57,
@@ -2079,7 +2508,9 @@
      "reward": 0.3386,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 20.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.035
     },
     {
      "index": 58,
@@ -2089,7 +2520,9 @@
      "reward": 0.3759,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 20.5,
+     "cents_off": 20.6,
+     "timing_dev": 1.572
     },
     {
      "index": 59,
@@ -2099,7 +2532,9 @@
      "reward": 0.2171,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 20.75,
+     "cents_off": 50.6,
+     "timing_dev": 3.429
     },
     {
      "index": 60,
@@ -2109,7 +2544,9 @@
      "reward": 0.1892,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 21.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.196
     },
     {
      "index": 61,
@@ -2119,7 +2556,9 @@
      "reward": 0.1381,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 5.6
+     "score_start": 21.167,
+     "cents_off": 5.6,
+     "timing_dev": 0.075
     },
     {
      "index": 62,
@@ -2129,7 +2568,9 @@
      "reward": 0.2964,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 21.25,
+     "cents_off": 20.6,
+     "timing_dev": 1.678
     },
     {
      "index": 63,
@@ -2139,7 +2580,9 @@
      "reward": 0.3138,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 21.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.554
     },
     {
      "index": 64,
@@ -2149,7 +2592,9 @@
      "reward": 0.3331,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 22.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.018
     },
     {
      "index": 65,
@@ -2159,7 +2604,9 @@
      "reward": 0.4549,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 22.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.172
     },
     {
      "index": 66,
@@ -2169,7 +2616,9 @@
      "reward": 0.1357,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 24.0,
+     "cents_off": 50.6,
+     "timing_dev": 2.537
     },
     {
      "index": 67,
@@ -2179,7 +2628,9 @@
      "reward": 0.2574,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 68,
@@ -2189,7 +2640,9 @@
      "reward": 0.2378,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.715
     },
     {
      "index": 69,
@@ -2199,7 +2652,9 @@
      "reward": 0.3114,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 24.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.535
     },
     {
      "index": 70,
@@ -2209,7 +2664,9 @@
      "reward": 0.1696,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 25.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 71,
@@ -2219,7 +2676,9 @@
      "reward": 0.3236,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 25.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 72,
@@ -2229,7 +2688,9 @@
      "reward": 0.4707,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 25.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.036
     },
     {
      "index": 73,
@@ -2239,7 +2700,9 @@
      "reward": 0.2148,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 26.0,
+     "cents_off": 60.6,
+     "timing_dev": 0.429
     },
     {
      "index": 74,
@@ -2249,7 +2712,9 @@
      "reward": 0.2231,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 26.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.053
     },
     {
      "index": 75,
@@ -2259,7 +2724,9 @@
      "reward": 0.2308,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 27.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.822
     },
     {
      "index": 76,
@@ -2269,7 +2736,9 @@
      "reward": 0.2935,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 27.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 77,
@@ -2279,7 +2748,9 @@
      "reward": 0.3128,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.894
     },
     {
      "index": 78,
@@ -2289,7 +2760,9 @@
      "reward": 0.24,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.786
     },
     {
      "index": 79,
@@ -2299,7 +2772,9 @@
      "reward": 0.227,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 28.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.786
     },
     {
      "index": 80,
@@ -2309,7 +2784,9 @@
      "reward": 0.1766,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 28.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.322
     },
     {
      "index": 81,
@@ -2319,7 +2796,9 @@
      "reward": 0.3873,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 28.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.875
     },
     {
      "index": 82,
@@ -2329,7 +2808,9 @@
      "reward": 0.205,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 29.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.803
     },
     {
      "index": 83,
@@ -2339,7 +2820,9 @@
      "reward": 0.1069,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 29.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.053
     },
     {
      "index": 84,
@@ -2349,7 +2832,9 @@
      "reward": 0.1747,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 555.6
+     "score_start": 30.0,
+     "cents_off": 555.6,
+     "timing_dev": -0.875
     },
     {
      "index": 85,
@@ -2359,7 +2844,9 @@
      "reward": 0.2391,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 560.6
+     "score_start": 30.5,
+     "cents_off": 560.6,
+     "timing_dev": -0.535
     },
     {
      "index": 86,
@@ -2369,7 +2856,9 @@
      "reward": 0.3877,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 550.6
+     "score_start": 31.0,
+     "cents_off": 550.6,
+     "timing_dev": -0.392
     },
     {
      "index": 87,
@@ -2379,7 +2868,9 @@
      "reward": 0.2266,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 550.6
+     "score_start": 31.25,
+     "cents_off": 550.6,
+     "timing_dev": -0.357
     },
     {
      "index": 88,
@@ -2389,7 +2880,9 @@
      "reward": 0.1439,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 31.5,
+     "cents_off": null,
+     "timing_dev": -0.768
     },
     {
      "index": 89,
@@ -2399,7 +2892,9 @@
      "reward": 0.1307,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 32.0,
+     "cents_off": null,
+     "timing_dev": -0.75
     },
     {
      "index": 90,
@@ -2409,7 +2904,9 @@
      "reward": 0.1379,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 32.5,
+     "cents_off": null,
+     "timing_dev": -0.106
     },
     {
      "index": 91,
@@ -2419,7 +2916,9 @@
      "reward": 0.2998,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 32.75,
+     "cents_off": 10.6,
+     "timing_dev": 6.715
     },
     {
      "index": 92,
@@ -2429,7 +2928,9 @@
      "reward": 0.6113,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 33.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 93,
@@ -2439,7 +2940,9 @@
      "reward": 0.3005,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 33.5,
+     "cents_off": 10.6,
+     "timing_dev": 8.038
     },
     {
      "index": 94,
@@ -2449,7 +2952,9 @@
      "reward": 0.2195,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 33.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.965
     },
     {
      "index": 95,
@@ -2459,7 +2964,9 @@
      "reward": 0.2427,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 34.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.965
     },
     {
      "index": 96,
@@ -2469,7 +2976,9 @@
      "reward": 0.5945,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 34.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.429
     },
     {
      "index": 97,
@@ -2479,7 +2988,9 @@
      "reward": 0.6305,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 34.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.161
     },
     {
      "index": 98,
@@ -2489,7 +3000,9 @@
      "reward": 0.1715,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 36.0,
+     "cents_off": 50.6,
+     "timing_dev": 3.0
     },
     {
      "index": 99,
@@ -2499,7 +3012,9 @@
      "reward": 0.2343,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 36.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 100,
@@ -2509,7 +3024,9 @@
      "reward": 0.3315,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 36.5,
+     "cents_off": 20.6,
+     "timing_dev": 2.286
     },
     {
      "index": 101,
@@ -2519,7 +3036,9 @@
      "reward": 0.1605,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 36.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.0
     },
     {
      "index": 102,
@@ -2529,7 +3048,9 @@
      "reward": 0.172,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 37.0,
+     "cents_off": 20.6,
+     "timing_dev": 2.002
     },
     {
      "index": 103,
@@ -2539,7 +3060,9 @@
      "reward": 0.2749,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 37.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 104,
@@ -2549,7 +3072,9 @@
      "reward": 0.3907,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 37.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.375
     },
     {
      "index": 105,
@@ -2559,7 +3084,9 @@
      "reward": 0.3837,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 38.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.357
     },
     {
      "index": 106,
@@ -2569,7 +3096,9 @@
      "reward": 0.3879,
      "issue": null,
      "issue_name": null,
-     "cents_off": 50.6
+     "score_start": 38.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.053
     },
     {
      "index": 107,
@@ -2579,7 +3108,9 @@
      "reward": 0.2418,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 39.0,
+     "cents_off": 50.6,
+     "timing_dev": 4.286
     },
     {
      "index": 108,
@@ -2589,7 +3120,9 @@
      "reward": 0.4293,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 39.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 109,
@@ -2599,7 +3132,9 @@
      "reward": 0.3832,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 39.5,
+     "cents_off": 20.6,
+     "timing_dev": 2.18
     },
     {
      "index": 110,
@@ -2609,7 +3144,9 @@
      "reward": 0.1423,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 39.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.394
     },
     {
      "index": 111,
@@ -2619,7 +3156,9 @@
      "reward": 0.254,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 40.0,
+     "cents_off": 20.6,
+     "timing_dev": 2.322
     },
     {
      "index": 112,
@@ -2629,7 +3168,9 @@
      "reward": 0.2495,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 40.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 113,
@@ -2639,7 +3180,9 @@
      "reward": 0.4374,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 40.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.036
     },
     {
      "index": 114,
@@ -2649,7 +3192,9 @@
      "reward": 0.2323,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 41.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.643
     },
     {
      "index": 115,
@@ -2659,7 +3204,9 @@
      "reward": 0.4459,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 41.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.572
     },
     {
      "index": 116,
@@ -2669,7 +3216,9 @@
      "reward": 0.4755,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 42.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.161
     },
     {
      "index": 117,
@@ -2679,7 +3228,9 @@
      "reward": 0.2711,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 42.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.071
     },
     {
      "index": 118,
@@ -2689,7 +3240,9 @@
      "reward": 0.3342,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 42.75,
+     "cents_off": 20.6,
+     "timing_dev": -0.035
     },
     {
      "index": 119,
@@ -2699,7 +3252,9 @@
      "reward": 0.3838,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 43.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.0
     },
     {
      "index": 120,
@@ -2709,7 +3264,9 @@
      "reward": 0.3019,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 43.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 121,
@@ -2719,7 +3276,9 @@
      "reward": 0.5423,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 43.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.017
     },
     {
      "index": 122,
@@ -2729,7 +3288,9 @@
      "reward": 0.3443,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 44.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 123,
@@ -2739,7 +3300,9 @@
      "reward": 0.2726,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 44.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 124,
@@ -2749,7 +3312,9 @@
      "reward": 0.3368,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 44.5,
+     "cents_off": 20.6,
+     "timing_dev": 1.535
     },
     {
      "index": 125,
@@ -2759,7 +3324,9 @@
      "reward": 0.1914,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 44.75,
+     "cents_off": 50.6,
+     "timing_dev": 4.074
     },
     {
      "index": 126,
@@ -2769,7 +3336,9 @@
      "reward": 0.428,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 45.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.304
     },
     {
      "index": 127,
@@ -2779,7 +3348,9 @@
      "reward": 0.2731,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 45.167,
+     "cents_off": 10.6,
+     "timing_dev": -0.249
     },
     {
      "index": 128,
@@ -2789,7 +3360,9 @@
      "reward": 0.1794,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 45.25,
+     "cents_off": 20.6,
+     "timing_dev": 0.786
     },
     {
      "index": 129,
@@ -2799,7 +3372,9 @@
      "reward": 0.3042,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 45.5,
+     "cents_off": 50.6,
+     "timing_dev": 0.482
     },
     {
      "index": 130,
@@ -2809,7 +3384,9 @@
      "reward": 0.3715,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 46.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.018
     },
     {
      "index": 131,
@@ -2819,7 +3396,9 @@
      "reward": 0.3786,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 46.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.339
     },
     {
      "index": 132,
@@ -2829,7 +3408,9 @@
      "reward": 0.2008,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 48.0,
+     "cents_off": 60.6,
+     "timing_dev": 3.823
     },
     {
      "index": 133,
@@ -2839,7 +3420,9 @@
      "reward": 0.3509,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 48.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.286
     },
     {
      "index": 134,
@@ -2849,7 +3432,9 @@
      "reward": 0.2519,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 48.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 135,
@@ -2859,7 +3444,9 @@
      "reward": 0.3671,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 48.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.286
     },
     {
      "index": 136,
@@ -2869,7 +3456,9 @@
      "reward": 0.1988,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 49.0,
+     "cents_off": 70.6,
+     "timing_dev": -0.214
     },
     {
      "index": 137,
@@ -2879,7 +3468,9 @@
      "reward": 0.1128,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 49.25,
+     "cents_off": 60.6,
+     "timing_dev": -0.035
     },
     {
      "index": 138,
@@ -2889,7 +3480,9 @@
      "reward": 0.2201,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 80.6
+     "score_start": 49.5,
+     "cents_off": 80.6,
+     "timing_dev": 0.0
     },
     {
      "index": 139,
@@ -2899,7 +3492,9 @@
      "reward": 0.364,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 50.0,
+     "cents_off": 60.6,
+     "timing_dev": 0.036
     },
     {
      "index": 140,
@@ -2909,7 +3504,9 @@
      "reward": 0.2359,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 50.5,
+     "cents_off": 70.6,
+     "timing_dev": 1.518
     },
     {
      "index": 141,
@@ -2919,7 +3516,9 @@
      "reward": 0.3799,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 51.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.249
     },
     {
      "index": 142,
@@ -2929,7 +3528,9 @@
      "reward": 0.2872,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 51.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 143,
@@ -2939,7 +3540,9 @@
      "reward": 0.2916,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 51.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 144,
@@ -2949,7 +3552,9 @@
      "reward": 0.329,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 51.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 145,
@@ -2959,7 +3564,9 @@
      "reward": 0.2513,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 52.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 146,
@@ -2969,7 +3576,9 @@
      "reward": 0.2398,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 52.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 147,
@@ -2979,7 +3588,9 @@
      "reward": 0.4782,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 52.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.911
     },
     {
      "index": 148,
@@ -2989,7 +3600,9 @@
      "reward": 0.5555,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 53.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 149,
@@ -2999,7 +3612,9 @@
      "reward": 0.4754,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 53.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.893
     },
     {
      "index": 150,
@@ -3009,7 +3624,9 @@
      "reward": 0.3217,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 54.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 151,
@@ -3019,7 +3636,9 @@
      "reward": 0.2399,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 54.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 152,
@@ -3029,7 +3648,9 @@
      "reward": 0.1629,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 54.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 153,
@@ -3039,7 +3660,9 @@
      "reward": 0.3335,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 54.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 154,
@@ -3049,7 +3672,9 @@
      "reward": 0.2893,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 55.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 155,
@@ -3059,7 +3684,9 @@
      "reward": 0.2342,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 55.25,
+     "cents_off": null,
+     "timing_dev": 0.035
     },
     {
      "index": 156,
@@ -3069,7 +3696,9 @@
      "reward": 0.4283,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 55.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.001
     },
     {
      "index": 157,
@@ -3079,7 +3708,9 @@
      "reward": 0.4516,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 56.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.947
     },
     {
      "index": 158,
@@ -3089,7 +3720,9 @@
      "reward": 0.3614,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 56.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.589
     },
     {
      "index": 159,
@@ -3099,7 +3732,9 @@
      "reward": 0.5356,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 57.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.283
     },
     {
      "index": 160,
@@ -3109,7 +3744,9 @@
      "reward": 0.1255,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 57.167,
+     "cents_off": 10.6,
+     "timing_dev": 1.799
     },
     {
      "index": 161,
@@ -3119,7 +3756,9 @@
      "reward": 0.2,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 57.25,
+     "cents_off": 10.6,
+     "timing_dev": 2.251
     },
     {
      "index": 162,
@@ -3129,7 +3768,9 @@
      "reward": 0.6108,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 57.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.053
     },
     {
      "index": 163,
@@ -3139,7 +3780,9 @@
      "reward": 0.4966,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 58.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.982
     },
     {
      "index": 164,
@@ -3149,7 +3792,9 @@
      "reward": 0.55,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 58.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.143
     },
     {
      "index": 165,
@@ -3159,7 +3804,9 @@
      "reward": 0.373,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 59.0,
+     "cents_off": 10.6,
+     "timing_dev": 2.002
     },
     {
      "index": 166,
@@ -3169,7 +3816,9 @@
      "reward": 0.2124,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 59.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 167,
@@ -3179,7 +3828,9 @@
      "reward": 0.4527,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 59.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 168,
@@ -3189,7 +3840,9 @@
      "reward": 0.4258,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 60.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 169,
@@ -3199,7 +3852,9 @@
      "reward": 0.2991,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 60.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 170,
@@ -3209,7 +3864,9 @@
      "reward": 0.1973,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 60.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 171,
@@ -3219,7 +3876,9 @@
      "reward": 0.2335,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 61.0,
+     "cents_off": 10.6,
+     "timing_dev": 2.322
     },
     {
      "index": 172,
@@ -3229,7 +3888,9 @@
      "reward": 0.2333,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 61.25,
+     "cents_off": 20.6,
+     "timing_dev": 2.288
     },
     {
      "index": 173,
@@ -3239,7 +3900,9 @@
      "reward": 0.549,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 61.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 174,
@@ -3249,7 +3912,9 @@
      "reward": 0.3047,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 62.0,
+     "cents_off": 10.6,
+     "timing_dev": 2.286
     },
     {
      "index": 175,
@@ -3259,7 +3924,9 @@
      "reward": 0.2542,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 62.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.177
     },
     {
      "index": 176,
@@ -3269,7 +3936,9 @@
      "reward": 0.3108,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 62.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 177,
@@ -3279,7 +3948,9 @@
      "reward": 0.3159,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 62.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 178,
@@ -3289,7 +3960,9 @@
      "reward": 0.5396,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 63.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 179,
@@ -3299,7 +3972,9 @@
      "reward": 0.2557,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 63.5,
+     "cents_off": 20.6,
+     "timing_dev": -0.071
     },
     {
      "index": 180,
@@ -3309,7 +3984,9 @@
      "reward": 0.3953,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 63.75,
+     "cents_off": 20.6,
+     "timing_dev": 0.035
     },
     {
      "index": 181,
@@ -3319,7 +3996,9 @@
      "reward": 0.3233,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 64.0,
+     "cents_off": 20.6,
+     "timing_dev": 1.609
     },
     {
      "index": 182,
@@ -3329,7 +4008,9 @@
      "reward": 0.1514,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 64.25,
+     "cents_off": 70.6,
+     "timing_dev": -0.072
     },
     {
      "index": 183,
@@ -3339,7 +4020,9 @@
      "reward": 0.1931,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 64.5,
+     "cents_off": 50.6,
+     "timing_dev": -0.5
     },
     {
      "index": 184,
@@ -3349,7 +4032,9 @@
      "reward": 0.5035,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 65.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.002
     },
     {
      "index": 185,
@@ -3359,7 +4044,9 @@
      "reward": 0.2306,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 65.25,
+     "cents_off": 70.6,
+     "timing_dev": -0.108
     },
     {
      "index": 186,
@@ -3369,7 +4056,9 @@
      "reward": 0.2299,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 65.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.662
     },
     {
      "index": 187,
@@ -3379,7 +4068,9 @@
      "reward": 0.5784,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 66.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.715
     },
     {
      "index": 188,
@@ -3389,7 +4080,9 @@
      "reward": 0.1294,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 66.5,
+     "cents_off": 60.6,
+     "timing_dev": -0.535
     },
     {
      "index": 189,
@@ -3399,7 +4092,9 @@
      "reward": 0.2593,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 67.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.822
     },
     {
      "index": 190,
@@ -3409,7 +4104,9 @@
      "reward": 0.5148,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 67.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.786
     },
     {
      "index": 191,
@@ -3419,7 +4116,9 @@
      "reward": 0.3193,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 68.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.465
     },
     {
      "index": 192,
@@ -3429,7 +4128,9 @@
      "reward": 0.2556,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 68.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.036
     },
     {
      "index": 193,
@@ -3439,7 +4140,9 @@
      "reward": 0.5224,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 69.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 194,
@@ -3449,7 +4152,9 @@
      "reward": 0.2768,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 69.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.0
     },
     {
      "index": 195,
@@ -3459,7 +4164,9 @@
      "reward": 0.2851,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 69.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 196,
@@ -3469,7 +4176,9 @@
      "reward": 0.2443,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 70.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 197,
@@ -3479,7 +4188,9 @@
      "reward": 0.6222,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 70.25,
+     "cents_off": 10.6,
+     "timing_dev": 2.037
     },
     {
      "index": 198,
@@ -3489,7 +4200,9 @@
      "reward": 0.5836,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 70.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.256
     },
     {
      "index": 199,
@@ -3499,7 +4212,9 @@
      "reward": 0.148,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 72.0,
+     "cents_off": 60.6,
+     "timing_dev": 2.715
     },
     {
      "index": 200,
@@ -3509,7 +4224,9 @@
      "reward": 0.2614,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 72.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 201,
@@ -3519,7 +4236,9 @@
      "reward": 0.1847,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 72.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.929
     },
     {
      "index": 202,
@@ -3529,7 +4248,9 @@
      "reward": 0.2215,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 72.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.929
     },
     {
      "index": 203,
@@ -3539,7 +4260,9 @@
      "reward": 0.1752,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 15.6
+     "score_start": 73.0,
+     "cents_off": 15.6,
+     "timing_dev": 1.929
     },
     {
      "index": 204,
@@ -3549,7 +4272,9 @@
      "reward": 0.2634,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 73.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.357
     },
     {
      "index": 205,
@@ -3559,7 +4284,9 @@
      "reward": 0.4645,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 73.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.036
     },
     {
      "index": 206,
@@ -3569,7 +4296,9 @@
      "reward": 0.1851,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 74.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.215
     },
     {
      "index": 207,
@@ -3579,7 +4308,9 @@
      "reward": 0.3271,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 74.5,
+     "cents_off": 70.6,
+     "timing_dev": 0.001
     },
     {
      "index": 208,
@@ -3589,7 +4320,9 @@
      "reward": 0.1878,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 75.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.714
     },
     {
      "index": 209,
@@ -3599,7 +4332,9 @@
      "reward": 0.3605,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 75.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 210,
@@ -3609,7 +4344,9 @@
      "reward": 0.266,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 75.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.751
     },
     {
      "index": 211,
@@ -3619,7 +4356,9 @@
      "reward": 0.2746,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 75.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.537
     },
     {
      "index": 212,
@@ -3629,7 +4368,9 @@
      "reward": 0.3515,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 76.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.894
     },
     {
      "index": 213,
@@ -3639,7 +4380,9 @@
      "reward": 0.2551,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 76.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.322
     },
     {
      "index": 214,
@@ -3649,7 +4392,9 @@
      "reward": 0.3928,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 76.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.018
     },
     {
      "index": 215,
@@ -3659,7 +4404,9 @@
      "reward": 0.2088,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 77.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.554
     },
     {
      "index": 216,
@@ -3669,7 +4416,9 @@
      "reward": 0.2526,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 80.6
+     "score_start": 77.5,
+     "cents_off": 80.6,
+     "timing_dev": 1.447
     },
     {
      "index": 217,
@@ -3679,7 +4428,9 @@
      "reward": 0.4251,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 78.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.125
     },
     {
      "index": 218,
@@ -3689,7 +4440,9 @@
      "reward": 0.2243,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 78.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.965
     },
     {
      "index": 219,
@@ -3699,7 +4452,9 @@
      "reward": 0.276,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 78.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.108
     },
     {
      "index": 220,
@@ -3709,7 +4464,9 @@
      "reward": 0.2305,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 79.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 221,
@@ -3719,7 +4476,9 @@
      "reward": 0.3852,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 79.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 222,
@@ -3729,7 +4488,9 @@
      "reward": 0.526,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 79.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 223,
@@ -3739,7 +4500,9 @@
      "reward": 0.2864,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 80.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 224,
@@ -3749,7 +4512,9 @@
      "reward": 0.3346,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 15.6
+     "score_start": 80.25,
+     "cents_off": 15.6,
+     "timing_dev": -0.0
     },
     {
      "index": 225,
@@ -3759,7 +4524,9 @@
      "reward": 0.2839,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 20.6
+     "score_start": 80.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.178
     },
     {
      "index": 226,
@@ -3769,7 +4536,9 @@
      "reward": 0.1891,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 80.75,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 227,
@@ -3779,7 +4548,9 @@
      "reward": 0.1368,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 81.0,
+     "cents_off": null,
+     "timing_dev": -0.733
     },
     {
      "index": 228,
@@ -3789,7 +4560,9 @@
      "reward": 0.1375,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 81.167,
+     "cents_off": null,
+     "timing_dev": -0.462
     },
     {
      "index": 229,
@@ -3799,7 +4572,9 @@
      "reward": 0.244,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 81.25,
+     "cents_off": null,
+     "timing_dev": -0.392
     },
     {
      "index": 230,
@@ -3809,7 +4584,9 @@
      "reward": 0.1201,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 81.5,
+     "cents_off": 50.6,
+     "timing_dev": 1.875
     },
     {
      "index": 231,
@@ -3819,7 +4596,9 @@
      "reward": 0.1566,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 50.6
+     "score_start": 82.0,
+     "cents_off": 50.6,
+     "timing_dev": 1.036
     },
     {
      "index": 232,
@@ -3829,7 +4608,9 @@
      "reward": 0.389,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 82.5,
+     "cents_off": null,
+     "timing_dev": -0.914
     },
     {
      "index": 233,
@@ -3839,7 +4620,9 @@
      "reward": 0.3821,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 88.5,
+     "cents_off": 50.6,
+     "timing_dev": 7.538
     },
     {
      "index": 234,
@@ -3849,7 +4632,9 @@
      "reward": 0.1878,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 88.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 235,
@@ -3859,7 +4644,9 @@
      "reward": 0.2748,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 89.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 236,
@@ -3869,7 +4656,9 @@
      "reward": 0.2958,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 89.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.465
     },
     {
      "index": 237,
@@ -3879,7 +4668,9 @@
      "reward": 0.1556,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 60.6
+     "score_start": 89.5,
+     "cents_off": 60.6,
+     "timing_dev": -0.035
     },
     {
      "index": 238,
@@ -3889,7 +4680,9 @@
      "reward": 0.1797,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 89.75,
+     "cents_off": 70.6,
+     "timing_dev": 0.965
     },
     {
      "index": 239,
@@ -3899,7 +4692,9 @@
      "reward": 0.3165,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 90.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.036
     },
     {
      "index": 240,
@@ -3909,7 +4704,9 @@
      "reward": 0.2484,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 90.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.107
     },
     {
      "index": 241,
@@ -3919,7 +4716,9 @@
      "reward": 0.295,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 91.0,
+     "cents_off": 70.6,
+     "timing_dev": 1.322
     },
     {
      "index": 242,
@@ -3929,7 +4728,9 @@
      "reward": 0.4013,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 91.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.249
     },
     {
      "index": 243,
@@ -3939,7 +4740,9 @@
      "reward": 0.2358,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 91.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 244,
@@ -3949,7 +4752,9 @@
      "reward": 0.1842,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 92.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 245,
@@ -3959,7 +4764,9 @@
      "reward": 0.258,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 92.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 246,
@@ -3969,7 +4776,9 @@
      "reward": 0.2385,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 92.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 247,
@@ -3979,7 +4788,9 @@
      "reward": 0.2172,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 92.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 248,
@@ -3989,7 +4800,9 @@
      "reward": 0.388,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 93.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.054
     },
     {
      "index": 249,
@@ -3999,7 +4812,9 @@
      "reward": 0.5689,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 93.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 250,
@@ -4009,7 +4824,9 @@
      "reward": 0.3982,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 94.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.018
     },
     {
      "index": 251,
@@ -4019,7 +4836,9 @@
      "reward": 0.2058,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 94.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 252,
@@ -4029,7 +4848,9 @@
      "reward": 0.1453,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 94.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 253,
@@ -4039,7 +4860,9 @@
      "reward": 0.2374,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 95.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.071
     },
     {
      "index": 254,
@@ -4049,7 +4872,9 @@
      "reward": 0.2744,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 95.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 255,
@@ -4059,7 +4884,9 @@
      "reward": 0.189,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 95.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 256,
@@ -4069,7 +4896,9 @@
      "reward": 0.1236,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 95.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 257,
@@ -4079,7 +4908,9 @@
      "reward": 0.4405,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 96.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.911
     },
     {
      "index": 258,
@@ -4089,7 +4920,9 @@
      "reward": 0.5785,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 96.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.983
     },
     {
      "index": 259,
@@ -4099,7 +4932,9 @@
      "reward": 0.3984,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 97.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.554
     },
     {
      "index": 260,
@@ -4109,7 +4944,9 @@
      "reward": 0.5176,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 97.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.391
     },
     {
      "index": 261,
@@ -4119,7 +4956,9 @@
      "reward": 0.1682,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 97.667,
+     "cents_off": 10.6,
+     "timing_dev": 1.799
     },
     {
      "index": 262,
@@ -4129,7 +4968,9 @@
      "reward": 0.1986,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 97.75,
+     "cents_off": 10.6,
+     "timing_dev": 2.108
     },
     {
      "index": 263,
@@ -4139,7 +4980,9 @@
      "reward": 0.5962,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 98.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 264,
@@ -4149,7 +4992,9 @@
      "reward": 0.4763,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 98.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.929
     },
     {
      "index": 265,
@@ -4159,7 +5004,9 @@
      "reward": 0.4911,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 99.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.715
     },
     {
      "index": 266,
@@ -4169,7 +5016,9 @@
      "reward": 0.3264,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 99.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.572
     },
     {
      "index": 267,
@@ -4179,7 +5028,9 @@
      "reward": 0.3415,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 99.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 268,
@@ -4189,7 +5040,9 @@
      "reward": 0.4612,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 100.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 269,
@@ -4199,7 +5052,9 @@
      "reward": 0.3925,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 100.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 270,
@@ -4209,7 +5064,9 @@
      "reward": 0.3319,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 101.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 271,
@@ -4219,7 +5076,9 @@
      "reward": 0.1647,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 101.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 272,
@@ -4229,7 +5088,9 @@
      "reward": 0.2479,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 101.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.751
     },
     {
      "index": 273,
@@ -4239,7 +5100,9 @@
      "reward": 0.2804,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 101.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 274,
@@ -4249,7 +5112,9 @@
      "reward": 0.5477,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 102.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.125
     },
     {
      "index": 275,
@@ -4259,7 +5124,9 @@
      "reward": 0.2611,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 102.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.894
     },
     {
      "index": 276,
@@ -4269,7 +5136,9 @@
      "reward": 0.3377,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 102.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 277,
@@ -4279,7 +5148,9 @@
      "reward": 0.2979,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 103.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 278,
@@ -4289,7 +5160,9 @@
      "reward": 0.2331,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 103.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 279,
@@ -4299,7 +5172,9 @@
      "reward": 0.5489,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 103.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 280,
@@ -4309,7 +5184,9 @@
      "reward": 0.3036,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 104.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 281,
@@ -4319,7 +5196,9 @@
      "reward": 0.3377,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 104.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 282,
@@ -4329,7 +5208,9 @@
      "reward": 0.2019,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 104.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 283,
@@ -4339,7 +5220,9 @@
      "reward": 0.1375,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 60.6
+     "score_start": 104.75,
+     "cents_off": 60.6,
+     "timing_dev": 0.465
     },
     {
      "index": 284,
@@ -4349,7 +5232,9 @@
      "reward": 0.2001,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 105.0,
+     "cents_off": null,
+     "timing_dev": -0.035
     },
     {
      "index": 285,
@@ -4359,7 +5244,9 @@
      "reward": 0.2089,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 105.5,
+     "cents_off": 70.6,
+     "timing_dev": 0.071
     },
     {
      "index": 286,
@@ -4369,7 +5256,9 @@
      "reward": 0.202,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 80.6
+     "score_start": 105.75,
+     "cents_off": 80.6,
+     "timing_dev": -0.178
     },
     {
      "index": 287,
@@ -4379,7 +5268,9 @@
      "reward": 0.1874,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 70.6
+     "score_start": 106.0,
+     "cents_off": 70.6,
+     "timing_dev": 0.822
     },
     {
      "index": 288,
@@ -4389,7 +5280,9 @@
      "reward": 0.6511,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 106.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.75
     },
     {
      "index": 289,
@@ -4399,7 +5292,9 @@
      "reward": 0.2935,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 107.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.821
     },
     {
      "index": 290,
@@ -4409,7 +5304,9 @@
      "reward": 0.1309,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 40.6
+     "score_start": 107.5,
+     "cents_off": 40.6,
+     "timing_dev": -0.25
     },
     {
      "index": 291,
@@ -4419,7 +5316,9 @@
      "reward": 0.3136,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 108.0,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 292,
@@ -4429,7 +5328,9 @@
      "reward": 0.1184,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 70.6
+     "score_start": 108.5,
+     "cents_off": 70.6,
+     "timing_dev": -0.572
     },
     {
      "index": 293,
@@ -4439,7 +5340,9 @@
      "reward": 0.3151,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 109.0,
+     "cents_off": 50.6,
+     "timing_dev": -0.571
     },
     {
      "index": 294,
@@ -4449,7 +5352,9 @@
      "reward": 0.1757,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 109.5,
+     "cents_off": null,
+     "timing_dev": -0.786
     },
     {
      "index": 295,
@@ -4459,7 +5364,9 @@
      "reward": 0.1789,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 110.0,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 296,
@@ -4469,7 +5376,9 @@
      "reward": 0.1717,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 110.25,
+     "cents_off": null,
+     "timing_dev": -0.714
     },
     {
      "index": 297,
@@ -4479,7 +5388,9 @@
      "reward": 0.1445,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 110.5,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 298,
@@ -4489,7 +5400,9 @@
      "reward": 0.1175,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 110.75,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 299,
@@ -4499,7 +5412,9 @@
      "reward": 0.6743,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 111.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.714
     },
     {
      "index": 300,
@@ -4509,7 +5424,9 @@
      "reward": 0.2288,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 112.5,
+     "cents_off": null,
+     "timing_dev": -0.714
     },
     {
      "index": 301,
@@ -4519,7 +5436,9 @@
      "reward": 0.2596,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 112.75,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 302,
@@ -4529,7 +5448,9 @@
      "reward": 0.1924,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 113.0,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 303,
@@ -4539,7 +5460,9 @@
      "reward": 0.1825,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 260.6
+     "score_start": 113.25,
+     "cents_off": 260.6,
+     "timing_dev": 5.574
     },
     {
      "index": 304,
@@ -4549,7 +5472,9 @@
      "reward": 0.4018,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 113.5,
+     "cents_off": 10.6,
+     "timing_dev": 10.574
     },
     {
      "index": 305,
@@ -4559,7 +5484,9 @@
      "reward": 0.2528,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 113.75,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 306,
@@ -4569,7 +5496,9 @@
      "reward": 0.2038,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 114.0,
+     "cents_off": null,
+     "timing_dev": -0.643
     },
     {
      "index": 307,
@@ -4579,7 +5508,9 @@
      "reward": 0.1275,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 114.5,
+     "cents_off": null,
+     "timing_dev": -0.822
     },
     {
      "index": 308,
@@ -4589,7 +5520,9 @@
      "reward": 0.1424,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": -429.4
+     "score_start": 115.0,
+     "cents_off": -429.4,
+     "timing_dev": -0.642
     },
     {
      "index": 309,
@@ -4599,7 +5532,9 @@
      "reward": 0.159,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": -439.4
+     "score_start": 115.5,
+     "cents_off": -439.4,
+     "timing_dev": -0.071
     },
     {
      "index": 310,
@@ -4609,7 +5544,9 @@
      "reward": 0.2784,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 115.75,
+     "cents_off": null,
+     "timing_dev": -0.715
     },
     {
      "index": 311,
@@ -4619,7 +5556,9 @@
      "reward": 0.2085,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 116.0,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 312,
@@ -4629,7 +5568,9 @@
      "reward": 0.1619,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 116.25,
+     "cents_off": null,
+     "timing_dev": 0.678
     },
     {
      "index": 313,
@@ -4639,7 +5580,9 @@
      "reward": 0.1645,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 116.5,
+     "cents_off": 10.6,
+     "timing_dev": 44.762
     },
     {
      "index": 314,
@@ -4649,7 +5592,9 @@
      "reward": 0.1735,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 116.75,
+     "cents_off": null,
+     "timing_dev": -0.714
     },
     {
      "index": 315,
@@ -4659,7 +5604,9 @@
      "reward": 0.1622,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 117.0,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 316,
@@ -4669,7 +5616,9 @@
      "reward": 0.141,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 117.5,
+     "cents_off": null,
+     "timing_dev": -0.446
     },
     {
      "index": 317,
@@ -4679,7 +5628,9 @@
      "reward": 0.0407,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 118.0,
+     "cents_off": null,
+     "timing_dev": -0.839
     },
     {
      "index": 318,
@@ -4689,7 +5640,9 @@
      "reward": 0.4969,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 118.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 319,
@@ -4699,7 +5652,9 @@
      "reward": 0.2404,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 119.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.072
     },
     {
      "index": 320,
@@ -4709,7 +5664,9 @@
      "reward": 0.1267,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 119.25,
+     "cents_off": null,
+     "timing_dev": -0.857
     },
     {
      "index": 321,
@@ -4719,7 +5676,9 @@
      "reward": 0.2099,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 119.5,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 322,
@@ -4729,7 +5688,9 @@
      "reward": 0.1653,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": null
+     "score_start": 119.75,
+     "cents_off": null,
+     "timing_dev": -0.714
     },
     {
      "index": 323,
@@ -4739,7 +5700,9 @@
      "reward": 0.1446,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 120.0,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 324,
@@ -4749,7 +5712,9 @@
      "reward": 0.0813,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 120.5,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 325,
@@ -4759,7 +5724,9 @@
      "reward": 0.1401,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 120.75,
+     "cents_off": null,
+     "timing_dev": -0.714
     },
     {
      "index": 326,
@@ -4769,7 +5736,9 @@
      "reward": 0.2673,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 121.0,
+     "cents_off": 20.6,
+     "timing_dev": 7.431
     },
     {
      "index": 327,
@@ -4779,7 +5748,9 @@
      "reward": 0.18,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 121.25,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 328,
@@ -4789,7 +5760,9 @@
      "reward": 0.1959,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 121.5,
+     "cents_off": null,
+     "timing_dev": -0.786
     },
     {
      "index": 329,
@@ -4799,7 +5772,9 @@
      "reward": 0.1608,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 121.667,
+     "cents_off": null,
+     "timing_dev": -0.569
     },
     {
      "index": 330,
@@ -4809,7 +5784,9 @@
      "reward": 0.1373,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 121.75,
+     "cents_off": null,
+     "timing_dev": -0.571
     },
     {
      "index": 331,
@@ -4819,7 +5796,9 @@
      "reward": 0.1804,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 50.6
+     "score_start": 122.0,
+     "cents_off": 50.6,
+     "timing_dev": 0.0
     },
     {
      "index": 332,
@@ -4829,7 +5808,9 @@
      "reward": 0.1514,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": null
+     "score_start": 122.5,
+     "cents_off": null,
+     "timing_dev": -0.572
     },
     {
      "index": 333,
@@ -4839,11 +5820,22 @@
      "reward": 0.2127,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
+     "score_start": 123.0,
      "cents_off": -449.4
     }
    ],
    "seconds_audio": 492.6,
-   "seconds_compute": 241.0
+   "seconds_compute": 101.7,
+   "timing_by_next_note": {
+    "same_note_next": {
+     "n": 182,
+     "timing_dev_median": 0.071
+    },
+    "string_change_next": {
+     "n": 151,
+     "timing_dev_median": 1.429
+    }
+   }
   },
   "perpetual": {
    "status": "ok",
@@ -4861,6 +5853,9 @@
     53,
     95
    ],
+   "slower_than_score": 2.6,
+   "timing_dev_median": 0.037,
+   "share_on_time": 0.772,
    "notes": [
     {
      "index": 0,
@@ -4870,7 +5865,9 @@
      "reward": 0.3195,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 0.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 1,
@@ -4880,7 +5877,9 @@
      "reward": 0.2631,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 0.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 2,
@@ -4890,7 +5889,9 @@
      "reward": 0.3947,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 0.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 3,
@@ -4900,7 +5901,9 @@
      "reward": 0.2891,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 0.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 4,
@@ -4910,7 +5913,9 @@
      "reward": 0.3669,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 1.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 5,
@@ -4920,7 +5925,9 @@
      "reward": 0.3061,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 1.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 6,
@@ -4930,7 +5937,9 @@
      "reward": 0.3144,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 1.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 7,
@@ -4940,7 +5949,9 @@
      "reward": 0.2973,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 1.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 8,
@@ -4950,7 +5961,9 @@
      "reward": 0.3399,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 2.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 9,
@@ -4960,7 +5973,9 @@
      "reward": 0.301,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 2.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 10,
@@ -4970,7 +5985,9 @@
      "reward": 0.2132,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 2.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.502
     },
     {
      "index": 11,
@@ -4980,7 +5997,9 @@
      "reward": 0.3305,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 2.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 12,
@@ -4990,7 +6009,9 @@
      "reward": 0.3586,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 13,
@@ -5000,7 +6021,9 @@
      "reward": 0.3213,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.678
     },
     {
      "index": 14,
@@ -5010,7 +6033,9 @@
      "reward": 0.2328,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.177
     },
     {
      "index": 15,
@@ -5020,7 +6045,9 @@
      "reward": 0.1125,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 3.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.535
     },
     {
      "index": 16,
@@ -5030,7 +6057,9 @@
      "reward": 0.3931,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 4.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 17,
@@ -5040,7 +6069,9 @@
      "reward": 0.277,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 4.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 18,
@@ -5050,7 +6081,9 @@
      "reward": 0.3264,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 4.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 19,
@@ -5060,7 +6093,9 @@
      "reward": 0.3052,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 4.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 20,
@@ -5070,7 +6105,9 @@
      "reward": 0.3409,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 5.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 21,
@@ -5080,7 +6117,9 @@
      "reward": 0.2572,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 5.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 22,
@@ -5090,7 +6129,9 @@
      "reward": 0.3327,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 5.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 23,
@@ -5100,7 +6141,9 @@
      "reward": 0.2665,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 5.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 24,
@@ -5110,7 +6153,9 @@
      "reward": 0.2546,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 6.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 25,
@@ -5120,7 +6165,9 @@
      "reward": 0.3004,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 26,
@@ -5130,7 +6177,9 @@
      "reward": 0.2806,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 6.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.429
     },
     {
      "index": 27,
@@ -5140,7 +6189,9 @@
      "reward": 0.2849,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 6.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.108
     },
     {
      "index": 28,
@@ -5150,7 +6201,9 @@
      "reward": 0.2972,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 7.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 29,
@@ -5160,7 +6213,9 @@
      "reward": 0.2855,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 7.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 30,
@@ -5170,7 +6225,9 @@
      "reward": 0.3132,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 7.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 31,
@@ -5180,7 +6237,9 @@
      "reward": 0.2923,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 7.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.678
     },
     {
      "index": 32,
@@ -5190,7 +6249,9 @@
      "reward": 0.292,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 33,
@@ -5200,7 +6261,9 @@
      "reward": 0.1473,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 34,
@@ -5210,7 +6273,9 @@
      "reward": 0.2606,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 35,
@@ -5220,7 +6285,9 @@
      "reward": 0.119,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 36,
@@ -5230,7 +6297,9 @@
      "reward": 0.3153,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.071
     },
     {
      "index": 37,
@@ -5240,7 +6309,9 @@
      "reward": 0.0897,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 38,
@@ -5250,7 +6321,9 @@
      "reward": 0.2414,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.071
     },
     {
      "index": 39,
@@ -5260,7 +6333,9 @@
      "reward": 0.0502,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 40,
@@ -5270,7 +6345,9 @@
      "reward": 0.2921,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.072
     },
     {
      "index": 41,
@@ -5280,7 +6357,9 @@
      "reward": 0.0645,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 10.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.537
     },
     {
      "index": 42,
@@ -5290,7 +6369,9 @@
      "reward": 0.3179,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 10.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 43,
@@ -5300,7 +6381,9 @@
      "reward": 0.2302,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 10.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 44,
@@ -5310,7 +6393,9 @@
      "reward": 0.3174,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 11.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 45,
@@ -5320,7 +6405,9 @@
      "reward": 0.2932,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 11.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.643
     },
     {
      "index": 46,
@@ -5330,7 +6417,9 @@
      "reward": 0.3014,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 11.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.178
     },
     {
      "index": 47,
@@ -5340,7 +6429,9 @@
      "reward": 0.1815,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 11.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 48,
@@ -5350,7 +6441,9 @@
      "reward": 0.2932,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 49,
@@ -5360,7 +6453,9 @@
      "reward": 0.1054,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 50,
@@ -5370,7 +6465,9 @@
      "reward": 0.2846,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 51,
@@ -5380,7 +6477,9 @@
      "reward": 0.1223,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 52,
@@ -5390,7 +6489,9 @@
      "reward": 0.2499,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 13.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.108
     },
     {
      "index": 53,
@@ -5400,7 +6501,9 @@
      "reward": 0.0808,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 13.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.108
     },
     {
      "index": 54,
@@ -5410,7 +6513,9 @@
      "reward": 0.2326,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 13.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 55,
@@ -5420,7 +6525,9 @@
      "reward": 0.1572,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 13.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 56,
@@ -5430,7 +6537,9 @@
      "reward": 0.27,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 14.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 57,
@@ -5440,7 +6549,9 @@
      "reward": 0.1349,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 14.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.465
     },
     {
      "index": 58,
@@ -5450,7 +6561,9 @@
      "reward": 0.3998,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 14.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.106
     },
     {
      "index": 59,
@@ -5460,7 +6573,9 @@
      "reward": 0.2908,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 14.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 60,
@@ -5470,7 +6585,9 @@
      "reward": 0.3025,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 15.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 61,
@@ -5480,7 +6597,9 @@
      "reward": 0.2786,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 15.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 62,
@@ -5490,7 +6609,9 @@
      "reward": 0.3207,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 15.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 63,
@@ -5500,7 +6621,9 @@
      "reward": 0.278,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 15.75,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 64,
@@ -5510,7 +6633,9 @@
      "reward": 0.3198,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 16.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 65,
@@ -5520,7 +6645,9 @@
      "reward": 0.281,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 16.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 66,
@@ -5530,7 +6657,9 @@
      "reward": 0.3295,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 16.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 67,
@@ -5540,7 +6669,9 @@
      "reward": 0.2405,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 16.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 68,
@@ -5550,7 +6681,9 @@
      "reward": 0.3449,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 17.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 69,
@@ -5560,7 +6693,9 @@
      "reward": 0.2709,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 17.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 70,
@@ -5570,7 +6705,9 @@
      "reward": 0.252,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 17.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 71,
@@ -5580,7 +6717,9 @@
      "reward": 0.2675,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 17.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.608
     },
     {
      "index": 72,
@@ -5590,7 +6729,9 @@
      "reward": 0.2722,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.429
     },
     {
      "index": 73,
@@ -5600,7 +6741,9 @@
      "reward": 0.3484,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 18.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.071
     },
     {
      "index": 74,
@@ -5610,7 +6753,9 @@
      "reward": 0.2726,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.643
     },
     {
      "index": 75,
@@ -5620,7 +6765,9 @@
      "reward": 0.1745,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 18.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.214
     },
     {
      "index": 76,
@@ -5630,7 +6777,9 @@
      "reward": 0.2562,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 77,
@@ -5640,7 +6789,9 @@
      "reward": 0.1726,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 78,
@@ -5650,7 +6801,9 @@
      "reward": 0.2285,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.035
     },
     {
      "index": 79,
@@ -5660,7 +6813,9 @@
      "reward": 0.1276,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.645
     },
     {
      "index": 80,
@@ -5670,7 +6825,9 @@
      "reward": 0.3273,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 20.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.251
     },
     {
      "index": 81,
@@ -5680,7 +6837,9 @@
      "reward": 0.2974,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 20.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 82,
@@ -5690,7 +6849,9 @@
      "reward": 0.3279,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 20.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 83,
@@ -5700,7 +6861,9 @@
      "reward": 0.3296,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 20.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 84,
@@ -5710,7 +6873,9 @@
      "reward": 0.3562,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 21.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 85,
@@ -5720,7 +6885,9 @@
      "reward": 0.2757,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 21.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 86,
@@ -5730,7 +6897,9 @@
      "reward": 0.3063,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 21.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 87,
@@ -5740,7 +6909,9 @@
      "reward": 0.277,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 21.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.502
     },
     {
      "index": 88,
@@ -5750,7 +6921,9 @@
      "reward": 0.233,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 22.0,
+     "cents_off": 10.6,
+     "timing_dev": 1.572
     },
     {
      "index": 89,
@@ -5760,7 +6933,9 @@
      "reward": 0.3287,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 22.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.108
     },
     {
      "index": 90,
@@ -5770,7 +6945,9 @@
      "reward": 0.2424,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 22.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.537
     },
     {
      "index": 91,
@@ -5780,7 +6957,9 @@
      "reward": 0.1444,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 22.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.143
     },
     {
      "index": 92,
@@ -5790,7 +6969,9 @@
      "reward": 0.2312,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 23.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.072
     },
     {
      "index": 93,
@@ -5800,7 +6981,9 @@
      "reward": 0.0995,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 23.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 94,
@@ -5810,7 +6993,9 @@
      "reward": 0.2389,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 23.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 95,
@@ -5820,7 +7005,9 @@
      "reward": 0.0817,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 23.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.678
     },
     {
      "index": 96,
@@ -5830,7 +7017,9 @@
      "reward": 0.3388,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.249
     },
     {
      "index": 97,
@@ -5840,7 +7029,9 @@
      "reward": 0.3331,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 98,
@@ -5850,7 +7041,9 @@
      "reward": 0.3271,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 99,
@@ -5860,7 +7053,9 @@
      "reward": 0.3243,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 24.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 100,
@@ -5870,7 +7065,9 @@
      "reward": 0.346,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 25.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 101,
@@ -5880,7 +7077,9 @@
      "reward": 0.2712,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 25.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 102,
@@ -5890,7 +7089,9 @@
      "reward": 0.3077,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 25.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 103,
@@ -5900,7 +7101,9 @@
      "reward": 0.2744,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 25.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 104,
@@ -5910,7 +7113,9 @@
      "reward": 0.3302,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 105,
@@ -5920,7 +7125,9 @@
      "reward": 0.298,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 26.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.537
     },
     {
      "index": 106,
@@ -5930,7 +7137,9 @@
      "reward": 0.2772,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 26.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.571
     },
     {
      "index": 107,
@@ -5940,7 +7149,9 @@
      "reward": 0.3452,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 26.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.142
     },
     {
      "index": 108,
@@ -5950,7 +7161,9 @@
      "reward": 0.3106,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 27.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 109,
@@ -5960,7 +7173,9 @@
      "reward": 0.375,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.572
     },
     {
      "index": 110,
@@ -5970,7 +7185,9 @@
      "reward": 0.2056,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 27.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.072
     },
     {
      "index": 111,
@@ -5980,7 +7197,9 @@
      "reward": 0.0647,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 27.75,
+     "cents_off": 10.6,
+     "timing_dev": 1.645
     },
     {
      "index": 112,
@@ -5990,7 +7209,9 @@
      "reward": 0.3184,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 28.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.251
     },
     {
      "index": 113,
@@ -6000,7 +7221,9 @@
      "reward": 0.3124,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 28.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.002
     },
     {
      "index": 114,
@@ -6010,7 +7233,9 @@
      "reward": 0.1605,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 28.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.037
     },
     {
      "index": 115,
@@ -6020,7 +7245,9 @@
      "reward": 0.3081,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 28.75,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 116,
@@ -6030,7 +7257,9 @@
      "reward": 0.2886,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 29.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 117,
@@ -6040,7 +7269,9 @@
      "reward": 0.2094,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 29.25,
+     "cents_off": 10.6,
+     "timing_dev": -0.0
     },
     {
      "index": 118,
@@ -6050,7 +7281,9 @@
      "reward": 0.3349,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 29.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 119,
@@ -6060,7 +7293,9 @@
      "reward": 0.2518,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 29.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.037
     },
     {
      "index": 120,
@@ -6070,7 +7305,9 @@
      "reward": 0.3179,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 30.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.072
     },
     {
      "index": 121,
@@ -6080,7 +7317,9 @@
      "reward": 0.2108,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 30.25,
+     "cents_off": 10.6,
+     "timing_dev": 1.465
     },
     {
      "index": 122,
@@ -6090,7 +7329,9 @@
      "reward": 0.3419,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 30.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.537
     },
     {
      "index": 123,
@@ -6100,7 +7341,9 @@
      "reward": 0.3104,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 30.75,
+     "cents_off": 10.6,
+     "timing_dev": -0.108
     },
     {
      "index": 124,
@@ -6110,7 +7353,9 @@
      "reward": 0.2145,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 31.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 125,
@@ -6120,7 +7365,9 @@
      "reward": 0.2557,
      "issue": "tone_worst_part",
      "issue_name": "cleanliness of the worst part",
-     "cents_off": 10.6
+     "score_start": 31.25,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 126,
@@ -6130,7 +7377,9 @@
      "reward": 0.267,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 31.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.035
     },
     {
      "index": 127,
@@ -6140,11 +7389,22 @@
      "reward": 0.2496,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
+     "score_start": 31.75,
      "cents_off": 10.6
     }
    ],
    "seconds_audio": 106.1,
-   "seconds_compute": 52.8
+   "seconds_compute": 29.6,
+   "timing_by_next_note": {
+    "same_note_next": {
+     "n": 103,
+     "timing_dev_median": 0.035
+    },
+    "string_change_next": {
+     "n": 24,
+     "timing_dev_median": 1.571
+    }
+   }
   },
   "twinkle": {
    "status": "ok",
@@ -6161,6 +7421,9 @@
     5,
     22
    ],
+   "slower_than_score": 2.554,
+   "timing_dev_median": 0.036,
+   "share_on_time": 0.805,
    "notes": [
     {
      "index": 0,
@@ -6170,7 +7433,9 @@
      "reward": 0.5198,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 0.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 1,
@@ -6180,7 +7445,9 @@
      "reward": 0.5083,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 0.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.854
     },
     {
      "index": 2,
@@ -6190,7 +7457,9 @@
      "reward": 0.533,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 1.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.054
     },
     {
      "index": 3,
@@ -6200,7 +7469,9 @@
      "reward": 0.437,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 1.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.055
     },
     {
      "index": 4,
@@ -6210,7 +7481,9 @@
      "reward": 0.488,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 2.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.037
     },
     {
      "index": 5,
@@ -6220,7 +7493,9 @@
      "reward": 0.3872,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 2.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.055
     },
     {
      "index": 6,
@@ -6230,7 +7505,9 @@
      "reward": 0.4873,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 3.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.627
     },
     {
      "index": 7,
@@ -6240,7 +7517,9 @@
      "reward": 0.5429,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 4.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.001
     },
     {
      "index": 8,
@@ -6250,7 +7529,9 @@
      "reward": 0.6127,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 4.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.018
     },
     {
      "index": 9,
@@ -6260,7 +7541,9 @@
      "reward": 0.5226,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 5.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.018
     },
     {
      "index": 10,
@@ -6270,7 +7553,9 @@
      "reward": 0.587,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 5.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.018
     },
     {
      "index": 11,
@@ -6280,7 +7565,9 @@
      "reward": 0.5246,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 6.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.018
     },
     {
      "index": 12,
@@ -6290,7 +7577,9 @@
      "reward": 0.6132,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 6.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.018
     },
     {
      "index": 13,
@@ -6300,7 +7589,9 @@
      "reward": 0.6374,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 7.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.391
     },
     {
      "index": 14,
@@ -6310,7 +7601,9 @@
      "reward": 0.514,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 15,
@@ -6320,7 +7613,9 @@
      "reward": 0.3847,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 8.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.709
     },
     {
      "index": 16,
@@ -6330,7 +7625,9 @@
      "reward": 0.5844,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 9.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 17,
@@ -6340,7 +7637,9 @@
      "reward": 0.5381,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 9.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 18,
@@ -6350,7 +7649,9 @@
      "reward": 0.5312,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 10.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 19,
@@ -6360,7 +7661,9 @@
      "reward": 0.5564,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 10.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 20,
@@ -6370,7 +7673,9 @@
      "reward": 0.6803,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 11.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.6
     },
     {
      "index": 21,
@@ -6380,7 +7685,9 @@
      "reward": 0.5719,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.11
     },
     {
      "index": 22,
@@ -6390,7 +7697,9 @@
      "reward": 0.3954,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 12.5,
+     "cents_off": 10.6,
+     "timing_dev": 1.236
     },
     {
      "index": 23,
@@ -6400,7 +7709,9 @@
      "reward": 0.5329,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 13.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.018
     },
     {
      "index": 24,
@@ -6410,7 +7721,9 @@
      "reward": 0.5918,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 13.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.019
     },
     {
      "index": 25,
@@ -6420,7 +7733,9 @@
      "reward": 0.526,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 14.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 26,
@@ -6430,7 +7745,9 @@
      "reward": 0.5718,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 14.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.018
     },
     {
      "index": 27,
@@ -6440,7 +7757,9 @@
      "reward": 0.6324,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 15.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 28,
@@ -6450,7 +7769,9 @@
      "reward": 0.5068,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 16.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 29,
@@ -6460,7 +7781,9 @@
      "reward": 0.559,
      "issue": null,
      "issue_name": null,
-     "cents_off": 10.6
+     "score_start": 16.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.818
     },
     {
      "index": 30,
@@ -6470,7 +7793,9 @@
      "reward": 0.552,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 17.0,
+     "cents_off": 10.6,
+     "timing_dev": -0.055
     },
     {
      "index": 31,
@@ -6480,7 +7805,9 @@
      "reward": 0.3834,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 17.5,
+     "cents_off": 10.6,
+     "timing_dev": -0.036
     },
     {
      "index": 32,
@@ -6490,7 +7817,9 @@
      "reward": 0.4491,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 33,
@@ -6500,7 +7829,9 @@
      "reward": 0.3837,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 18.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.0
     },
     {
      "index": 34,
@@ -6510,7 +7841,9 @@
      "reward": 0.5299,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 19.0,
+     "cents_off": 10.6,
+     "timing_dev": 0.646
     },
     {
      "index": 35,
@@ -6520,7 +7853,9 @@
      "reward": 0.5461,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 20.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.055
     },
     {
      "index": 36,
@@ -6530,7 +7865,9 @@
      "reward": 0.575,
      "issue": null,
      "issue_name": null,
-     "cents_off": 20.6
+     "score_start": 20.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.001
     },
     {
      "index": 37,
@@ -6540,7 +7877,9 @@
      "reward": 0.4833,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 21.0,
+     "cents_off": 20.6,
+     "timing_dev": 0.0
     },
     {
      "index": 38,
@@ -6550,7 +7889,9 @@
      "reward": 0.5789,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 10.6
+     "score_start": 21.5,
+     "cents_off": 10.6,
+     "timing_dev": 0.018
     },
     {
      "index": 39,
@@ -6560,7 +7901,9 @@
      "reward": 0.5224,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 22.0,
+     "cents_off": 20.6,
+     "timing_dev": -0.036
     },
     {
      "index": 40,
@@ -6570,7 +7913,9 @@
      "reward": 0.5964,
      "issue": "tone_clean",
      "issue_name": "tone cleanliness (HNR)",
-     "cents_off": 20.6
+     "score_start": 22.5,
+     "cents_off": 20.6,
+     "timing_dev": 0.054
     },
     {
      "index": 41,
@@ -6580,11 +7925,22 @@
      "reward": 0.6195,
      "issue": null,
      "issue_name": null,
+     "score_start": 23.0,
      "cents_off": 15.6
     }
    ],
    "seconds_audio": 71.4,
-   "seconds_compute": 34.3
+   "seconds_compute": 18.1,
+   "timing_by_next_note": {
+    "same_note_next": {
+     "n": 33,
+     "timing_dev_median": 0.018
+    },
+    "string_change_next": {
+     "n": 8,
+     "timing_dev_median": 0.677
+    }
+   }
   }
  }
 }

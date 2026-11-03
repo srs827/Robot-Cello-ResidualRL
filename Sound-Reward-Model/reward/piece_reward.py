@@ -48,7 +48,7 @@ def _trim(y, s, e, sr=SR):
 
 
 def notes_from_midi(y, midi_path, track=None, sr=SR):
-    """Align the MIDI score to the recording by pitch (DTW), split repeated notes at bow changes -> [(start_s, end_s, pitch)]."""
+    """Align the MIDI score to the recording by pitch (DTW), split repeated notes at bow changes -> [(start_s, end_s, pitch, score_start_s)]."""
     import pretty_midi
     m = pretty_midi.PrettyMIDI(midi_path)
     notes = sorted([n for i in m.instruments if not i.is_drum for n in i.notes], key=lambda n: (n.start, -n.pitch))
@@ -93,8 +93,8 @@ def notes_from_midi(y, midi_path, track=None, sr=SR):
         cuts = [lo] + (_pick_cuts(db, lo, hi, len(r) - 1, g) if len(r) > 1 else []) + [hi]
         for n, a, b in zip(r, cuts[:-1], cuts[1:]):
             s, e = _trim(y, a / fs, b / fs, sr)
-            out.append((s, e, n.pitch))
-    return [(s, e, p) for s, e, p in out if e - s >= 0.1]
+            out.append((s, e, n.pitch, n.start))
+    return [x for x in out if x[1] - x[0] >= 0.1]
 
 
 def notes_from_pitch(y, track=None, sr=SR, min_len=0.15):
@@ -137,6 +137,21 @@ def cents_off(f0, s, e, target, sr=SR):
     return float(np.median(c)) if len(c) >= 3 else None
 
 
+def timing(rows, tol=0.2):
+    """Rhythm check: each note's played length (to the next note) vs the score, after removing the overall tempo."""
+    pairs = [(a, b) for a, b in zip(rows[:-1], rows[1:]) if a["score_start"] is not None and b["score_start"] is not None
+             and b["score_start"] > a["score_start"]]
+    if len(pairs) < 3:
+        return {}
+    ratio = np.array([(b["start"] - a["start"]) / (b["score_start"] - a["score_start"]) for a, b in pairs])
+    tempo = float(np.median(ratio))
+    for (a, b), q in zip(pairs, ratio):
+        a["timing_dev"] = round(float(q / tempo - 1), 3)
+    dev = ratio / tempo - 1
+    return dict(slower_than_score=round(tempo, 3), timing_dev_median=round(float(np.median(np.abs(dev))), 3),
+                share_on_time=round(float(np.mean(np.abs(dev) <= tol)), 3))
+
+
 class PieceReward(Reward):
     """Reward model for whole pieces: one reward and one main issue per note, plus the piece average."""
 
@@ -149,11 +164,11 @@ class PieceReward(Reward):
         if notes is None:
             notes = notes_from_midi(y, midi, track) if midi else notes_from_pitch(y, track)
         rows = []
-        for k, (s, e, p) in enumerate(notes):
+        for k, (s, e, p, *score) in enumerate(notes):
             seg = y[int(s * SR):int(e * SR)]
             info = self.explain(seg, SR)
             row = dict(index=k, start=round(s, 3), end=round(e, 3), note=librosa.midi_to_note(p, unicode=False),
-                       reward=info["reward"], issue=None, issue_name=None)
+                       reward=info["reward"], issue=None, issue_name=None, score_start=round(score[0], 3) if score else None)
             if info["status"] == "ok":
                 todo = [a for a in info["aspects"] if a["status"] != "ok" and a["aspect"] not in SKIP_ASPECTS]
                 if todo:
@@ -168,9 +183,12 @@ class PieceReward(Reward):
             if x["issue"]:
                 issues[x["issue"]] = issues.get(x["issue"], 0) + 1
         worst = sorted(rows, key=lambda x: x["reward"])[:5]
-        return dict(status="ok", reward=round(float(r.mean()), 4), n_notes=len(rows),
-                    share_good=round(float(np.mean(r >= 0.5)), 3), issue_counts=issues,
-                    worst_notes=[x["index"] for x in worst], notes=rows)
+        res = dict(status="ok", reward=round(float(r.mean()), 4), n_notes=len(rows),
+                   share_good=round(float(np.mean(r >= 0.5)), 3), issue_counts=issues,
+                   worst_notes=[x["index"] for x in worst])
+        res.update(timing(rows))
+        res["notes"] = rows
+        return res
 
 
 if __name__ == "__main__":

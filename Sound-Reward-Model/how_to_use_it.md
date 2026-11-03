@@ -46,8 +46,8 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 
 ## reward/piece_reward.py  ← score a whole song note by note
 - **Input:** a recording of a whole piece (numpy array or wav / mp3 file) plus where the notes are: the MIDI score (`--midi`), the robot run log csv (`--log`, uses `time_elapsed_sec`, `current_note_number`, `remaining_duration_sec`), or a list of `(start_s, end_s, midi_pitch)`. With none of them it cuts notes by detected pitch (less exact: repeated notes merge).
-- **What it does:** finds every note (MIDI: lines the score up with the recording by pitch and splits repeated notes at bow changes), then gives each note a reward and its main issue (same aspects as `explain()`, without the "ending" one, which the cause test showed the model does not really use) and how far its pitch is from the score in cents.
-- **Output:** a dict: `reward` (average over notes), `share_good` (share of notes ≥ 0.5), `issue_counts`, `worst_notes`, and `notes` = one row per note (`start`, `end`, `note`, `reward`, `issue`, `cents_off`).
+- **What it does:** finds every note (MIDI: lines the score up with the recording by pitch and splits repeated notes at bow changes), then gives each note a reward and its main issue (same aspects as `explain()`, without the "ending" one, which the cause test showed the model does not really use) and how far its pitch is from the score in cents. With a MIDI score it also checks rhythm: each note's length to the next note vs the score, after removing the overall tempo.
+- **Output:** a dict: `reward` (average over notes), `share_good` (share of notes ≥ 0.5), `issue_counts`, `worst_notes`, with MIDI also `slower_than_score`, `timing_dev_median`, `share_on_time` (within ±20 %), and `notes` = one row per note (`start`, `end`, `note`, `reward`, `issue`, `cents_off`, `timing_dev`).
 - **How to run:**
   ```python
   import sys; sys.path.insert(0, "path/to/reward")
@@ -153,9 +153,15 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 - **Output:** `outputs/explain/one_feature_test.json`
 - **How to run:** `python analysis/one_feature_test.py`
 
+## analysis/mp3_test.py
+- **Input:** a model, the built dataset.
+- **What it does:** checks whether MP3 compression changes the reward: held-out good and bad takes are turned into MP3 (about 80 and 50 kbps, like the robot song files) and scored again.
+- **Output:** `outputs/explain/mp3_test.json` (mean reward of good / bad takes, good-vs-bad AUC, change vs original)
+- **How to run:** `python analysis/mp3_test.py`
+
 ## analysis/score_pieces.py
 - **Input:** recordings with a MIDI file of the same name (default: the robot recordings in `../lol/Robot/` and scores in `../lol/Midi/` of this repo).
-- **What it does:** runs `piece_reward.py` on every song: score per note, per song average, main issues, pitch per note.
+- **What it does:** runs `piece_reward.py` on every song: score per note, per song average, main issues, pitch per note, rhythm, and the timing error before a string change vs on the same string.
 - **Output:** `outputs/pieces/pieces.json`
 - **How to run:** `python analysis/score_pieces.py` (or `--audio_dir ... --midi_dir ...`; about 0.5 s of compute per second of audio on CPU, mostly pitch detection).
 

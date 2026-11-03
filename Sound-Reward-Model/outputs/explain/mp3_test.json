@@ -1,0 +1,52 @@
+{
+ "n_good": 75,
+ "n_bad": 35,
+ "models": {
+  "fast": {
+   "original": {
+    "mean_good": 0.6798,
+    "mean_bad": 0.4358,
+    "auc": 0.835,
+    "mean_change": 0.0,
+    "max_abs_change": 0.0
+   },
+   "mp3_80kbps": {
+    "mean_good": 0.666,
+    "mean_bad": 0.4247,
+    "auc": 0.8347,
+    "mean_change": -0.0129,
+    "max_abs_change": 0.0403
+   },
+   "mp3_50kbps": {
+    "mean_good": 0.6194,
+    "mean_bad": 0.4047,
+    "auc": 0.8354,
+    "mean_change": -0.051,
+    "max_abs_change": 0.127
+   }
+  },
+  "ensemble12": {
+   "original": {
+    "mean_good": 0.6368,
+    "mean_bad": 0.4226,
+    "auc": 0.8358,
+    "mean_change": 0.0,
+    "max_abs_change": 0.0
+   },
+   "mp3_80kbps": {
+    "mean_good": 0.6244,
+    "mean_bad": 0.4137,
+    "auc": 0.8366,
+    "mean_change": -0.0113,
+    "max_abs_change": 0.0296
+   },
+   "mp3_50kbps": {
+    "mean_good": 0.5729,
+    "mean_bad": 0.393,
+    "auc": 0.7912,
+    "mean_change": -0.053,
+    "max_abs_change": 0.1674
+   }
+  }
+ }
+}
