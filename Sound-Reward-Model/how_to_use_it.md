@@ -73,6 +73,18 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 - **Output:** –
 - **How to run:** loaded automatically by `reward.py`, `evaluate.py` and the analysis scripts.
 
+## training/train_vcello.py
+- **Input:** the fast model (`distill12`), the built dataset, and the virtual cello calibration in `outputs/virtual_cello/virtual_cello.json`.
+- **What it does:** experiment: fine-tunes the fast model so clean bowing on the virtual cello scores higher than double-slip or crushed bowing, while keeping its scores on real recordings the same. Trains on the G and A strings only (D is kept out for testing). `--lam` sets how strong the virtual cello part is.
+- **Output:** `candidates/<name>_seed0.pt`
+- **How to run:** `python training/train_vcello.py --name fast_vc --lam 1.0` (about 10 minutes on CPU). Then `python reward/build_reference.py --models fast_vc --model_dir candidates` before using it.
+
+## candidates/
+- **Input:** –
+- **What it does:** experimental models, NOT used by default: `fast_vc` (strong virtual-cello retrain, lam 1.0) and `fast_vc03` (gentle, lam 0.3), plus their `reference.json`. Results: `outputs/evaluation_candidate/`, `outputs/virtual_cello_candidate/`, `outputs/virtual_cello_candidate03/`, `outputs/pieces/pieces_candidate.json`. Both lose some accuracy on real recordings, so the shipped `fast` stays the recommended model.
+- **Output:** –
+- **How to run:** `Reward("fast_vc", model_dir="candidates")`. To compare with the current model in `evaluate.py`, copy `checkpoints/distill12_seed0.pt` into `candidates/` and run `python evaluation/evaluate.py --models "fast_vc03,fast_vc,distill12" --baseline distill12 --model_dir candidates --out outputs/evaluation_candidate`.
+
 ---
 
 ## data/download_public.py
@@ -163,7 +175,19 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 - **Input:** recordings with a MIDI file of the same name (default: the robot recordings in `../lol/Robot/` and scores in `../lol/Midi/` of this repo).
 - **What it does:** runs `piece_reward.py` on every song: score per note, per song average, main issues, pitch per note, rhythm, and the timing error before a string change vs on the same string.
 - **Output:** `outputs/pieces/pieces.json`
-- **How to run:** `python analysis/score_pieces.py` (or `--audio_dir ... --midi_dir ...`; about 0.5 s of compute per second of audio on CPU, mostly pitch detection).
+- **How to run:** `python analysis/score_pieces.py` (or `--audio_dir ... --midi_dir ...`, another model with `--model ... --model_dir ...`; about 0.5 s of compute per second of audio on CPU, mostly pitch detection).
+
+## analysis/virtual_cello.py
+- **Input:** bow force, bow speed, contact point (0.06–0.20 of the string length from the bridge) and pitch.
+- **What it does:** a physical model of a bowed cello string (waveguide string + bow friction + body resonances). `play()` returns the audio and a physics check: how often the string moves in clean "Helmholtz motion" (one slip per cycle).
+- **Output:** audio (numpy, 22.05 kHz) and the Helmholtz share (0–1).
+- **How to run:** imported by `virtual_cello_test.py`; `from virtual_cello import play; y, helm = play(1.1, 0.1)`.
+
+## analysis/virtual_cello_test.py
+- **Input:** a model; for the body-colour calibration also `outputs/pieces/pieces.json` and the robot songs in `../lol/Robot/`.
+- **What it does:** (1) matches the virtual cello's body colour to the real robot recordings, (2) plays a 20 × 12 grid of bow force × bow speed and compares the reward with the physics (clean vibration / too much / too little force), (3) the classic Schelleng diagram (contact point × force) on the G, D and A strings, (4) a tiny RL loop: a cross-entropy optimizer learns bow force, speed and contact point from 5 starting points using only the reward.
+- **Output:** `outputs/virtual_cello/virtual_cello.json` (`virtual_cello_uncalibrated.json` = same test without the calibration); with `--audio_out <folder>` also before/after wav files of a short melody.
+- **How to run:** `python analysis/virtual_cello_test.py` (about 5 minutes on CPU; `--calibrate no` skips the calibration; a candidate model: `--model fast_vc --model_dir candidates --out outputs/virtual_cello_candidate`).
 
 ## analysis/example_outputs.py
 - **Input:** a model, the built dataset.
@@ -181,6 +205,6 @@ The recordings (`.wav`) are not in GitHub. To rebuild the dataset or retrain, co
 
 ## outputs/
 - **Input:** –
-- **What it does:** results of the shipped models: `evaluation/` (summary.csv, evaluation.json, and `all_models_original_run.md` = every model from the original runs incl. the old RL reward), `explain/` (feature and position analysis), `examples/` (explain / compare outputs for a good and a bad take), `pieces/` (note-by-note scores of 5 robot songs).
+- **What it does:** results of the shipped models: `evaluation/` (summary.csv, evaluation.json, and `all_models_original_run.md` = every model from the original runs incl. the old RL reward), `explain/` (feature and position analysis), `examples/` (explain / compare outputs for a good and a bad take), `pieces/` (note-by-note scores of 5 robot songs), `virtual_cello/` (reward vs bowing physics and the tiny RL loop).
 - **Output:** –
 - **How to run:** –

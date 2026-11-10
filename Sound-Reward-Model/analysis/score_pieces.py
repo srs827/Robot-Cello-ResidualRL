@@ -29,9 +29,10 @@ def main():
     ap.add_argument("--audio_dir", default=os.path.join(HERE, "..", "..", "lol", "Robot"))
     ap.add_argument("--midi_dir", default=os.path.join(HERE, "..", "..", "lol", "Midi"))
     ap.add_argument("--model", default="fast")
+    ap.add_argument("--model_dir", default=None, help="folder with the model (default: checkpoints/)")
     ap.add_argument("--out", default=os.path.join(HERE, "..", "outputs", "pieces", "pieces.json"))
     a = ap.parse_args()
-    R = PieceReward(a.model)
+    R = PieceReward(a.model, model_dir=a.model_dir)
     res = {}
     for f in sorted(glob.glob(os.path.join(a.audio_dir, "*.mp3")) + sorted(glob.glob(os.path.join(a.audio_dir, "*.wav")))):
         name = os.path.splitext(os.path.basename(f))[0]
